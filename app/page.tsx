@@ -3,12 +3,9 @@
 import React, { useMemo, useState } from "react";
 import {
   Search,
-  Facebook,
   ShoppingCart,
   ShieldCheck,
-  Smartphone,
   Flame,
-  LayoutGrid,
   Star,
   Plus,
   Minus,
@@ -16,13 +13,9 @@ import {
   Filter,
   Sparkles,
   BadgePercent,
-  Store,
   Headphones,
-  Truck,
   X,
   MessageCircle,
-  CheckCircle2,
-  ChevronRight,
 } from "lucide-react";
 
 const facebookPage = "https://m.me/LotusstoreTH";
@@ -498,6 +491,7 @@ export default function LotusStorePage() {
   const [showCart, setShowCart] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
 
   const popularProducts = useMemo(() => {
     return products.filter((p) => p.popular && p.type === activeType).slice(0, 4);
@@ -555,6 +549,20 @@ export default function LotusStorePage() {
 
     return sorted;
   }, [activeFilter, activeType, query, sortBy]);
+
+  const searchSuggestions = useMemo(() => {
+    const keyword = query.trim().toLowerCase();
+
+    if (!keyword) return [];
+
+    return products
+      .filter((product) => {
+        const matchesType = product.type === activeType;
+        const matchesName = product.name.toLowerCase().includes(keyword);
+        return matchesType && matchesName;
+      })
+      .slice(0, 6);
+  }, [query, activeType]);
 
   const cartCount = useMemo(() => {
     return cart.reduce((sum, item) => sum + item.qty, 0);
@@ -637,12 +645,12 @@ ${lines.join("\n")}
   return (
     <div className="min-h-screen bg-[#050505] text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
-        <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
-          <div className="flex min-w-0 items-center gap-3">
+        <div className="mx-auto flex h-14 max-w-7xl items-center gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 lg:px-8">
+          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logoUrl}
               alt="Lotus Store"
-              className="h-10 w-10 rounded-2xl object-cover ring-1 ring-white/10"
+              className="h-9 w-9 rounded-2xl object-cover ring-1 ring-white/10 sm:h-10 sm:w-10"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
@@ -655,14 +663,57 @@ ${lines.join("\n")}
             </div>
           </div>
 
-          <div className="relative ml-2 flex-1 md:max-w-2xl">
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+          <div className="relative ml-1 flex-1 md:max-w-2xl">
+            <Search className="pointer-events-none absolute left-4 top-1/2 z-20 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+
             <input
-  value={query}
-  onChange={(e) => setQuery(e.target.value)}
-  placeholder="ค้นหาเกมหรือแอพ..."
-  className="relative z-10 h-11 w-full rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10"
-/>
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => {
+                setTimeout(() => setShowSuggestions(false), 150);
+              }}
+              placeholder="ค้นหาเกมหรือแอพ..."
+              className="relative z-10 h-10 w-full rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10 sm:h-11"
+            />
+
+            {showSuggestions && query.trim() !== "" && searchSuggestions.length > 0 && (
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-white/10 bg-[#111111] shadow-2xl shadow-black/40">
+                {searchSuggestions.map((product) => (
+                  <button
+                    key={product.id}
+                    type="button"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => {
+                      setQuery(product.name);
+                      setShowSuggestions(false);
+                    }}
+                    className="flex w-full items-center gap-3 border-b border-white/5 px-3 py-3 text-left transition hover:bg-white/5 last:border-b-0"
+                  >
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="h-12 w-12 rounded-xl object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src = "https://placehold.co/100x100";
+                      }}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-semibold text-white">
+                        {product.name}
+                      </p>
+                      <p className="text-xs text-zinc-400">{product.category}</p>
+                    </div>
+                    <span className="shrink-0 text-sm font-bold text-red-400">
+                      {formatBaht(product.price)}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <a
@@ -678,7 +729,7 @@ ${lines.join("\n")}
 
           <button
             onClick={() => setShowCart(true)}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-lg shadow-black/40 transition hover:scale-[1.03] hover:bg-zinc-200"
+            className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-lg shadow-black/40 transition hover:scale-[1.03] hover:bg-zinc-200 sm:h-11 sm:w-11"
           >
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
@@ -690,33 +741,33 @@ ${lines.join("\n")}
         </div>
       </header>
 
-      <main className="pb-32 pt-16">
+      <main className="pb-32 pt-14 sm:pt-16">
         <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(255,0,0,0.18),transparent_28%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
+          <div className="mx-auto grid max-w-7xl gap-6 px-3 py-6 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
             <div className="relative z-10">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-zinc-200 backdrop-blur">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-zinc-200 backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
                 <Sparkles className="h-4 w-4" />
                 Premium mobile game & app storefront
               </div>
 
               <h1 className="max-w-3xl leading-[0.95] tracking-tight">
-                <span className="block text-4xl font-black text-white sm:text-5xl lg:text-7xl">
+                <span className="block text-3xl font-black text-white sm:text-5xl lg:text-7xl">
                   ซื้อเกมและแอพราคาคุ้ม
                 </span>
-                <span className="mt-3 block text-xl font-medium text-zinc-400 sm:text-2xl lg:text-3xl">
+                <span className="mt-2 block text-base font-medium text-zinc-400 sm:mt-3 sm:text-2xl lg:text-3xl">
                   ดูง่าย กดสั่งซื้อได้ทันที
                 </span>
               </h1>
 
-              <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7 lg:text-lg">
                 รวมเกมและแอพยอดนิยมสำหรับ iOS และ Android เลือกง่าย
                 สั่งไว และคุยกับเพจได้ทันทีในหน้าต่างแชท
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
                 <a
                   href="#products"
-                  className="rounded-full bg-red-600 px-6 py-3 font-bold text-white transition hover:scale-[1.02] hover:bg-red-700"
+                  className="rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white transition hover:scale-[1.02] hover:bg-red-700 sm:px-6"
                 >
                   เริ่มเลือกสินค้า
                 </a>
@@ -726,13 +777,13 @@ ${lines.join("\n")}
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-white/10 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/10"
+                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:px-6"
                 >
                   ทักแชทเลย
                 </a>
               </div>
 
-              <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
+              <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:gap-3 md:grid-cols-4">
                 {[
                   { icon: ShieldCheck, title: "การันตี", desc: "ใช้งานได้" },
                   { icon: MessageCircle, title: "ตอบไว", desc: "คุยง่าย" },
@@ -741,18 +792,20 @@ ${lines.join("\n")}
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-md"
+                    className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-md sm:rounded-3xl sm:p-4"
                   >
-                    <item.icon className="mb-3 h-5 w-5 text-white" />
-                    <p className="font-bold text-white">{item.title}</p>
-                    <p className="text-sm text-zinc-400">{item.desc}</p>
+                    <item.icon className="mb-2 h-5 w-5 text-white sm:mb-3" />
+                    <p className="text-sm font-bold text-white sm:text-base">
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-zinc-400 sm:text-sm">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="rounded-[32px] border border-white/10 bg-[#111111] p-5 text-white shadow-2xl shadow-black/40">
+            <div className="relative z-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <div className="rounded-[28px] border border-white/10 bg-[#111111] p-4 text-white shadow-2xl shadow-black/40 sm:rounded-[32px] sm:p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <p className="text-sm font-bold text-white">Flash Deal</p>
                   <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
@@ -761,25 +814,25 @@ ${lines.join("\n")}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3 sm:gap-4">
                   <img
                     src={popularProducts[0]?.image ?? "https://placehold.co/400x400"}
                     alt={popularProducts[0]?.name ?? "สินค้าแนะนำ"}
-                    className="h-24 w-24 rounded-2xl bg-[#191919] object-cover"
+                    className="h-20 w-20 rounded-2xl bg-[#191919] object-cover sm:h-24 sm:w-24"
                   />
                   <div className="min-w-0">
-                    <h3 className="line-clamp-2 text-lg font-black">
+                    <h3 className="line-clamp-2 text-base font-black sm:text-lg">
                       {popularProducts[0]?.name ?? "สินค้าแนะนำ"}
                     </h3>
-                    <p className="mt-1 text-sm text-zinc-400">
+                    <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
                       {popularProducts[0]?.description ??
                         "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
                     </p>
                     <div className="mt-3 flex items-end gap-2">
-                      <span className="text-2xl font-black text-cyan-300">
+                      <span className="text-xl font-black text-cyan-300 sm:text-2xl">
                         {formatBaht(popularProducts[0]?.price ?? 0)}
                       </span>
-                      <span className="text-sm text-zinc-500 line-through">
+                      <span className="text-xs text-zinc-500 line-through sm:text-sm">
                         {formatBaht(popularProducts[0]?.oldPrice ?? 0)}
                       </span>
                     </div>
@@ -787,7 +840,7 @@ ${lines.join("\n")}
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {[
                   { label: "รีวิวลูกค้า", value: "4.9/5" },
                   { label: "ออเดอร์รวม", value: "1,500+" },
@@ -796,10 +849,12 @@ ${lines.join("\n")}
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-[28px] border border-white/10 bg-[#0f0f0f] p-5 text-white shadow-xl shadow-black/30"
+                    className="rounded-[24px] border border-white/10 bg-[#0f0f0f] p-4 text-white shadow-xl shadow-black/30 sm:rounded-[28px] sm:p-5"
                   >
-                    <p className="text-sm text-zinc-500">{item.label}</p>
-                    <p className="mt-2 text-2xl font-black">{item.value}</p>
+                    <p className="text-xl font-black sm:text-2xl">{item.value}</p>
+                    <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
+                      {item.label}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -807,490 +862,276 @@ ${lines.join("\n")}
           </div>
         </section>
 
-        <section className="mx-auto mt-6 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-4 md:grid-cols-4">
-            {[
-              { title: "ร้านน่าเชื่อถือ", desc: "มีรีวิวและสินค้าขายดี", icon: Store },
-              { title: "รองรับหลายแพลตฟอร์ม", desc: "iOS / Android", icon: Smartphone },
-              { title: "สินค้าฮิตอัปเดต", desc: "เกมดังและแอพยอดนิยม", icon: Flame },
-              { title: "ใช้งานง่าย", desc: "เลือกสะดวก สั่งซื้อรวดเร็ว", icon: LayoutGrid },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="rounded-[28px] border border-white/10 bg-[#0d0d0d] p-5 shadow-lg shadow-black/30"
+        <section className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
+          <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-white/5 p-3 backdrop-blur-md sm:rounded-[28px] sm:p-4">
+            <div className="flex gap-2 overflow-x-auto no-scrollbar">
+              {typeFilters.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setActiveType(type)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
+                    activeType === type
+                      ? "bg-white text-black"
+                      : "bg-white/5 text-zinc-300 border border-white/10"
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex gap-2 overflow-x-auto no-scrollbar">
+              {platformFilters.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    activeFilter === filter
+                      ? "bg-red-600 text-white"
+                      : "bg-white/5 text-zinc-300 border border-white/10"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+
+            <div className="relative">
+              <Filter className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="h-11 w-full appearance-none rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none"
               >
-                <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3">
-                  <item.icon className="h-5 w-5 text-white" />
+                <option value="popular" className="text-black">
+                  เรียงตามความนิยม
+                </option>
+                <option value="price-low" className="text-black">
+                  ราคาน้อยไปมาก
+                </option>
+                <option value="price-high" className="text-black">
+                  ราคามากไปน้อย
+                </option>
+                <option value="discount" className="text-black">
+                  ส่วนลดมากสุด
+                </option>
+                <option value="rating" className="text-black">
+                  คะแนนสูงสุด
+                </option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-7xl px-3 pb-3 sm:px-6 lg:px-8">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-lg font-black text-white sm:text-xl">สินค้าขายดี</h2>
+            <span className="inline-flex items-center gap-1 text-sm text-red-400">
+              <Flame className="h-4 w-4" />
+              Hot
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {popularProducts.map((product) => (
+              <button
+                key={product.id}
+                onClick={() => setSelectedProduct(product)}
+                className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 text-left transition hover:scale-[1.01]"
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.src = "https://placehold.co/500x500";
+                    }}
+                  />
                 </div>
-                <h3 className="text-lg font-black text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-zinc-400">{item.desc}</p>
-              </div>
+                <div className="p-3">
+                  <p className="line-clamp-2 min-h-[40px] text-sm font-bold text-white">
+                    {product.name}
+                  </p>
+                  <div className="mt-2 flex items-end gap-2">
+                    <span className="text-base font-black text-red-400 sm:text-lg">
+                      {formatBaht(product.price)}
+                    </span>
+                    <span className="text-xs text-zinc-500 line-through">
+                      {formatBaht(product.oldPrice)}
+                    </span>
+                  </div>
+                </div>
+              </button>
             ))}
           </div>
         </section>
 
-        <section
-          id="products"
-          className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8"
-        >
-          <div className="rounded-[32px] border border-white/10 bg-[#090909] p-5 shadow-2xl shadow-black/40 sm:p-6">
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-500">
-                  Lotus Store Collection
-                </p>
-                <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
-                  เลือกสินค้าในร้าน
-                </h2>
-              </div>
-
-              <div className="flex flex-wrap gap-2">
-                {typeFilters.map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setActiveType(type)}
-                    className={`rounded-full px-4 py-2 text-sm font-bold transition ${
-                      activeType === type
-                        ? "bg-red-600 text-white"
-                        : "border border-white/10 bg-white/5 text-zinc-300 hover:bg-white/10"
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_auto]">
-              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-                {platformFilters.map((filter) => (
-                  <button
-                    key={filter}
-                    onClick={() => setActiveFilter(filter)}
-                    className={`rounded-2xl px-4 py-3 text-sm font-bold transition ${
-                      activeFilter === filter
-                        ? "bg-white text-black"
-                        : "border border-white/10 bg-[#111111] text-zinc-300 hover:bg-[#171717]"
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                ))}
-              </div>
-
-              <div className="relative">
-                <Filter className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="h-12 w-full appearance-none rounded-2xl border border-white/10 bg-[#111111] pl-11 pr-10 text-sm font-semibold text-white outline-none transition hover:bg-[#171717] lg:w-[220px]"
-                >
-                  <option value="popular">เรียงตามความนิยม</option>
-                  <option value="price-low">ราคาต่ำไปสูง</option>
-                  <option value="price-high">ราคาสูงไปต่ำ</option>
-                  <option value="discount">ส่วนลดมากสุด</option>
-                  <option value="rating">คะแนนสูงสุด</option>
-                </select>
-              </div>
-            </div>
-
-           <div className="mt-8 grid items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-3">
-  {filteredProducts.map((product) => (
-    <article
-      key={product.id}
-      className="group flex h-full flex-col overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b from-[#111111] to-[#0a0a0a] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl hover:shadow-black/50"
-    >
-      <div className="relative overflow-hidden bg-[#0f0f0f] p-4">
-        <div className="absolute left-4 top-4 z-10 rounded-full border border-white/10 bg-black/80 px-3 py-1 text-xs font-bold text-white shadow-sm backdrop-blur">
-          {product.badge}
-        </div>
-
-        <div className="absolute right-4 top-4 z-10 rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white shadow-sm">
-          -{discountPercent(product.price, product.oldPrice)}%
-        </div>
-
-        <div className="flex h-56 items-center justify-center rounded-2xl bg-[#151515] p-3">
-          <img
-            src={product.image}
-            alt={product.name}
-            className="max-h-full w-full rounded-2xl object-contain transition duration-300 group-hover:scale-[1.03]"
-            onError={(e) => {
-              e.currentTarget.src =
-                "https://placehold.co/600x600/111111/ffffff?text=Image";
-            }}
-          />
-        </div>
-      </div>
-
-      <div className="flex flex-1 flex-col p-5">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0 flex-1">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-zinc-500">
-              {product.category}
-            </p>
-
-            <h3 className="mt-2 min-h-[72px] line-clamp-2 text-[1.65rem] font-black leading-tight text-white">
-              {product.name}
-            </h3>
-          </div>
-
-          {product.popular && (
-            <span className="shrink-0 rounded-full border border-red-500/30 bg-red-500/15 px-3 py-1 text-xs font-bold text-red-300">
-              ขายดี
-            </span>
-          )}
-        </div>
-
-        <p className="mt-3 min-h-[48px] line-clamp-2 text-sm leading-6 text-zinc-400">
-          {product.description}
-        </p>
-
-        <div className="mt-4 grid min-h-[52px] grid-cols-[auto_auto_1fr] items-center gap-3 text-sm text-zinc-400">
-          <div className="flex items-center gap-1 whitespace-nowrap">
-            <Star className="h-4 w-4 fill-current text-yellow-400" />
-            <span className="font-bold text-yellow-300">{product.rating}</span>
-          </div>
-
-          <span className="whitespace-nowrap text-zinc-500">
-            ขายแล้ว {product.sold}
-          </span>
-
-          <span className="truncate text-right text-zinc-400">
-            {product.platform.join(" / ")}
-          </span>
-        </div>
-
-        <div className="mt-5 rounded-2xl border border-white/10 bg-[#101010] p-4">
-          <div className="flex min-h-[44px] items-end gap-2">
-            <p className="text-3xl font-black text-cyan-300">
-              {formatBaht(product.price)}
-            </p>
-            <p className="pb-1 text-sm text-zinc-500 line-through">
-              {formatBaht(product.oldPrice)}
+        <section id="products" className="mx-auto max-w-7xl px-3 py-4 sm:px-6 lg:px-8">
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="text-lg font-black text-white sm:text-xl">สินค้าทั้งหมด</h2>
+            <p className="text-xs text-zinc-400 sm:text-sm">
+              พบ {filteredProducts.length} รายการ
             </p>
           </div>
 
-          <p className="mt-2 min-h-[24px] text-sm font-medium text-emerald-400">
-            ประหยัด {formatBaht(product.oldPrice - product.price)}
-          </p>
-        </div>
-
-        <div className="mt-auto pt-5">
-          <div className="flex gap-2">
-            <button
-              onClick={() => setSelectedProduct(product)}
-              className="flex-1 rounded-full border border-white/10 bg-[#151515] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#1b1b1b]"
-            >
-              ดูสินค้า
-            </button>
-
-            <button
-              onClick={() => addToCart(product)}
-              className="flex-1 rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-red-700"
-            >
-              ใส่ตะกร้า
-            </button>
-          </div>
-        </div>
-      </div>
-    </article>
-  ))}
-</div>
-
-            {filteredProducts.length === 0 && (
-              <div className="mt-8 rounded-3xl border border-dashed border-white/10 bg-[#111111] p-10 text-center">
-                <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  ลองเปลี่ยนคำค้นหา ประเภท หรือแพลตฟอร์ม
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[32px] border border-white/10 bg-[#0b0b0b] p-6 shadow-xl shadow-black/30">
-            <div className="max-w-2xl">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                Why Lotus Store
-              </p>
-              <h2 className="mt-2 text-3xl font-black text-white">
-                ทำไมลูกค้าถึงเลือกซื้อกับเรา
-              </h2>
-              <p className="mt-3 text-zinc-400">
-                เน้นความเรียบง่าย เลือกง่าย คุยง่าย และมีข้อมูลชัดเจน
-                เพื่อให้ลูกค้าตัดสินใจได้ไวขึ้น
+          {filteredProducts.length === 0 ? (
+            <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-center">
+              <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
+              <p className="mt-2 text-sm text-zinc-400">
+                ลองเปลี่ยนคำค้นหรือหมวดสินค้า
               </p>
             </div>
-
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
-              {[
-                {
-                  icon: ShieldCheck,
-                  title: "มั่นใจได้มากขึ้น",
-                  desc: "หน้าเว็บชัดเจน มีรีวิว มีรายละเอียด และมีปุ่มสั่งซื้อที่ตรงไปตรงมา",
-                },
-                {
-                  icon: MessageCircle,
-                  title: "คุยกับเพจได้ทันที",
-                  desc: "ไม่ต้องงมหาช่องทางติดต่อ กดสั่งซื้อแล้วเด้งไปแชทพร้อมข้อความอัตโนมัติ",
-                },
-                {
-                  icon: CheckCircle2,
-                  title: "เลือกง่ายกว่าเดิม",
-                  desc: "มีตัวกรอง แยกแพลตฟอร์ม และจัดเรียงสินค้าให้ดูสินค้าที่ใช่ได้เร็วขึ้น",
-                },
-              ].map((item, index) => (
+          ) : (
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {filteredProducts.map((product) => (
                 <div
-                  key={index}
-                  className="rounded-[28px] border border-white/10 bg-[#111111] p-5"
+                  key={product.id}
+                  className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 shadow-xl shadow-black/20"
                 >
-                  <div className="mb-4 inline-flex rounded-2xl bg-red-600/15 p-3 text-red-300">
-                    <item.icon className="h-5 w-5" />
+                  <button
+                    onClick={() => setSelectedProduct(product)}
+                    className="block w-full text-left"
+                  >
+                    <div className="relative aspect-[4/4.8] overflow-hidden bg-[#111111]">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="h-full w-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://placehold.co/600x800";
+                        }}
+                      />
+                      <span className="absolute left-2 top-2 rounded-full bg-black/70 px-2 py-1 text-[10px] font-bold text-white backdrop-blur">
+                        {product.badge}
+                      </span>
+                      {discountPercent(product.price, product.oldPrice) > 0 && (
+                        <span className="absolute right-2 top-2 rounded-full bg-red-600 px-2 py-1 text-[10px] font-bold text-white">
+                          -{discountPercent(product.price, product.oldPrice)}%
+                        </span>
+                      )}
+                    </div>
+                  </button>
+
+                  <div className="p-3">
+                    <p className="line-clamp-2 min-h-[40px] text-sm font-bold text-white">
+                      {product.name}
+                    </p>
+
+                    <div className="mt-2 flex items-center gap-2 text-xs text-zinc-400">
+                      <span className="inline-flex items-center gap-1">
+                        <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
+                        {product.rating}
+                      </span>
+                      <span>ขายแล้ว {product.sold}</span>
+                    </div>
+
+                    <div className="mt-3 flex items-end gap-2">
+                      <span className="text-lg font-black text-red-400">
+                        {formatBaht(product.price)}
+                      </span>
+                      <span className="text-xs text-zinc-500 line-through">
+                        {formatBaht(product.oldPrice)}
+                      </span>
+                    </div>
+
+                    <div className="mt-3 grid grid-cols-1 gap-2">
+                      <button
+                        onClick={() => setSelectedProduct(product)}
+                        className="rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"
+                      >
+                        ดูรายละเอียด
+                      </button>
+                      <button
+                        onClick={() => addToCart(product)}
+                        className="rounded-full bg-red-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-red-700"
+                      >
+                        เพิ่มลงตะกร้า
+                      </button>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-black text-white">{item.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-400">{item.desc}</p>
                 </div>
               ))}
             </div>
-          </div>
+          )}
         </section>
-
-        <section className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-            <div className="rounded-[32px] border border-white/10 bg-[#0d0d0d] p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                Order flow
-              </p>
-              <h2 className="mt-2 text-3xl font-black text-white">ขั้นตอนการสั่งซื้อ</h2>
-
-              <div className="mt-6 space-y-4">
-                {[
-                  "เลือกเกมหรือแอพที่ต้องการจากหน้าเว็บ",
-                  "กดดูสินค้า หรือใส่ตะกร้าเพื่อรวมหลายรายการ",
-                  "กดสั่งซื้อผ่านเพจ ระบบจะเปิดแชทพร้อมข้อความอัตโนมัติ",
-                  "คุยรายละเอียดเพิ่มเติม แล้วปิดการสั่งซื้อได้ทันที",
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red-600 font-black text-white">
-                      {index + 1}
-                    </div>
-                    <div className="pt-1 text-zinc-300">{step}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="rounded-[32px] border border-white/10 bg-[#0d0d0d] p-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                Quick trust
-              </p>
-              <h2 className="mt-2 text-3xl font-black text-white">
-                จุดที่ช่วยให้ลูกค้าตัดสินใจไวขึ้น
-              </h2>
-
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  "มีรีวิวลูกค้า",
-                  "ปุ่มสั่งซื้อชัดเจน",
-                  "ราคาและส่วนลดเด่น",
-                  "รองรับหลายแพลตฟอร์ม",
-                  "มีสินค้าหลากหลาย",
-                  "ทักเพจได้ทันที",
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[#111111] p-4 text-zinc-300"
-                  >
-                    <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-
-              <a
-                href={`${facebookPage}?text=${encodeURIComponent(
-                  "สวัสดีครับ สนใจสั่งซื้อสินค้าในร้าน Lotus Store"
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-red-600 px-5 py-3 font-bold text-white transition hover:bg-red-700"
-              >
-                เริ่มคุยกับเพจตอนนี้
-                <ChevronRight className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto mt-8 max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
-          <div className="grid gap-5 lg:grid-cols-3">
-            {[
-              "บริการดี ตอบไว แนะนำสินค้าเข้าใจง่าย สั่งซื้อสะดวกมาก",
-              "ราคาดี ดูน่าเชื่อถือ และหน้าเว็บใช้งานง่ายกว่าที่คิด",
-              "หน้าเว็บดูเหมือนร้านจริงมากขึ้น ลูกค้าน่าจะมั่นใจขึ้นเยอะ",
-            ].map((text, index) => (
-              <div
-                key={index}
-                className="rounded-[30px] border border-white/10 bg-[#0d0d0d] p-6 shadow-sm"
-              >
-                <div className="mb-3 flex items-center gap-1 text-white">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current text-yellow-400" />
-                  ))}
-                </div>
-                <h3 className="text-lg font-black text-white">รีวิวลูกค้า</h3>
-                <p className="mt-3 text-zinc-400">{text}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <footer className="border-t border-white/10 bg-[#050505]">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
-            <div>
-              <div className="flex items-center gap-3">
-                <img
-                  src={logoUrl}
-                  alt="Lotus Store"
-                  className="h-10 w-10 rounded-2xl object-cover ring-1 ring-white/10"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-                <div>
-                  <p className="text-lg font-black text-white">Lotus Store</p>
-                  <p className="text-sm text-zinc-500">Game & App Shop</p>
-                </div>
-              </div>
-
-              <p className="mt-4 max-w-xl text-sm leading-7 text-zinc-400">
-                ร้านขายเกมและแอพโทนพรีเมียมที่เน้นความชัดเจนในการเลือกสินค้า
-                และช่วยให้ลูกค้าทักแชทสั่งซื้อได้ง่ายขึ้นจากทุกจุดของหน้าเว็บ
-              </p>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-3xl border border-white/10 bg-[#0d0d0d] p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                  ช่องทางสั่งซื้อ
-                </p>
-                <a
-                  href={`${facebookPage}?text=${encodeURIComponent(
-                    "สวัสดีครับ สนใจสั่งซื้อสินค้าในร้าน Lotus Store"
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-3 inline-flex rounded-full bg-red-600 px-4 py-2 font-bold text-white transition hover:bg-red-700"
-                >
-                  ทักเพจ Lotus Store
-                </a>
-              </div>
-
-              <div className="rounded-3xl border border-white/10 bg-[#0d0d0d] p-5">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-zinc-500">
-                  รองรับ
-                </p>
-                <p className="mt-3 text-zinc-300">iOS / Android / แอพ / เกม</p>
-              </div>
-            </div>
-          </div>
-        </footer>
       </main>
 
       {selectedProduct && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
-          <div className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[32px] border border-white/10 bg-[#0d0d0d] shadow-2xl shadow-black/60">
-            <button
-              onClick={() => setSelectedProduct(null)}
-              className="absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-white/5 p-2 text-white transition hover:bg-white/10"
-            >
-              <X className="h-5 w-5" />
-            </button>
+        <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4">
+          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-white/10 bg-[#0c0c0c] shadow-2xl shadow-black/50 sm:max-w-lg sm:rounded-[32px]">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4 backdrop-blur">
+              <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-            <div className="grid gap-6 p-5 md:grid-cols-2 md:p-8">
-              <div className="rounded-[28px] bg-[#141414] p-5">
+            <div className="p-4">
+              <div className="overflow-hidden rounded-[24px] bg-[#111111]">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  className="h-[320px] w-full rounded-[24px] bg-[#1a1a1a] object-contain"
+                  className="aspect-[4/3] w-full object-cover"
                   onError={(e) => {
-                    e.currentTarget.src =
-                      "https://placehold.co/600x600/111111/ffffff?text=Image";
+                    e.currentTarget.src = "https://placehold.co/800x600";
                   }}
                 />
               </div>
 
-              <div>
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold text-white">
-                    {selectedProduct.badge}
-                  </span>
-                  {selectedProduct.popular && (
-                    <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
-                      แนะนำ
-                    </span>
-                  )}
-                </div>
+              <h3 className="mt-4 text-xl font-black text-white">
+                {selectedProduct.name}
+              </h3>
 
-                <h2 className="text-3xl font-black leading-tight text-white">
-                  {selectedProduct.name}
-                </h2>
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                  {selectedProduct.badge}
+                </span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                  {selectedProduct.category}
+                </span>
+              </div>
 
-                <p className="mt-3 text-zinc-400">{selectedProduct.description}</p>
+              <div className="mt-4 flex items-center gap-2">
+                <span className="text-2xl font-black text-red-400">
+                  {formatBaht(selectedProduct.price)}
+                </span>
+                <span className="text-sm text-zinc-500 line-through">
+                  {formatBaht(selectedProduct.oldPrice)}
+                </span>
+              </div>
 
-                <div className="mt-5 flex items-center gap-2 text-sm text-zinc-300">
-                  <Star className="h-4 w-4 fill-current text-yellow-400" />
-                  <span className="font-bold text-white">{selectedProduct.rating}</span>
-                  <span className="text-zinc-500">• ขายแล้ว {selectedProduct.sold} ครั้ง</span>
-                </div>
+              <div className="mt-2 flex items-center gap-3 text-sm text-zinc-400">
+                <span className="inline-flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  {selectedProduct.rating}
+                </span>
+                <span>ขายแล้ว {selectedProduct.sold}</span>
+              </div>
 
-                <div className="mt-6 rounded-[24px] border border-white/10 bg-[#111111] p-5">
-                  <p className="text-sm text-zinc-500">ราคาพิเศษวันนี้</p>
-                  <div className="mt-2 flex items-end gap-3">
-                    <span className="text-4xl font-black text-cyan-300">
-                      {formatBaht(selectedProduct.price)}
-                    </span>
-                    <span className="text-lg text-zinc-500 line-through">
-                      {formatBaht(selectedProduct.oldPrice)}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-sm text-emerald-400">
-                    ประหยัด{" "}
-                    {formatBaht(selectedProduct.oldPrice - selectedProduct.price)} • ลด{" "}
-                    {discountPercent(selectedProduct.price, selectedProduct.oldPrice)}%
-                  </p>
-                </div>
+              <p className="mt-4 text-sm leading-7 text-zinc-300">
+                {selectedProduct.description}
+              </p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <button
-                    onClick={() => addToCart(selectedProduct)}
-                    className="rounded-full bg-red-600 px-5 py-3 font-bold text-white transition hover:scale-[1.02] hover:bg-red-700"
-                  >
-                    ใส่ตะกร้า
-                  </button>
-                  <a
-                    href={`${facebookPage}?text=${selectedCheckoutMessage}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-white/10 bg-white/5 px-5 py-3 font-bold text-white transition hover:scale-[1.02] hover:bg-white/10"
-                  >
-                    สั่งซื้อผ่านเพจ
-                  </a>
-                </div>
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => addToCart(selectedProduct)}
+                  className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white"
+                >
+                  เพิ่มลงตะกร้า
+                </button>
 
-                <div className="mt-6 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-white/10 bg-[#111111] p-4">
-                    <p className="text-sm text-zinc-500">แพลตฟอร์ม</p>
-                    <p className="mt-1 font-bold text-white">
-                      {selectedProduct.platform.join(" / ")}
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border border-white/10 bg-[#111111] p-4">
-                    <p className="text-sm text-zinc-500">สถานะ</p>
-                    <p className="mt-1 font-bold text-white">พร้อมขาย</p>
-                  </div>
-                </div>
+                <a
+                  href={`${facebookPage}?text=${selectedCheckoutMessage}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-red-600 px-4 py-3 text-center text-sm font-bold text-white"
+                >
+                  ซื้อเลย
+                </a>
               </div>
             </div>
           </div>
@@ -1298,143 +1139,151 @@ ${lines.join("\n")}
       )}
 
       <div
-        className={`fixed right-0 top-0 z-[80] h-full w-full max-w-md transform border-l border-white/10 bg-[#090909] shadow-2xl shadow-black/60 transition duration-300 ${
-          showCart ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-y-0 right-0 z-[80] flex w-full justify-end bg-black/50 transition ${
+          showCart ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
+        onClick={() => setShowCart(false)}
       >
-        <div className="flex h-16 items-center justify-between border-b border-white/10 px-5">
-          <div>
-            <h3 className="text-lg font-black text-white">ตะกร้าสินค้า</h3>
-            <p className="text-xs text-zinc-500">{cartCount} รายการ</p>
-          </div>
-          <button
-            onClick={() => setShowCart(false)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-
-        <div className="flex h-[calc(100%-64px)] flex-col">
-          <div className="flex-1 space-y-4 overflow-y-auto p-5">
-            {cart.length === 0 ? (
-              <div className="rounded-3xl border border-dashed border-white/10 bg-[#111111] p-8 text-center">
-                <ShoppingCart className="mx-auto h-10 w-10 text-zinc-600" />
-                <p className="mt-4 text-lg font-bold text-white">
-                  ยังไม่มีสินค้าในตะกร้า
-                </p>
-                <p className="mt-2 text-sm text-zinc-400">
-                  เลือกสินค้าแล้วกดใส่ตะกร้าได้เลย
-                </p>
+        <div
+          className={`h-full w-full max-w-md transform border-l border-white/10 bg-[#0b0b0b] shadow-2xl shadow-black/50 transition-transform duration-300 ${
+            showCart ? "translate-x-0" : "translate-x-full"
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex h-full flex-col">
+            <div className="flex items-center justify-between border-b border-white/10 p-4">
+              <div>
+                <p className="text-lg font-black text-white">ตะกร้าสินค้า</p>
+                <p className="text-xs text-zinc-400">ทั้งหมด {cartCount} ชิ้น</p>
               </div>
-            ) : (
-              cart.map((item) => (
-                <div
-                  key={item.product.id}
-                  className="rounded-3xl border border-white/10 bg-[#111111] p-4"
-                >
-                  <div className="flex gap-4">
-                    <img
-                      src={item.product.image}
-                      alt={item.product.name}
-                      className="h-20 w-20 rounded-2xl bg-[#1a1a1a] object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          "https://placehold.co/300x300/111111/ffffff?text=Image";
-                      }}
-                    />
-
-                    <div className="min-w-0 flex-1">
-                      <h4 className="line-clamp-2 font-black text-white">
-                        {item.product.name}
-                      </h4>
-                      <p className="mt-1 text-sm text-zinc-400">
-                        {formatBaht(item.product.price)} / ชิ้น
-                      </p>
-
-                      <div className="mt-3 flex items-center justify-between gap-3">
-                        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#181818] px-2 py-1">
-                          <button
-                            onClick={() => updateQty(item.product.id, -1)}
-                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:bg-white/10"
-                          >
-                            <Minus className="h-4 w-4" />
-                          </button>
-                          <span className="min-w-6 text-center text-sm font-bold text-white">
-                            {item.qty}
-                          </span>
-                          <button
-                            onClick={() => updateQty(item.product.id, 1)}
-                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:bg-white/10"
-                          >
-                            <Plus className="h-4 w-4" />
-                          </button>
-                        </div>
-
-                        <button
-                          onClick={() => removeFromCart(item.product.id)}
-                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-
-          <div className="border-t border-white/10 bg-[#090909] p-5">
-            <div className="space-y-3 rounded-3xl border border-white/10 bg-[#111111] p-4">
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-zinc-400">ยอดสินค้า</span>
-                <span className="font-bold text-white">{formatBaht(cartSubtotal)}</span>
-              </div>
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-zinc-400">ส่วนลดรวม</span>
-                <span className="font-bold text-zinc-200">
-                  {formatBaht(cartSavings)}
-                </span>
-              </div>
-              <div className="h-px bg-white/10" />
-              <div className="flex items-center justify-between">
-                <span className="text-base font-semibold text-white">ยอดรวม</span>
-                <span className="text-2xl font-black text-white">
-                  {formatBaht(cartSubtotal)}
-                </span>
-              </div>
+              <button
+                onClick={() => setShowCart(false)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
             </div>
 
-            <div className="mt-4 grid gap-3">
+            <div className="flex-1 overflow-y-auto p-4">
+              {cart.length === 0 ? (
+                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6 text-center">
+                  <p className="font-bold text-white">ยังไม่มีสินค้าในตะกร้า</p>
+                  <p className="mt-2 text-sm text-zinc-400">
+                    เพิ่มสินค้าแล้วกลับมาดูได้ที่นี่
+                  </p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {cart.map((item) => (
+                    <div
+                      key={item.product.id}
+                      className="rounded-[24px] border border-white/10 bg-white/5 p-3"
+                    >
+                      <div className="flex gap-3">
+                        <img
+                          src={item.product.image}
+                          alt={item.product.name}
+                          className="h-20 w-20 rounded-2xl object-cover"
+                          onError={(e) => {
+                            e.currentTarget.src = "https://placehold.co/200x200";
+                          }}
+                        />
+
+                        <div className="min-w-0 flex-1">
+                          <p className="line-clamp-2 text-sm font-bold text-white">
+                            {item.product.name}
+                          </p>
+                          <p className="mt-1 text-sm font-bold text-red-400">
+                            {formatBaht(item.product.price)}
+                          </p>
+
+                          <div className="mt-3 flex items-center justify-between gap-2">
+                            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-2 py-1">
+                              <button
+                                onClick={() => updateQty(item.product.id, -1)}
+                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white"
+                              >
+                                <Minus className="h-4 w-4" />
+                              </button>
+                              <span className="min-w-[20px] text-center text-sm font-bold text-white">
+                                {item.qty}
+                              </span>
+                              <button
+                                onClick={() => updateQty(item.product.id, 1)}
+                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white"
+                              >
+                                <Plus className="h-4 w-4" />
+                              </button>
+                            </div>
+
+                            <button
+                              onClick={() => removeFromCart(item.product.id)}
+                              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-red-600/15 text-red-400"
+                            >
+                              <Trash2 className="h-4 w-4" />
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="border-t border-white/10 p-4">
+              <div className="rounded-[24px] border border-white/10 bg-white/5 p-4">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-zinc-400">ยอดรวม</span>
+                  <span className="font-bold text-white">
+                    {formatBaht(cartSubtotal)}
+                  </span>
+                </div>
+                <div className="mt-2 flex items-center justify-between text-sm">
+                  <span className="text-zinc-400">ประหยัด</span>
+                  <span className="font-bold text-emerald-400">
+                    {formatBaht(cartSavings)}
+                  </span>
+                </div>
+              </div>
+
               <a
                 href={`${facebookPage}?text=${checkoutMessage}`}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-red-600 px-5 py-4 font-bold text-white transition hover:scale-[1.01] hover:bg-red-700"
+                className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white"
               >
-                <Facebook className="h-4 w-4" />
-                สั่งซื้อผ่านเพจ
+                ซื้อเลยผ่าน Messenger
               </a>
-
-              <button
-                onClick={() => setShowCart(false)}
-                className="rounded-full border border-white/10 bg-white/5 px-5 py-4 font-bold text-white transition hover:bg-white/10"
-              >
-                เลือกสินค้าต่อ
-              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {showCart && (
-        <button
-          aria-label="close overlay"
-          onClick={() => setShowCart(false)}
-          className="fixed inset-0 z-[75] bg-black/55 backdrop-blur-[1px]"
-        />
-      )}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/80 p-3 backdrop-blur md:hidden">
+        <div className="mx-auto flex max-w-7xl items-center gap-2">
+          <button
+            onClick={() => setShowCart(true)}
+            className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-black"
+          >
+            <ShoppingCart className="h-5 w-5" />
+            {cartCount > 0 && (
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold text-white">
+                {cartCount}
+              </span>
+            )}
+          </button>
+
+          <a
+            href={`${facebookPage}?text=${checkoutMessage}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-red-600 px-4 text-sm font-black text-white"
+          >
+            ซื้อเลย / ทักเพจ
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
