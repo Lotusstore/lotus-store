@@ -48,7 +48,7 @@ type CartItem = {
   qty: number;
 };
 
-const products: Product[] = [
+const products = [
   {
     id: 1,
     name: "Red Dead Redemption",
@@ -61,8 +61,6 @@ const products: Product[] = [
     image: "https://i.postimg.cc/76KkFZC3/red-dead1.png",
     popular: true,
     description: "เกมแอ็กชันโลกเปิด เล่นสนุก ภาพสวย",
-    rating: 4.9,
-    sold: 182,
   },
   {
     id: 2,
@@ -77,8 +75,6 @@ const products: Product[] = [
       "https://play-lh.googleusercontent.com/sZ2vcnPx2dGILYDxX4e6VIFZq1lWdBvekVFSGphJa2Lnreo7ghXsaP11nIKq77Rl775JN6zgf7v9whOmKwpWMoY",
     popular: false,
     description: "เกมลอบเร้น วางแผนภารกิจสุดมัน",
-    rating: 4.7,
-    sold: 94,
   },
   {
     id: 3,
@@ -93,8 +89,6 @@ const products: Product[] = [
       "https://www.latestmodapks.com/wp-content/uploads/2025/01/GRID-Legends-logo-media.png",
     popular: true,
     description: "เกมแข่งรถภาพสวย เล่นลื่น มันส์มาก",
-    rating: 4.8,
-    sold: 133,
   },
   {
     id: 4,
@@ -109,11 +103,51 @@ const products: Product[] = [
       "https://play-lh.googleusercontent.com/stwUFdYIiKFCOU1uOCPQK5mRxr2fnZraDbM0ra32_-QxhudPDBGaehpzz_o9xLQl7A_v",
     popular: false,
     description: "สายแข่งรถต้องมี เล่นฟรีลื่น ภาพดี",
-    rating: 4.6,
-    sold: 71,
   },
   {
     id: 5,
+    name: "Rome: Total War",
+    price: 69,
+    oldPrice: 279,
+    platform: ["iOS"],
+    category: "ยุทธศาสตร์",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BY2M2YTRiOWQtMmRkYy00YWQyLWJhZDctMjYxZmZlMGI1ZTZjXkEyXkFqcGc@._V1_.jpg",
+    popular: false,
+    description: "วางแผนการรบ บริหารกองทัพแบบจัดเต็ม",
+  },
+  {
+    id: 6,
+    name: "Medieval II: Total War",
+    price: 69,
+    oldPrice: 419,
+    platform: ["iOS"],
+    category: "ยุทธศาสตร์",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/NcwYpmoO_x5c_H3p70ccQLQXHrUsuT2ciRMj0tH93R45QfT2ZX2Pz7aIsjRKbBfzMG8=w240-h480-rw",
+    popular: false,
+    description: "สายวางแผนยุคกลาง เล่นเพลินมาก",
+  },
+  {
+    id: 7,
+    name: "Empire: Total War",
+    price: 79,
+    oldPrice: 549,
+    platform: ["iOS"],
+    category: "ยุทธศาสตร์",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/_jVd9_2tmJPxse-PDnoowF0PjDtG2kYHP494zd3BQmyCR36l6HNoiOt1pzUuB12hXw",
+    popular: false,
+    description: "สงครามระดับจักรวรรดิ เล่นลึกและคุ้ม",
+  },
+  {
+    id: 8,
     name: "Tomb Raider",
     price: 79,
     oldPrice: 549,
@@ -125,27 +159,37 @@ const products: Product[] = [
       "https://play-lh.googleusercontent.com/7HgM2hUw-T74b4Hgwu8u9iShbH_VX_Sz-LudBGxZ0pmvQ6OOVVd4kWf4G1MUr_mSyonQBMyls-McHAyeGhlfSQ",
     popular: true,
     description: "ซีรีส์เกมแอ็กชันผจญภัยระดับตำนาน",
-    rating: 4.8,
-    sold: 120,
   },
   {
-    id: 6,
+    id: 9,
+    name: "Monoposto",
+    price: 59,
+    oldPrice: 129,
+    platform: ["iOS"],
+    category: "แข่งรถ",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/OXDfcG00jAGMeNSFn-lWvXhMSEVTBvEH_GCwMyvc6ePlZJ6D2Lv0BEcnt8Gyk9_uym38TMkws1OrTe2UeNAc5GU=w240-h480-rw",
+    popular: true,
+    description: "เกมแข่งรถแนว Formula สไตล์อินดี้ที่เน้นความสมจริง",
+  },
+  {
+    id: 10,
     name: "Minecraft",
     price: 20,
     oldPrice: 79,
     platform: ["iOS", "Android"],
-    category: "สร้างบล็อก",
+    category: "เกมจำลองการสร้างบล็อก",
     type: "เกม",
     badge: "iOS / Android",
     image:
       "https://play-lh.googleusercontent.com/gfNz1N2GNi5piz24IB08RQ4ZGfUnN_kOH8Edhh7uCiotI2P7IBWBXdHzR8gC01ppNnU=w720-h405-rw",
     popular: true,
     description: "เอาชีวิตรอดได้ตามจินตนาการอย่างไร้ขีดจำกัด",
-    rating: 5.0,
-    sold: 500,
   },
   {
-    id: 7,
+    id: 11,
     name: "Bully",
     price: 69,
     oldPrice: 249,
@@ -155,44 +199,192 @@ const products: Product[] = [
     badge: "iOS / Android",
     image:
       "https://assets1.ignimgs.com/2016/12/08/bully-anniversary-edition---button-1481236555145.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
-    popular: true,
-    description: "เกมนักเรียนสายป่วนสุดคลาสสิก เล่นสนุกมาก",
-    rating: 4.9,
-    sold: 207,
+    popular: false,
+    description:
+      "เป็นเกมที่เติมเต็มความฝันของคนที่อยากลองเกรียนในโรงเรียนโดยไม่ต้องโดนไล่ออกจริงๆ",
   },
   {
-    id: 8,
+    id: 12,
+    name: "Dealers Life 2",
+    price: 59,
+    oldPrice: 249,
+    platform: ["iOS", "Android"],
+    category: "จำลองสถานการณ์บริหารร้านรับจำนำ",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/aXVwHjGZWrGP5isAhQqCUXp_EeazWeQ_cr94rIDzLQ6owDeMjWuti44LO8UfJC3c5E0",
+    popular: false,
+    description:
+      "จำลองสถานการณ์บริหารร้านรับจำนำ ผสมผสานอารมณ์ขันและการชิงไหวชิงพริบ",
+  },
+  {
+    id: 13,
+    name: "GTA San Andreas Definitive Edition",
+    price: 79,
+    oldPrice: 500,
+    platform: ["iOS"],
+    category: "แอ็กชัน-ผจญภัย",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://cdn1.epicgames.com/offer/3262906d93334603b399e106492b1217/EGS_GrandTheftAutoSanAndreasTheDefinitiveEdition_RockstarGames_S1_2560x1440-3daa3396c39d5310e071d9093689fdde",
+    popular: false,
+    description:
+      "เกมเวอร์ชันรีมาสเตอร์ของเกมระดับตำนานอย่าง GTA San Andreas",
+  },
+  {
+    id: 14,
+    name: "Dealer's Life Legend",
+    price: 59,
+    oldPrice: 249,
+    platform: ["iOS", "Android"],
+    category: "จำลองสถานการณ์บริหารร้านรับจำนำ",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/aXVwHjGZWrGP5isAhQqCUXp_EeazWeQ_cr94rIDzLQ6owDeMjWuti44LO8UfJC3c5E0",
+    popular: true,
+    description:
+      "จำลองสถานการณ์บริหารร้านรับจำนำ ผสมผสานอารมณ์ขันและการชิงไหวชิงพริบ",
+  },
+  {
+    id: 15,
     name: "Subnautica",
     price: 69,
     oldPrice: 299,
     platform: ["iOS"],
-    category: "เอาชีวิตรอด",
+    category: "ผจญภัย",
     type: "เกม",
-    badge: "iOS Only",
+    badge: "iOS",
     image: "https://i.postimg.cc/pX10d20x/IMG-4326.webp",
     popular: true,
-    description: "เอาชีวิตรอดและสำรวจโลกใต้น้ำแบบ Open World",
-    rating: 4.8,
-    sold: 86,
+    description:
+      "เกมแนวผจญภัยเอาชีวิตรอด (Survival) แบบ Open World ใต้ทะเลลึก",
   },
   {
-    id: 9,
+    id: 16,
+    name: "Balatro",
+    price: 69,
+    oldPrice: 349,
+    platform: ["iOS"],
+    category: "การ์ด",
+    type: "เกม",
+    badge: "iOS",
+    image:
+      "https://store-images.s-microsoft.com/image/apps.51959.14272217582130616.02bf9982-d980-42d9-93e6-372b4b7e36d8.31c1e585-05c9-4f32-b695-4b900c913466",
+    popular: false,
+    description:
+      "เกมแนว Roguelike Deck-builder ผสมโป๊กเกอร์ที่โด่งดังและได้รับรางวัลมากมายในปี 2024",
+  },
+  {
+    id: 17,
+    name: "Maneater",
+    price: 69,
+    oldPrice: 179,
+    platform: ["iOS"],
+    category: "แอ็กชั่น",
+    type: "เกม",
+    badge: "iOS",
+    image:
+      "https://cdn1.epicgames.com/offer/turtle/Maneater_EGS_Landscape_2560x1440-2560x1440-cf27e86a8daeeb2915a49a8b4c954dbd_2560x1440-73fc4959c67434d944d8b9cdabe3ffdf",
+    popular: false,
+    description:
+      "เกมแนว Action RPG (ShaRkPG) แบบ Open World มุมมองบุคคลที่สาม ที่ผู้เล่นรับบทเป็นฉลามหัวค้อนตัวเล็กที่ต้องเอาชีวิตรอดในมหาสมุทร",
+  },
+  {
+    id: 18,
+    name: "Passpartout: Starving Artist",
+    price: 69,
+    oldPrice: 199,
+    platform: ["iOS", "Android"],
+    category: "จำลองสถานการณ์",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/AZbfYj6GeHsHj_MHctm-BWGTu69alv_nyepx2Nh0bgU2hf_nJ4_gWBQgNlBo65IoJg",
+    popular: false,
+    description:
+      "เกมจำลองสถานการณ์ (Simulation) แนวอินดี้ที่ให้ผู้เล่นรับบทเป็นจิตรกรชาวฝรั่งเศส พยายามวาดภาพขายเพื่อหาเงินเลี้ยงชีพและไต่เต้าสู่การเป็นศิลปินชื่อดัง",
+  },
+  {
+    id: 19,
+    name: "Subnautica Below Zero",
+    price: 69,
+    oldPrice: 399,
+    platform: ["iOS", "Android"],
+    category: "แอ็กชั่น",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/yNRNX4CKTIGMZ23D3P0xwiEAhf-vCsZW9W9YZckeTflpnoU7MYAufdsfI15RDwcP1k96CNArzkPNdBey2kylwg",
+    popular: true,
+    description:
+      "เกมแนวเอาชีวิตรอดและสำรวจโลกใต้น้ำภาคต่อจาก Subnautica พัฒนาโดย Unknown Worlds Entertainment",
+  },
+  {
+    id: 20,
+    name: "Way of the Hunter: Wild Europe",
+    price: 69,
+    oldPrice: 179,
+    platform: ["iOS"],
+    category: "เกมจำลองการล่าสัตว์",
+    type: "เกม",
+    badge: "iOS",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRkMXD7_FdGipCxDA-5Uty7WnqRQ2UrlMdiA&s",
+    popular: false,
+    description:
+      "เกมจำลองการล่าสัตว์สุดสมจริงฉบับพกพาบนมือถือ (Android และ iOS) ที่พัฒนาโดย Nine Rocks Games",
+  },
+  {
+    id: 21,
+    name: "Naruto: Ultimate Ninja Storm",
+    price: 69,
+    oldPrice: 479,
+    platform: ["iOS", "Android"],
+    category: "แอ็กชั่น",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://dl.memuplay.com/new_market/img/com.bandainamcoent.ultimateninjastorm.icon.2024-10-04-15-38-07.png",
+    popular: false,
+    description:
+      "ซีรีส์เกมต่อสู้แอ็กชัน 3D (3D Fighting) ที่สร้างจากอนิเมะ/มังงะชื่อดัง นารูโตะ นินจาจอมคาถา",
+  },
+  {
+    id: 22,
+    name: "Farming Simulator 23 Mobile",
+    price: 49,
+    oldPrice: 99,
+    platform: ["iOS", "Android"],
+    category: "จำลองสถานการณ์",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/ZqZ9mW1y-DW4kNHEC0WmzKbayuFhe_seQq-zUdqV4Dn-rmOKYQYljSYtMZCI0JWirw=w1024",
+    popular: true,
+    description:
+      "เกมจำลองการทำฟาร์มที่สมจริงพัฒนาโดย GIANTS Software สำหรับมือถือ (iOS/Android)",
+  },
+
+  // ===== แอพ =====
+  {
+    id: 23,
     name: "Nomad Sculpt",
     price: 69,
     oldPrice: 699,
     platform: ["iOS"],
-    category: "3D",
+    category: "ปั้นโมเดล 3 มิติ",
     type: "แอพ",
     badge: "iOS Only",
     image:
       "https://play-lh.googleusercontent.com/H--AktreIu_qdZiFI3GQhexMzPXZhnUevfbViDeNXKyc9MonV8bE1v_nP4y9XjNoxgY=w256",
     popular: true,
-    description: "แอพปั้นโมเดล 3 มิติ ใช้งานง่าย งานโปร",
-    rating: 4.9,
-    sold: 52,
+    description: "แอปพลิเคชัน ปั้นโมเดล 3 มิติ (3D Sculpting) คุณภาพสูงบนอุปกรณ์พกพา เช่น iPad หรือ Android Tablet ที่โดดเด่นเรื่องการใช้งานง่าย",
   },
-  {
-    id: 10,
+   {
+    id: 24,
     name: "Procreate",
     price: 69,
     oldPrice: 399,
@@ -204,27 +396,23 @@ const products: Product[] = [
       "https://yt3.googleusercontent.com/ytc/AIdro_nodCAR388ZAG2uYqxYZTuQ21H_tceLJIrfdGjWOq06g-U=s900-c-k-c0x00ffffff-no-rj",
     popular: true,
     description: "แอพวาดรูปยอดนิยม ฟีลมืออาชีพ ใช้งานลื่น",
-    rating: 4.9,
-    sold: 103,
   },
   {
-    id: 11,
+    id: 25,
     name: "LumaFusion",
     price: 99,
     oldPrice: 999,
     platform: ["iOS"],
-    category: "ตัดต่อ",
+    category: "ตัดต่อวิดีโอ",
     type: "แอพ",
     badge: "iOS Only",
     image:
       "https://play-lh.googleusercontent.com/hpxaOSJvrFC3yIbX-Bw83p_CdAsUj0N9Z66WoVLNYKMg9eQR0h_uREQpLMcChJs8KQ",
     popular: false,
     description: "แอพตัดต่อวิดีโอระดับโปรสำหรับ iPhone และ iPad",
-    rating: 4.8,
-    sold: 44,
   },
   {
-    id: 12,
+    id: 26,
     name: "GoodNotes 6",
     price: 69,
     oldPrice: 839,
@@ -236,9 +424,8 @@ const products: Product[] = [
       "https://www.iphonejd.com/wp-content/uploads/2023/08/6a010535fde333970c02b751ae6870200c.png",
     popular: true,
     description: "แอพจดโน้ตยอดนิยมสำหรับเรียนและทำงาน",
-    rating: 4.9,
-    sold: 77,
   },
+
 ];
 
 const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android"];
