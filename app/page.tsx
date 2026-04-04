@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import {
   Search,
   ShoppingCart,
@@ -492,6 +492,7 @@ export default function LotusStorePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const productRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
   const popularProducts = useMemo(() => {
     return products.filter((p) => p.popular && p.type === activeType).slice(0, 4);
@@ -641,6 +642,26 @@ ${lines.join("\n")}
   const removeFromCart = (productId: number) => {
     setCart((prev) => prev.filter((item) => item.product.id !== productId));
   };
+  const scrollToProduct = (product: Product) => {
+  setQuery(product.name);
+  setShowSuggestions(false);
+
+  setTimeout(() => {
+    const element = productRefs.current[product.id];
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+
+      element.classList.add("ring-2", "ring-red-500");
+
+      setTimeout(() => {
+        element.classList.remove("ring-2", "ring-red-500");
+      }, 1600);
+    }
+  }, 100);
+};
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
@@ -666,12 +687,17 @@ ${lines.join("\n")}
           <div className="relative ml-1 flex-1 md:max-w-2xl">
             <Search className="pointer-events-none absolute left-4 top-1/2 z-20 h-4 w-4 -translate-y-1/2 text-zinc-500" />
 
-            <input
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowSuggestions(true);
-              }}
+           <input
+  value={query}
+  onChange={(e) => {
+    setQuery(e.target.value);
+    setShowSuggestions(true);
+  }}
+  onKeyDown={(e) => {
+    if (e.key === "Enter" && searchSuggestions.length > 0) {
+      scrollToProduct(searchSuggestions[0]);
+    }
+  }}
               onFocus={() => setShowSuggestions(true)}
               onBlur={() => {
                 setTimeout(() => setShowSuggestions(false), 150);
@@ -687,10 +713,7 @@ ${lines.join("\n")}
                     key={product.id}
                     type="button"
                     onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => {
-                      setQuery(product.name);
-                      setShowSuggestions(false);
-                    }}
+                    onClick={() => scrollToProduct(product)}
                     className="flex w-full items-center gap-3 border-b border-white/5 px-3 py-3 text-left transition hover:bg-white/5 last:border-b-0"
                   >
                     <img
@@ -986,9 +1009,12 @@ ${lines.join("\n")}
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
               {filteredProducts.map((product) => (
                 <div
-                  key={product.id}
-                  className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 shadow-xl shadow-black/20"
-                >
+  key={product.id}
+  ref={(el) => {
+    productRefs.current[product.id] = el;
+  }}
+  className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 shadow-xl shadow-black/20 transition"
+>
                   <button
                     onClick={() => setSelectedProduct(product)}
                     className="block w-full text-left"
