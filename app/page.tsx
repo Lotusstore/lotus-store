@@ -286,7 +286,8 @@ const products: Product[] = [
     badge: "iOS",
     image: "https://i.postimg.cc/pX10d20x/IMG-4326.webp",
     popular: true,
-    description: "เกมแนวผจญภัยเอาชีวิตรอด (Survival) แบบ Open World ใต้ทะเลลึก",
+    description:
+      "เกมแนวผจญภัยเอาชีวิตรอด (Survival) แบบ Open World ใต้ทะเลลึก",
     rating: 4.8,
     sold: 86,
   },
@@ -511,7 +512,8 @@ export default function LotusStorePage() {
         activeFilter === "ทั้งหมด"
           ? true
           : activeFilter === "iOS / Android"
-            ? product.platform.includes("iOS") && product.platform.includes("Android")
+            ? product.platform.includes("iOS") &&
+              product.platform.includes("Android")
             : product.platform.includes(activeFilter);
 
       const matchesKeyword =
@@ -535,7 +537,9 @@ export default function LotusStorePage() {
         break;
       case "discount":
         sorted.sort(
-          (a, b) => discountPercent(b.price, b.oldPrice) - discountPercent(a.price, a.oldPrice)
+          (a, b) =>
+            discountPercent(b.price, b.oldPrice) -
+            discountPercent(a.price, a.oldPrice)
         );
         break;
       case "rating":
@@ -622,31 +626,33 @@ export default function LotusStorePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fff6f2] text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-orange-100 bg-white/90 backdrop-blur-xl">
+    <div className="min-h-screen bg-black text-white">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/85 backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-3">
             <img
               src={logoUrl}
               alt="Lotus Store"
-              className="h-10 w-10 rounded-2xl object-cover ring-1 ring-orange-100"
+              className="h-10 w-10 rounded-2xl object-cover ring-1 ring-white/10"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
             />
             <div className="hidden sm:block">
-              <p className="text-lg font-black tracking-tight text-orange-600">Lotus Store</p>
-              <p className="text-xs text-slate-500">Game & App Shop</p>
+              <p className="text-lg font-black tracking-tight text-white">
+                Lotus Store
+              </p>
+              <p className="text-xs text-gray-400">Game & App Shop</p>
             </div>
           </div>
 
           <div className="relative ml-auto hidden max-w-2xl flex-1 md:block">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="ค้นหาเกมหรือแอพที่ต้องการ..."
-              className="h-11 w-full rounded-full border border-orange-200 bg-[#fff7f3] pl-11 pr-4 text-sm outline-none transition focus:border-orange-400 focus:bg-white"
+              className="h-11 w-full rounded-full border border-white/10 bg-[#111111] pl-11 pr-4 text-sm text-white outline-none transition focus:border-white/30 focus:bg-[#171717]"
             />
           </div>
 
@@ -654,18 +660,18 @@ export default function LotusStorePage() {
             href={facebookPage}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-black md:inline-flex"
+            className="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-black transition hover:scale-[1.02] hover:bg-gray-200 md:inline-flex"
           >
             ติดต่อเพจ
           </a>
 
           <button
             onClick={() => setShowCart(true)}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full bg-orange text-white shadow-lg shadow-orange-200 transition hover:scale-[1.03] hover:bg-orange-600"
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-lg shadow-black/40 transition hover:scale-[1.03] hover:bg-gray-200"
           >
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-slate-900 px-1 text-[10px] font-bold text-white">
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-white px-1 text-[10px] font-bold text-black">
                 {cartCount}
               </span>
             )}
@@ -674,29 +680,31 @@ export default function LotusStorePage() {
       </header>
 
       <main className="pb-32 pt-16">
-        <section className="relative overflow-hidden bg-gradient-to-r from-orange-500 via-orange-400 to-amber-300 text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.28),transparent_30%)]" />
+        <section className="relative overflow-hidden border-b border-white/10 bg-gradient-to-r from-black via-[#0d0d0d] to-[#1a1a1a] text-white">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_30%)]" />
           <div className="mx-auto grid max-w-7xl gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-14">
             <div className="relative z-10">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold backdrop-blur">
                 <Sparkles className="h-4 w-4" />
                 เว็บขายเกมและแอพราคาคุ้มค่า ที่คนรักเกมและแอพต้องไม่พลาด
               </div>
 
               <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
                 ซื้อเกมและแอพราคาคุ้ม
-                <span className="block text-slate-950">ดูง่าย กดใส่ตะกร้าได้ทันที</span>
+                <span className="block text-gray-300">
+                  ดูง่าย กดใส่ตะกร้าได้ทันที
+                </span>
               </h1>
 
-              <p className="mt-4 max-w-2xl text-base text-white/90 sm:text-lg">
-                รองรับทั้ง iOS และ Android พร้อมดีไซน์ใหม่ให้ดูโปรขึ้น น่าเชื่อถือขึ้น
-                และปิดการขายได้ดีขึ้น
+              <p className="mt-4 max-w-2xl text-base text-white/75 sm:text-lg">
+                รองรับทั้ง iOS และ Android พร้อมดีไซน์ใหม่ให้ดูโปรขึ้น
+                น่าเชื่อถือขึ้น และปิดการขายได้ดีขึ้น
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
                   href="#products"
-                  className="rounded-full bg-slate-950 px-6 py-3 font-bold text-white transition hover:scale-[1.02]"
+                  className="rounded-full bg-white px-6 py-3 font-bold text-black transition hover:scale-[1.02] hover:bg-gray-200"
                 >
                   เริ่มเลือกสินค้า
                 </a>
@@ -704,7 +712,7 @@ export default function LotusStorePage() {
                   href={facebookPage}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-white/30 bg-white/15 px-6 py-3 font-semibold backdrop-blur transition hover:bg-white/25"
+                  className="rounded-full border border-white/15 bg-white/5 px-6 py-3 font-semibold text-white backdrop-blur transition hover:bg-white/10"
                 >
                   ทักเพจซื้อทันที
                 </a>
@@ -717,21 +725,25 @@ export default function LotusStorePage() {
                   { icon: Headphones, title: "ซัพพอร์ต", desc: "ก่อน-หลังขาย" },
                   { icon: BadgePercent, title: "ดีลคุ้ม", desc: "ลดแรงหลายเกม" },
                 ].map((item, index) => (
-                  <div key={index} className="rounded-3xl bg-white/16 p-4 backdrop-blur-md">
-                    <item.icon className="mb-3 h-5 w-5" />
+                  <div
+                    key={index}
+                    className="rounded-3xl border border-white/10 bg-white/5 p-4 backdrop-blur-md"
+                  >
+                    <item.icon className="mb-3 h-5 w-5 text-white" />
                     <p className="font-bold">{item.title}</p>
-                    <p className="text-sm text-white/80">{item.desc}</p>
+                    <p className="text-sm text-white/60">{item.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="rounded-[32px] bg-white p-5 text-slate-900 shadow-2xl">
+              <div className="rounded-[32px] border border-white/10 bg-[#111111] p-5 text-white shadow-2xl shadow-black/40">
                 <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-bold text-orange">Flash Deal</p>
-                  <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-600">
-                    ลดสูงสุด {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
+                  <p className="text-sm font-bold text-white">Flash Deal</p>
+                  <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold text-gray-200">
+                    ลดสูงสุด{" "}
+                    {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
                   </span>
                 </div>
 
@@ -739,20 +751,21 @@ export default function LotusStorePage() {
                   <img
                     src={popularProducts[0]?.image ?? "https://placehold.co/400x400"}
                     alt={popularProducts[0]?.name ?? "สินค้าแนะนำ"}
-                    className="h-24 w-24 rounded-2xl object-cover"
+                    className="h-24 w-24 rounded-2xl bg-[#1a1a1a] object-cover"
                   />
                   <div className="min-w-0">
                     <h3 className="line-clamp-2 text-lg font-black">
                       {popularProducts[0]?.name ?? "สินค้าแนะนำ"}
                     </h3>
-                    <p className="mt-1 text-sm text-slate-500">
-                      {popularProducts[0]?.description ?? "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
+                    <p className="mt-1 text-sm text-gray-400">
+                      {popularProducts[0]?.description ??
+                        "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
                     </p>
                     <div className="mt-3 flex items-end gap-2">
-                      <span className="text-2xl font-black text-orange-600">
+                      <span className="text-2xl font-black text-white">
                         {formatBaht(popularProducts[0]?.price ?? 0)}
                       </span>
-                      <span className="text-sm text-slate-400 line-through">
+                      <span className="text-sm text-gray-500 line-through">
                         {formatBaht(popularProducts[0]?.oldPrice ?? 0)}
                       </span>
                     </div>
@@ -767,8 +780,11 @@ export default function LotusStorePage() {
                   { label: "สินค้า", value: `${products.length}+` },
                   { label: "พร้อมตอบ", value: "ทุกวัน" },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-[28px] bg-slate-950 p-5 text-white shadow-xl">
-                    <p className="text-sm text-white/60">{item.label}</p>
+                  <div
+                    key={item.label}
+                    className="rounded-[28px] border border-white/10 bg-[#111111] p-5 text-white shadow-xl shadow-black/30"
+                  >
+                    <p className="text-sm text-white/55">{item.label}</p>
                     <p className="mt-2 text-2xl font-black">{item.value}</p>
                   </div>
                 ))}
@@ -783,196 +799,98 @@ export default function LotusStorePage() {
               { title: "ร้านน่าเชื่อถือ", desc: "มีรีวิวและสินค้าขายดี", icon: Store },
               { title: "รองรับหลายแพลตฟอร์ม", desc: "iOS / Android", icon: Smartphone },
               { title: "สินค้าฮิตอัปเดต", desc: "เกมดังและแอพยอดนิยม", icon: Flame },
-              { title: "ซื้อหลายชิ้นได้", desc: "มีระบบตะกร้าสินค้า", icon: ShoppingCart },
+              { title: "ใช้งานง่าย", desc: "เลือกดูได้สะดวกและสั่งซื้อไว", icon: LayoutGrid },
             ].map((item, index) => (
               <div
                 key={index}
-                className="rounded-[28px] border border-orange-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                className="rounded-[28px] border border-white/10 bg-[#0f0f0f] p-5 shadow-lg shadow-black/30"
               >
-                <item.icon className="mb-3 h-6 w-6 text-orange-500" />
-                <h3 className="font-black text-slate-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-500">{item.desc}</p>
+                <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3">
+                  <item.icon className="h-5 w-5 text-white" />
+                </div>
+                <h3 className="text-lg font-black text-white">{item.title}</h3>
+                <p className="mt-2 text-sm text-gray-400">{item.desc}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="mx-auto mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-5 flex items-center gap-2">
-            <Flame className="h-5 w-5 text-orange-500" />
-            <h2 className="text-2xl font-black sm:text-3xl">
-              {activeType === "เกม" ? "สินค้าขายดี" : "แอพยอดฮิต"}
-            </h2>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {popularProducts.map((product) => (
-              <div
-                key={product.id}
-                className="group overflow-hidden rounded-[32px] border border-orange-100 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              >
-                <div className="relative bg-gradient-to-br from-orange-50 to-white p-4">
-                  <div className="absolute left-4 top-4 rounded-full bg-orange-500 px-3 py-1 text-xs font-bold text-white">
-                    ขายดี
-                  </div>
-                  <div className="absolute right-4 top-4 rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white">
-                    -{discountPercent(product.price, product.oldPrice)}%
-                  </div>
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="mx-auto h-44 w-full rounded-2xl object-contain transition duration-300 group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/600x600/f5f5f5/111111?text=Image";
-                    }}
-                  />
-                </div>
-
-                <div className="p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
-                    {product.category}
-                  </p>
-                  <h3 className="mt-2 line-clamp-2 text-lg font-black leading-tight">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-slate-500">
-                    {product.description}
-                  </p>
-
-                  <div className="mt-3 flex items-center gap-1 text-sm text-amber-500">
-                    <Star className="h-4 w-4 fill-current" />
-                    <span className="font-bold text-slate-700">{product.rating}</span>
-                    <span className="text-slate-400">| ขายแล้ว {product.sold}</span>
-                  </div>
-
-                  <div className="mt-4 flex items-end justify-between gap-3">
-                    <div>
-                      <p className="text-2xl font-black text-orange-600">{formatBaht(product.price)}</p>
-                      <p className="text-sm text-slate-400 line-through">{formatBaht(product.oldPrice)}</p>
-                    </div>
-                    <button
-                      onClick={() => addToCart(product)}
-                      className="rounded-full bg-slate-950 px-4 py-2 text-sm font-bold text-white transition hover:scale-[1.02]"
-                    >
-                      ใส่ตะกร้า
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="products" className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8 grid gap-4 md:grid-cols-4">
-            {[
-              { title: "Flash Sale", desc: "ดีลแรงประจำวัน", icon: BadgePercent },
-              { title: "ซื้อด่วน", desc: "กดใส่ตะกร้าไว", icon: ShoppingCart },
-              { title: "ยอดนิยม", desc: "สินค้าขายดี", icon: Flame },
-              { title: "ร้านแนะนำ", desc: "ดีไซน์ใหม่โคตรโปร", icon: Sparkles },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="rounded-[28px] border border-orange-100 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-              >
-                <item.icon className="mb-3 h-6 w-6 text-orange-500" />
-                <p className="font-black text-slate-900">{item.title}</p>
-                <p className="mt-1 text-sm text-slate-500">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-[36px] border border-orange-100 bg-white p-5 shadow-sm sm:p-6 lg:p-8">
-            <div className="flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between">
+        <section
+          id="products"
+          className="mx-auto mt-8 max-w-7xl px-4 sm:px-6 lg:px-8"
+        >
+          <div className="rounded-[32px] border border-white/10 bg-[#0d0d0d] p-5 shadow-2xl shadow-black/40 sm:p-6">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.25em] text-orange-500">
-                  สินค้าทั้งหมด
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">
+                  Lotus Store Collection
                 </p>
-                <h2 className="mt-2 text-3xl font-black sm:text-4xl">
-                  รายการ{activeType}พร้อมขาย
+                <h2 className="mt-2 text-2xl font-black text-white sm:text-3xl">
+                  เลือกสินค้าในร้าน
                 </h2>
-                <p className="mt-3 max-w-2xl text-slate-500">
-                  เลือกสินค้า ใส่ตะกร้า และส่งรายการไปที่เพจได้ทันที
-                  เหมาะกับการขายหลายชิ้นในหนึ่งออเดอร์
-                </p>
               </div>
 
-              <div className="grid gap-3 sm:grid-cols-2 xl:min-w-[420px]">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                  <input
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    placeholder={`ค้นหา${activeType}...`}
-                    className="h-12 w-full rounded-2xl border border-orange-200 bg-[#fff8f4] pl-11 pr-4 outline-none focus:border-orange-400 focus:bg-white"
-                  />
-                </div>
-
-                <div className="relative">
-                  <Filter className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value)}
-                    className="h-12 w-full appearance-none rounded-2xl border border-orange-200 bg-[#fff8f4] pl-11 pr-4 outline-none focus:border-orange-400 focus:bg-white"
-                  >
-                    <option value="popular">เรียงตามความนิยม</option>
-                    <option value="price-low">ราคาต่ำไปสูง</option>
-                    <option value="price-high">ราคาสูงไปต่ำ</option>
-                    <option value="discount">ส่วนลดมากสุด</option>
-                    <option value="rating">คะแนนรีวิวสูงสุด</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-              <div className="inline-flex w-fit rounded-full bg-[#fff4ee] p-1">
+              <div className="flex flex-wrap gap-2">
                 {typeFilters.map((type) => (
                   <button
                     key={type}
-                    onClick={() => {
-                      setActiveType(type);
-                      setActiveFilter("ทั้งหมด");
-                    }}
-                    className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${
+                    onClick={() => setActiveType(type)}
+                    className={`rounded-full px-4 py-2 text-sm font-bold transition ${
                       activeType === type
-                        ? "bg-orange-500 text-white shadow-lg shadow-orange-100"
-                        : "text-slate-600 hover:text-slate-950"
+                        ? "bg-white text-black"
+                        : "border border-white/10 bg-white/5 text-gray-300 hover:bg-white/10"
                     }`}
                   >
                     {type}
                   </button>
                 ))}
               </div>
+            </div>
 
-              <div className="flex flex-wrap gap-2">
+            <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_auto]">
+              <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
                 {platformFilters.map((filter) => (
                   <button
                     key={filter}
                     onClick={() => setActiveFilter(filter)}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                    className={`rounded-2xl px-4 py-3 text-sm font-bold transition ${
                       activeFilter === filter
-                        ? "bg-slate-950 text-white"
-                        : "border border-orange-200 bg-white text-slate-600 hover:border-orange-400 hover:text-slate-950"
+                        ? "bg-white text-black"
+                        : "border border-white/10 bg-[#121212] text-gray-300 hover:bg-[#1a1a1a]"
                     }`}
                   >
                     {filter}
                   </button>
                 ))}
               </div>
+
+              <div className="relative">
+                <Filter className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-500" />
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value)}
+                  className="h-12 w-full appearance-none rounded-2xl border border-white/10 bg-[#121212] pl-11 pr-10 text-sm font-semibold text-white outline-none transition hover:bg-[#1a1a1a] lg:w-[220px]"
+                >
+                  <option value="popular">เรียงตามความนิยม</option>
+                  <option value="price-low">ราคาต่ำไปสูง</option>
+                  <option value="price-high">ราคาสูงไปต่ำ</option>
+                  <option value="discount">ส่วนลดมากสุด</option>
+                  <option value="rating">คะแนนสูงสุด</option>
+                </select>
+              </div>
             </div>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
               {filteredProducts.map((product) => (
                 <div
                   key={product.id}
-                  className="group overflow-hidden rounded-[30px] border border-orange-100 bg-gradient-to-b from-white to-[#fff9f6] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+                  className="group overflow-hidden rounded-[30px] border border-white/10 bg-gradient-to-b from-[#111111] to-[#0b0b0b] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:shadow-2xl hover:shadow-black/50"
                 >
-                  <div className="relative overflow-hidden bg-[#fff4ed] p-4">
-                    <div className="absolute left-4 top-4 z-10 rounded-full bg-white px-3 py-1 text-xs font-bold text-orange-600 shadow-sm">
+                  <div className="relative overflow-hidden bg-[#151515] p-4">
+                    <div className="absolute left-4 top-4 z-10 rounded-full border border-white/10 bg-black/80 px-3 py-1 text-xs font-bold text-white shadow-sm backdrop-blur">
                       {product.badge}
                     </div>
-                    <div className="absolute right-4 top-4 z-10 rounded-full bg-red-500 px-3 py-1 text-xs font-bold text-white shadow-sm">
+                    <div className="absolute right-4 top-4 z-10 rounded-full bg-white px-3 py-1 text-xs font-bold text-black shadow-sm">
                       -{discountPercent(product.price, product.oldPrice)}%
                     </div>
                     <img
@@ -980,35 +898,36 @@ export default function LotusStorePage() {
                       alt={product.name}
                       className="mx-auto h-52 w-full rounded-2xl object-contain transition duration-300 group-hover:scale-105"
                       onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/600x600/f5f5f5/111111?text=Image";
+                        e.currentTarget.src =
+                          "https://placehold.co/600x600/111111/ffffff?text=Image";
                       }}
                     />
                   </div>
 
                   <div className="p-5">
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-orange-500">
+                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
                       {product.category}
                     </p>
-                    <h3 className="mt-2 line-clamp-2 text-xl font-black leading-tight text-slate-900">
+                    <h3 className="mt-2 line-clamp-2 text-xl font-black leading-tight text-white">
                       {product.name}
                     </h3>
-                    <p className="mt-3 line-clamp-2 text-sm text-slate-500">
+                    <p className="mt-3 line-clamp-2 text-sm text-gray-400">
                       {product.description}
                     </p>
 
-                    <div className="mt-4 flex items-center justify-between rounded-2xl bg-white p-3 shadow-sm ring-1 ring-orange-100">
+                    <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/10 bg-[#111111] p-3">
                       <div>
-                        <div className="flex items-center gap-1 text-sm text-amber-500">
+                        <div className="flex items-center gap-1 text-sm text-gray-300">
                           <Star className="h-4 w-4 fill-current" />
-                          <span className="font-bold text-slate-700">{product.rating}</span>
-                          <span className="text-slate-400">({product.sold} sold)</span>
+                          <span className="font-bold text-white">{product.rating}</span>
+                          <span className="text-gray-500">({product.sold} sold)</span>
                         </div>
-                        <p className="mt-1 text-xs text-emerald-600">
+                        <p className="mt-1 text-xs text-gray-400">
                           พร้อมขาย • ส่งรายละเอียดทางเพจ
                         </p>
                       </div>
                       {product.popular && (
-                        <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-600">
+                        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold text-white">
                           HIT
                         </span>
                       )}
@@ -1016,19 +935,24 @@ export default function LotusStorePage() {
 
                     <div className="mt-4 flex items-end justify-between gap-4">
                       <div>
-                        <p className="text-2xl font-black text-orange-600">{formatBaht(product.price)}</p>
-                        <p className="text-sm text-slate-400 line-through">{formatBaht(product.oldPrice)}</p>
+                        <p className="text-2xl font-black text-white">
+                          {formatBaht(product.price)}
+                        </p>
+                        <p className="text-sm text-gray-500 line-through">
+                          {formatBaht(product.oldPrice)}
+                        </p>
                       </div>
+
                       <div className="flex gap-2">
                         <button
                           onClick={() => setSelectedProduct(product)}
-                          className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-900 transition hover:scale-[1.02]"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#151515] px-4 py-3 text-sm font-bold text-white transition hover:scale-[1.02] hover:bg-[#1d1d1d]"
                         >
-                          ดูรายละเอียด
+                          ดูสินค้า
                         </button>
                         <button
                           onClick={() => addToCart(product)}
-                          className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:scale-[1.02]"
+                          className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-black transition hover:scale-[1.02] hover:bg-gray-200"
                         >
                           <Plus className="h-4 w-4" />
                           ใส่ตะกร้า
@@ -1041,126 +965,119 @@ export default function LotusStorePage() {
             </div>
 
             {filteredProducts.length === 0 && (
-              <div className="mt-6 rounded-[28px] border border-dashed border-orange-200 bg-[#fff8f4] p-10 text-center">
-                <LayoutGrid className="mx-auto mb-4 h-10 w-10 text-orange-400" />
-                <h3 className="text-xl font-black">ยังไม่พบ{activeType}ที่ค้นหา</h3>
-                <p className="mt-2 text-slate-500">ลองเปลี่ยนคำค้นหา ตัวกรอง หรือประเภทสินค้า</p>
+              <div className="mt-8 rounded-3xl border border-dashed border-white/10 bg-[#111111] p-10 text-center">
+                <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
+                <p className="mt-2 text-sm text-gray-400">
+                  ลองเปลี่ยนคำค้นหา ประเภท หรือแพลตฟอร์ม
+                </p>
               </div>
             )}
-          </div>
-        </section>
-
-        <section className="mx-auto mt-12 max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-5 lg:grid-cols-3">
-            {[
-              "ซื้อแล้วใช้งานได้จริง ตอบไวมาก ร้านดูน่าเชื่อถือสุดๆ",
-              "ชอบตรงใส่ตะกร้าได้เลย ไม่ต้องทักทีละเกม สะดวกกว่าเดิมมาก",
-              "หน้าเว็บดูเหมือนร้านจริงมากขึ้น ลูกค้าน่าจะมั่นใจขึ้นเยอะ",
-            ].map((text, index) => (
-              <div key={index} className="rounded-[30px] border border-orange-100 bg-white p-6 shadow-sm">
-                <div className="mb-3 flex items-center gap-1 text-amber-500">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
-                  ))}
-                </div>
-                <h3 className="text-lg font-black">รีวิวลูกค้า</h3>
-                <p className="mt-3 text-slate-500">{text}</p>
-              </div>
-            ))}
           </div>
         </section>
       </main>
 
       {selectedProduct && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/50 p-4">
-          <div className="relative max-h-[92vh] w-full max-w-4xl overflow-y-auto rounded-[32px] bg-white shadow-2xl">
+        <div className="fixed inset-0 z-[60] flex items-center justify-center bg-black/70 p-4 backdrop-blur-sm">
+          <div className="relative w-full max-w-2xl overflow-hidden rounded-[32px] border border-white/10 bg-[#0f0f0f] shadow-2xl shadow-black/60">
             <button
               onClick={() => setSelectedProduct(null)}
-              className="absolute right-4 top-4 z-10 rounded-full bg-slate-100 p-2 text-slate-600 hover:bg-slate-200"
+              className="absolute right-4 top-4 z-20 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
             >
               <X className="h-5 w-5" />
             </button>
 
-            <div className="grid gap-6 p-5 md:grid-cols-2 md:p-8">
-              <div className="rounded-[28px] bg-[#fff5ef] p-5">
+            <div className="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
+              <div className="bg-[#151515] p-6">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  className="h-[320px] w-full rounded-[24px] bg-white object-contain"
+                  className="mx-auto h-72 w-full rounded-3xl object-contain"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://placehold.co/600x600/111111/ffffff?text=Image";
+                  }}
                 />
               </div>
 
-              <div>
-                <div className="mb-3 flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-600">
-                    {selectedProduct.badge}
-                  </span>
-                  {selectedProduct.popular && (
-                    <span className="rounded-full bg-slate-950 px-3 py-1 text-xs font-bold text-white">
-                      สินค้าขายดี
-                    </span>
-                  )}
-                </div>
-
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-orange-500">
+              <div className="p-6">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
                   {selectedProduct.category}
                 </p>
-                <h2 className="mt-2 text-3xl font-black leading-tight text-slate-900">
+                <h3 className="mt-2 text-3xl font-black text-white">
                   {selectedProduct.name}
-                </h2>
-                <p className="mt-4 text-base leading-7 text-slate-600">
+                </h3>
+                <p className="mt-3 text-sm text-gray-400">
                   {selectedProduct.description}
                 </p>
 
-                <div className="mt-5 flex items-center gap-2 text-sm text-amber-500">
-                  <Star className="h-4 w-4 fill-current" />
-                  <span className="font-bold text-slate-700">{selectedProduct.rating}</span>
-                  <span className="text-slate-400">ขายแล้ว {selectedProduct.sold}+ ชิ้น</span>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {selectedProduct.platform.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold text-white"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                  <span className="rounded-full border border-white/10 bg-white px-3 py-1 text-xs font-bold text-black">
+                    {selectedProduct.badge}
+                  </span>
                 </div>
 
-                <div className="mt-6 rounded-[28px] border border-orange-100 bg-[#fffaf7] p-5">
-                  <p className="text-3xl font-black text-orange-600">
-                    {formatBaht(selectedProduct.price)}
-                  </p>
-                  <p className="mt-1 text-sm text-slate-400 line-through">
-                    {formatBaht(selectedProduct.oldPrice)}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-emerald-600">
-                    ประหยัด {formatBaht(selectedProduct.oldPrice - selectedProduct.price)}
+                <div className="mt-6 rounded-3xl border border-white/10 bg-[#151515] p-4">
+                  <div className="flex items-center gap-2 text-sm text-gray-300">
+                    <Star className="h-4 w-4 fill-current" />
+                    <span className="font-bold text-white">
+                      {selectedProduct.rating}
+                    </span>
+                    <span className="text-gray-500">
+                      ({selectedProduct.sold} sold)
+                    </span>
+                  </div>
+
+                  <div className="mt-4 flex items-end gap-3">
+                    <span className="text-3xl font-black text-white">
+                      {formatBaht(selectedProduct.price)}
+                    </span>
+                    <span className="text-lg text-gray-500 line-through">
+                      {formatBaht(selectedProduct.oldPrice)}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm text-gray-400">
+                    ประหยัด {formatBaht(selectedProduct.oldPrice - selectedProduct.price)}{" "}
+                    ({discountPercent(selectedProduct.price, selectedProduct.oldPrice)}%)
                   </p>
                 </div>
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="mt-6 flex flex-wrap gap-3">
                   <button
                     onClick={() => addToCart(selectedProduct)}
-                    className="flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 font-bold text-white transition hover:scale-[1.01]"
+                    className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-bold text-black transition hover:scale-[1.02] hover:bg-gray-200"
                   >
                     <ShoppingCart className="h-4 w-4" />
                     ใส่ตะกร้า
                   </button>
 
                   <a
-                    href={`https://m.me/?text=${selectedCheckoutMessage}`}
+                    href={`${facebookPage}${facebookPage.includes("?") ? "&" : "?"}text=${selectedCheckoutMessage}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="block"
+                    className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-5 py-3 font-bold text-white transition hover:scale-[1.02] hover:bg-white/10"
                   >
-                    <button className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-orange-500 font-bold text-white transition hover:scale-[1.01] hover:bg-orange-600">
-                      <CheckCircle2 className="h-4 w-4" />
-                      ซื้อด่วนทันที
-                    </button>
+                    <Facebook className="h-4 w-4" />
+                    สั่งซื้อทางเพจ
                   </a>
                 </div>
 
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {["ส่งรายการง่าย", "รองรับหลายสินค้า", "ตอบแชทไว"].map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-2xl border border-orange-100 bg-white p-3 text-center text-sm font-semibold text-slate-700"
-                    >
-                      {item}
-                    </div>
-                  ))}
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="rounded-2xl border border-white/10 bg-[#151515] p-4">
+                    <p className="text-sm text-gray-500">สถานะ</p>
+                    <p className="mt-1 font-bold text-white">พร้อมขาย</p>
+                  </div>
+                  <div className="rounded-2xl border border-white/10 bg-[#151515] p-4">
+                    <p className="text-sm text-gray-500">การตอบกลับ</p>
+                    <p className="mt-1 font-bold text-white">ตอบไวทางเพจ</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1168,160 +1085,142 @@ export default function LotusStorePage() {
         </div>
       )}
 
-      {showCart && (
-        <div className="fixed inset-0 z-[60] flex">
-          <div className="flex-1 bg-black/40" onClick={() => setShowCart(false)} />
+      <div
+        className={`fixed right-0 top-0 z-[70] h-full w-full max-w-md transform border-l border-white/10 bg-[#0b0b0b] shadow-2xl shadow-black/60 transition duration-300 ${
+          showCart ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex h-16 items-center justify-between border-b border-white/10 px-5">
+          <div>
+            <h3 className="text-lg font-black text-white">ตะกร้าสินค้า</h3>
+            <p className="text-xs text-gray-500">{cartCount} รายการ</p>
+          </div>
+          <button
+            onClick={() => setShowCart(false)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
 
-          <aside className="flex h-full w-full max-w-md flex-col bg-white shadow-2xl">
-            <div className="flex items-center justify-between border-b border-orange-100 px-5 py-4">
-              <div>
-                <h2 className="text-xl font-black">ตะกร้าสินค้า</h2>
-                <p className="text-sm text-slate-500">มีสินค้า {cartCount} ชิ้น</p>
+        <div className="flex h-[calc(100%-64px)] flex-col">
+          <div className="flex-1 space-y-4 overflow-y-auto p-5">
+            {cart.length === 0 ? (
+              <div className="rounded-3xl border border-dashed border-white/10 bg-[#111111] p-8 text-center">
+                <ShoppingCart className="mx-auto h-10 w-10 text-gray-600" />
+                <p className="mt-4 text-lg font-bold text-white">ยังไม่มีสินค้าในตะกร้า</p>
+                <p className="mt-2 text-sm text-gray-400">
+                  เลือกสินค้าแล้วกดใส่ตะกร้าได้เลย
+                </p>
               </div>
-              <button
-                onClick={() => setShowCart(false)}
-                className="rounded-full bg-slate-100 p-2 text-slate-600 transition hover:bg-slate-200"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+            ) : (
+              cart.map((item) => (
+                <div
+                  key={item.product.id}
+                  className="rounded-3xl border border-white/10 bg-[#111111] p-4"
+                >
+                  <div className="flex gap-4">
+                    <img
+                      src={item.product.image}
+                      alt={item.product.name}
+                      className="h-20 w-20 rounded-2xl bg-[#1a1a1a] object-cover"
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          "https://placehold.co/300x300/111111/ffffff?text=Image";
+                      }}
+                    />
 
-            <div className="flex-1 overflow-y-auto px-5 py-4">
-              {cart.length === 0 ? (
-                <div className="rounded-[28px] border border-dashed border-orange-200 bg-[#fff8f4] p-8 text-center">
-                  <ShoppingCart className="mx-auto mb-4 h-10 w-10 text-orange-400" />
-                  <h3 className="text-lg font-black">ตะกร้ายังว่างอยู่</h3>
-                  <p className="mt-2 text-sm text-slate-500">
-                    เลือกเกมหรือแอพที่ต้องการ แล้วกดใส่ตะกร้าได้เลย
-                  </p>
-                </div>
-              ) : (
-                <div className="space-y-4">
-                  {cart.map((item) => (
-                    <div
-                      key={item.product.id}
-                      className="rounded-[26px] border border-orange-100 bg-[#fffaf7] p-4"
-                    >
-                      <div className="flex gap-3">
-                        <img
-                          src={item.product.image}
-                          alt={item.product.name}
-                          className="h-20 w-20 rounded-2xl object-cover"
-                        />
-                        <div className="min-w-0 flex-1">
-                          <h3 className="line-clamp-2 font-black">{item.product.name}</h3>
-                          <p className="mt-1 text-sm text-slate-500">{item.product.badge}</p>
-                          <p className="mt-2 text-lg font-black text-orange-600">
-                            {formatBaht(item.product.price)}
-                          </p>
-                        </div>
-                      </div>
+                    <div className="min-w-0 flex-1">
+                      <h4 className="line-clamp-2 font-black text-white">
+                        {item.product.name}
+                      </h4>
+                      <p className="mt-1 text-sm text-gray-400">
+                        {formatBaht(item.product.price)} / ชิ้น
+                      </p>
 
-                      <div className="mt-4 flex items-center justify-between gap-3">
-                        <div className="inline-flex items-center rounded-full bg-white ring-1 ring-orange-100">
+                      <div className="mt-3 flex items-center justify-between gap-3">
+                        <div className="flex items-center gap-2 rounded-full border border-white/10 bg-[#181818] px-2 py-1">
                           <button
                             onClick={() => updateQty(item.product.id, -1)}
-                            className="px-3 py-2 text-slate-700"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:bg-white/10"
                           >
                             <Minus className="h-4 w-4" />
                           </button>
-                          <span className="px-3 text-sm font-bold">{item.qty}</span>
+                          <span className="min-w-6 text-center text-sm font-bold text-white">
+                            {item.qty}
+                          </span>
                           <button
                             onClick={() => updateQty(item.product.id, 1)}
-                            className="px-3 py-2 text-slate-700"
+                            className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white transition hover:bg-white/10"
                           >
                             <Plus className="h-4 w-4" />
                           </button>
                         </div>
 
-                        <div className="flex items-center gap-3">
-                          <p className="font-black text-slate-900">
-                            {formatBaht(item.product.price * item.qty)}
-                          </p>
-                          <button
-                            onClick={() => removeFromCart(item.product.id)}
-                            className="rounded-full bg-red-50 p-2 text-red-500 hover:bg-red-100"
-                          >
-                            <Trash2 className="h-4 w-4" />
-                          </button>
-                        </div>
+                        <button
+                          onClick={() => removeFromCart(item.product.id)}
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </button>
                       </div>
                     </div>
-                  ))}
+                  </div>
                 </div>
-              )}
-            </div>
+              ))
+            )}
+          </div>
 
-            <div className="border-t border-orange-100 bg-[#fffaf7] p-5">
-              <div className="space-y-2 rounded-[24px] bg-white p-4 ring-1 ring-orange-100">
-                <div className="flex items-center justify-between text-sm text-slate-500">
-                  <span>ยอดสินค้า</span>
-                  <span>{formatBaht(cartSubtotal)}</span>
-                </div>
-                <div className="flex items-center justify-between text-sm text-emerald-600">
-                  <span>ประหยัดไป</span>
-                  <span>{formatBaht(cartSavings)}</span>
-                </div>
-                <div className="flex items-center justify-between border-t border-dashed border-orange-100 pt-2 text-lg font-black">
-                  <span>ยอดรวม</span>
-                  <span className="text-orange-600">{formatBaht(cartSubtotal)}</span>
-                </div>
+          <div className="border-t border-white/10 bg-[#0d0d0d] p-5">
+            <div className="space-y-3 rounded-3xl border border-white/10 bg-[#111111] p-4">
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-400">ยอดสินค้า</span>
+                <span className="font-bold text-white">{formatBaht(cartSubtotal)}</span>
               </div>
-
-              <a
-                href={facebookPage}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-4 block"
-              >
-                <button className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-slate-950 font-bold text-white transition hover:scale-[1.01]">
-                  <Facebook className="h-4 w-4" />
-                  ไปที่เพจ
-                </button>
-              </a>
-
-              <a
-                href={`https://m.me/?text=${checkoutMessage}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 block"
-              >
-                <button className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-orange-500 font-bold text-white transition hover:scale-[1.01] hover:bg-orange-600">
-                  <CheckCircle2 className="h-4 w-4" />
-                  ส่งรายการสั่งซื้อ
-                </button>
-              </a>
-
-              <p className="mt-3 text-center text-xs text-slate-500">
-                ลูกค้าสามารถใส่หลายสินค้าในตะกร้า แล้วส่งรายการไปสั่งซื้อทางเพจได้ทันที
-              </p>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-400">ส่วนลดรวม</span>
+                <span className="font-bold text-gray-200">
+                  {formatBaht(cartSavings)}
+                </span>
+              </div>
+              <div className="h-px bg-white/10" />
+              <div className="flex items-center justify-between">
+                <span className="text-base font-semibold text-white">ยอดรวม</span>
+                <span className="text-2xl font-black text-white">
+                  {formatBaht(cartSubtotal)}
+                </span>
+              </div>
             </div>
-          </aside>
-        </div>
-      )}
 
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-orange-100 bg-white/95 px-4 py-3 shadow-[0_-10px_30px_rgba(0,0,0,0.08)] backdrop-blur md:hidden">
-        <div className="mx-auto flex max-w-7xl items-center gap-3">
-          <button
-            onClick={() => setShowCart(true)}
-            className="flex h-12 flex-1 items-center justify-center gap-2 rounded-full border border-slate-200 bg-white font-bold text-slate-900"
-          >
-            <ShoppingCart className="h-4 w-4" />
-            ตะกร้า ({cartCount})
-          </button>
-          <a
-            href={cartCount > 0 ? `https://m.me/?text=${checkoutMessage}` : facebookPage}
-            target="_blank"
-            rel="noreferrer"
-            className="flex-[1.3]"
-          >
-            <button className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-orange-500 font-bold text-white">
-              <CheckCircle2 className="h-4 w-4" />
-              {cartCount > 0 ? "ซื้อเลย" : "ทักเพจทันที"}
-            </button>
-          </a>
+            <div className="mt-4 grid gap-3">
+              <a
+                href={`${facebookPage}${facebookPage.includes("?") ? "&" : "?"}text=${checkoutMessage}`}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-4 font-bold text-black transition hover:scale-[1.01] hover:bg-gray-200"
+              >
+                <Facebook className="h-4 w-4" />
+                สั่งซื้อผ่านเพจ
+              </a>
+
+              <button
+                onClick={() => setShowCart(false)}
+                className="rounded-full border border-white/10 bg-white/5 px-5 py-4 font-bold text-white transition hover:bg-white/10"
+              >
+                เลือกสินค้าต่อ
+              </button>
+            </div>
+          </div>
         </div>
       </div>
+
+      {showCart && (
+        <button
+          aria-label="close overlay"
+          onClick={() => setShowCart(false)}
+          className="fixed inset-0 z-[65] bg-black/50 backdrop-blur-[1px]"
+        />
+      )}
     </div>
   );
 }
