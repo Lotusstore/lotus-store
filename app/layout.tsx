@@ -30,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th" className={`${inter.variable} ${notoThai.variable}`}>
-      <body className="font-sans bg-[#050505] text-white">
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

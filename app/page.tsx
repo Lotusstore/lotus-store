@@ -694,12 +694,14 @@ ${lines.join("\n")}
                 ร้านขายเกมและแอพราคาคุ้ม โทนพรีเมียม สั่งซื้อไว
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-black leading-[1.05] sm:text-5xl lg:text-6xl">
-                ซื้อเกมและแอพราคาคุ้ม
-                <span className="mt-2 block text-zinc-400">
-                  ดูง่าย กดสั่งซื้อได้ทันที
-                </span>
-              </h1>
+              <h1 className="max-w-3xl leading-[0.95] tracking-tight">
+  <span className="block text-4xl font-black text-white sm:text-5xl lg:text-7xl">
+    ซื้อเกมและแอพราคาคุ้ม
+  </span>
+  <span className="mt-3 block text-xl font-medium text-zinc-400 sm:text-2xl lg:text-3xl">
+    ดูง่าย กดสั่งซื้อได้ทันที
+  </span>
+</h1>
 
               <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
                 รองรับทั้ง iOS และ Android พร้อมดีไซน์ใหม่ที่ดูโปรขึ้น
