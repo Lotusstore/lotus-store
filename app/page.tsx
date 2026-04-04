@@ -661,7 +661,7 @@ export default function LotusStorePage() {
 
           <button
             onClick={() => setShowCart(true)}
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full bg-orange-500 text-white shadow-lg shadow-orange-200 transition hover:scale-[1.03] hover:bg-orange-600"
+            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-black text-white shadow-lg shadow-orange-200 transition hover:scale-[1.03] hover:bg-orange-600"
           >
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
@@ -729,7 +729,7 @@ export default function LotusStorePage() {
             <div className="relative z-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
               <div className="rounded-[32px] bg-white p-5 text-slate-900 shadow-2xl">
                 <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-bold text-orange-500">Flash Deal</p>
+                  <p className="text-sm font-bold bg-white text-black">Flash Deal</p>
                   <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-600">
                     ลดสูงสุด {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
                   </span>
