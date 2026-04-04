@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 
 const facebookPage =
-  "https://www.facebook.com/share/1AjLqASu3J/?mibextid=wwXIfr";
+  "https://m.me/LotusstoreTH";
 const logoUrl = "/logo.png";
 
 type Product = {
@@ -651,7 +651,7 @@ export default function LotusStorePage() {
           </div>
 
           <a
-            href={facebookPage}
+            href={`${facebookPage}?text=${selectedCheckoutMessage}`}
             target="_blank"
             rel="noreferrer"
             className="hidden rounded-full bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.02] hover:bg-black md:inline-flex"
@@ -1281,7 +1281,7 @@ export default function LotusStorePage() {
               </a>
 
               <a
-                href={`https://m.me/?text=${checkoutMessage}`}
+                href={`${facebookPage}?text=${checkoutMessage}`}
                 target="_blank"
                 rel="noreferrer"
                 className="mt-3 block"
