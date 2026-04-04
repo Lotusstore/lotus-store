@@ -655,14 +655,14 @@ ${lines.join("\n")}
             </div>
           </div>
 
-          <div className="relative ml-auto hidden max-w-2xl flex-1 md:block">
-            <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
+          <div className="relative ml-2 flex-1 md:max-w-2xl">
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
             <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="ค้นหาเกมหรือแอพที่ต้องการ..."
-              className="h-11 w-full rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10"
-            />
+  value={query}
+  onChange={(e) => setQuery(e.target.value)}
+  placeholder="ค้นหาเกมหรือแอพ..."
+  className="relative z-10 h-11 w-full rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10"
+/>
           </div>
 
           <a
