@@ -636,7 +636,7 @@ export default function LotusStorePage() {
             />
             <div className="hidden sm:block">
               <p className="text-lg font-black tracking-tight text-orange-600">Lotus Store</p>
-              <p className="text-xs text-slate-500">Lazada Mini Game & App Shop</p>
+              <p className="text-xs text-slate-500">Game & App Shop</p>
             </div>
           </div>
 
@@ -680,7 +680,7 @@ export default function LotusStorePage() {
             <div className="relative z-10">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur">
                 <Sparkles className="h-4 w-4" />
-                เว็บขายเกมและแอพสไตล์ Lazada mini
+                เว็บขายเกมและแอพราคาคุ้มค่า ที่คนรักเกมและแอพต้องไม่พลาด
               </div>
 
               <h1 className="max-w-3xl text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
@@ -731,7 +731,7 @@ export default function LotusStorePage() {
                 <div className="mb-4 flex items-center justify-between">
                   <p className="text-sm font-bold text-orange-500">Flash Deal</p>
                   <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-bold text-orange-600">
-                    วันนี้เท่านั้น
+                    ลดสูงสุด {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
                   </span>
                 </div>
 
