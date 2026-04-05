@@ -603,7 +603,7 @@ const products: Product[] = [
   description: "สร้างอาณาจักร ป้องกันศัตรู เล่นฟรียาว",
   rating: 4.8,
   sold: 85,
-}
+},
 {
   id: 36,
   name: "My Time at Portia",
