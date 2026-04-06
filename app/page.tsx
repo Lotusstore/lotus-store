@@ -738,6 +738,21 @@ const products: Product[] = [
   description: "เกมลอบเร้นระดับตำนาน วางแผนฆ่าแบบเนียนๆ",
   rating: 4.9,
   sold: 130,
+},
+{
+  id: 45,
+  name: "Dead Cells",
+  price: 69,
+  oldPrice: 249,
+  platform: ["iOS", "Android"],
+  category: "แอ็กชั่น",
+  type: "เกม",
+  badge: "iOS / Android",
+  image: "https://assets1.ignimgs.com/2019/06/10/dead-cells---button-fin-1560125633132.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+  popular: true,
+  description: "เกมแอ็กชั่น Roguelike สุดมัน ตายแล้วเริ่มใหม่ แต่โคตรสนุก",
+  rating: 4.9,
+  sold: 150,
 }
 ];
 
