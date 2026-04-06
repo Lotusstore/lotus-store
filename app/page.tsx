@@ -693,6 +693,21 @@ const products: Product[] = [
   description: "เกมสยองขวัญแนวปริศนา บรรยากาศโคตรดี",
   rating: 4.8,
   sold: 90,
+},
+{
+  id: 42,
+  name: "Stardew Valley",
+  price: 59,
+  oldPrice: 199,
+  platform: ["iOS", "Android"],
+  category: "จำลองชีวิต",
+  type: "เกม",
+  badge: "iOS / Android",
+  image: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/df/12/0edf1230-3f6e-fbb3-7f72-f2aa844d100a/AppIcons-0-0-1x_U007emarketing-0-8-0-85-220.png/320x320bb.jpg",
+  popular: true,
+  description: "ทำฟาร์ม ปลูกผัก เลี้ยงสัตว์ ใช้ชีวิตชิลๆ เล่นเพลินทั้งวัน",
+  rating: 5.0,
+  sold: 220,
 }
 ];
 
