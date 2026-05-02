@@ -763,7 +763,7 @@ const products: Product[] = [
   category: "Sandbox",
   type: "เกม",
   badge: "PC",
-  image: "https://store.499k-network.com/game/minecraft-java-vs-bedrock",
+  image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
   popular: true,
   description: " Minecraft สำหรับ PC คุณจะได้รับทั้งเวอร์ชัน Java Edition และ Bedrock Edition รวมกันในแพ็กเดียว ซึ่งทั้งสองเวอร์ชันมีจุดเด่นที่ตอบโจทย์ผู้เล่นต่างสไตล์กัน",
   rating: 5.0,
