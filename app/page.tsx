@@ -763,11 +763,11 @@ const products: Product[] = [
   category: "Sandbox",
   type: "เกม",
   badge: "PC",
-  image: "https://i.postimg.cc/5y2JX9bS/minecraft-pc.jpg",
+  image: "https://www.youtube.com/watch?v=qNMfF9TYETM",
   popular: true,
-  description: "Minecraft เวอร์ชัน PC เล่นฟรียาว Mod ได้ สนุกสุด",
+  description: " Minecraft สำหรับ PC คุณจะได้รับทั้งเวอร์ชัน Java Edition และ Bedrock Edition รวมกันในแพ็กเดียว ซึ่งทั้งสองเวอร์ชันมีจุดเด่นที่ตอบโจทย์ผู้เล่นต่างสไตล์กัน",
   rating: 5.0,
-  sold: 0
+  sold: 50
 }
 ];
 
