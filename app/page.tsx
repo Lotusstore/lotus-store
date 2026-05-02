@@ -753,7 +753,7 @@ const products: Product[] = [
   description: "เกมแอ็กชั่น Roguelike สุดมัน ตายแล้วเริ่มใหม่ แต่โคตรสนุก",
   rating: 4.9,
   sold: 150,
-};
+},
 {
   id: 46,
   name: "Minecraft PC (Java / Bedrock)",
