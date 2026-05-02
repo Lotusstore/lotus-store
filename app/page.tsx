@@ -1144,10 +1144,10 @@ ${lines.join("\n")}
                   <img
                     src={pcFirstProduct?.image ?? "https://placehold.co/400x400"}
                     alt={pcFirstProduct?.name ?? "สินค้าแนะนำ"}
-                    className="h-20 w-20 rounded-2xl bg-[#191919] object-cover sm:h-24 sm:w-24"
+                    className="h-32 w-32 sm:h-40 sm:w-40 rounded-2xl bg-[#191919] object-cover"
                   />
                   <div className="min-w-0">
-                    <h3 className="line-clamp-2 text-base font-black sm:text-lg">
+                    <h3 className="line-clamp-2 text-xl sm:text-2xl font-black">
                       {pcFirstProduct?.name ?? "สินค้าแนะนำ"}
                     </h3>
                     <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
@@ -1155,7 +1155,7 @@ ${lines.join("\n")}
                         "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
                     </p>
                     <div className="mt-3 flex items-end gap-2">
-                      <span className="text-xl font-black text-cyan-300 sm:text-2xl">
+                      <span className="text-2xl sm:text-3xl font-black text-cyan-300">
                         {formatBaht(pcFirstProduct?.price ?? 0)}
                       </span>
                       <span className="text-xs text-zinc-500 line-through sm:text-sm">
@@ -1175,7 +1175,7 @@ ${lines.join("\n")}
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-[24px] border border-white/10 bg-[#0f0f0f] p-4 text-white shadow-xl shadow-black/30 sm:rounded-[28px] sm:p-5"
+                    className="rounded-[28px] border border-white/10 bg-[#111111] p-6 sm:p-8 text-white shadow-2xl"
                   >
                     <p className="text-xl font-black sm:text-2xl">{item.value}</p>
                     <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
