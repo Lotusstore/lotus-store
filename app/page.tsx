@@ -757,7 +757,7 @@ const products: Product[] = [
 {
   id: 46,
   name: "Minecraft PC (Java / Bedrock)",
-  price: 89,
+  price: 99,
   oldPrice: 1115,
   platform: ["PC"],
   category: "Sandbox",
