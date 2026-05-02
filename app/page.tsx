@@ -758,7 +758,7 @@ const products: Product[] = [
   id: 46,
   name: "Minecraft PC (Java / Bedrock)",
   price: 89,
-  oldPrice: 1,115,
+  oldPrice: 1115,
   platform: ["PC"],
   category: "Sandbox",
   type: "เกม",
@@ -767,7 +767,7 @@ const products: Product[] = [
   popular: true,
   description: "Minecraft เวอร์ชัน PC เล่นฟรียาว Mod ได้ สนุกสุด",
   rating: 5.0,
-  sold: 0,
+  sold: 0
 }
 ];
 
