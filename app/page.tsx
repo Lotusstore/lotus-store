@@ -753,10 +753,25 @@ const products: Product[] = [
   description: "เกมแอ็กชั่น Roguelike สุดมัน ตายแล้วเริ่มใหม่ แต่โคตรสนุก",
   rating: 4.9,
   sold: 150,
-}
+};
+{
+  id: 46,
+  name: "Minecraft PC (Java / Bedrock)",
+  price: 89,
+  oldPrice: 1,115,
+  platform: ["PC"],
+  category: "Sandbox",
+  type: "เกม",
+  badge: "PC",
+  image: "https://i.postimg.cc/5y2JX9bS/minecraft-pc.jpg",
+  popular: true,
+  description: "Minecraft เวอร์ชัน PC เล่นฟรียาว Mod ได้ สนุกสุด",
+  rating: 5.0,
+  sold: 0,
+};
 ];
 
-const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android"];
+const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
 const typeFilters: Array<"เกม" | "แอพ"> = ["เกม", "แอพ"];
 
 function formatBaht(value: number) {
