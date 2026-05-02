@@ -768,7 +768,7 @@ const products: Product[] = [
   description: "Minecraft เวอร์ชัน PC เล่นฟรียาว Mod ได้ สนุกสุด",
   rating: 5.0,
   sold: 0,
-};
+}
 ];
 
 const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
