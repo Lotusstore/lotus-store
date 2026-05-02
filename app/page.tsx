@@ -797,6 +797,9 @@ export default function LotusStorePage() {
   const popularProducts = useMemo(() => {
     return products.filter((p) => p.popular && p.type === activeType).slice(0, 4);
   }, [activeType]);
+  const pcFirstProduct = useMemo(() => {
+  return products.find((p) => p.id === 46);
+  }, []);
 
   const filteredProducts = useMemo(() => {
     const keyword = query.trim().toLowerCase();
@@ -1130,7 +1133,7 @@ ${lines.join("\n")}
             <div className="relative z-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-1">
               <div className="rounded-[28px] border border-white/10 bg-[#111111] p-4 text-white shadow-2xl shadow-black/40 sm:rounded-[32px] sm:p-5">
                 <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-bold text-white">Flash Deal</p>
+                  <p className="text-sm font-bold text-white">🎮 เกม PC เกมแรก มาแล้ว!</p>
                   <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
                     ลดสูงสุด{" "}
                     {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
@@ -1139,24 +1142,24 @@ ${lines.join("\n")}
 
                 <div className="flex items-center gap-3 sm:gap-4">
                   <img
-                    src={popularProducts[0]?.image ?? "https://placehold.co/400x400"}
-                    alt={popularProducts[0]?.name ?? "สินค้าแนะนำ"}
+                    src={pcFirstProduct?.image ?? "https://placehold.co/400x400"}
+                    alt={pcFirstProduct?.name ?? "สินค้าแนะนำ"}
                     className="h-20 w-20 rounded-2xl bg-[#191919] object-cover sm:h-24 sm:w-24"
                   />
                   <div className="min-w-0">
                     <h3 className="line-clamp-2 text-base font-black sm:text-lg">
-                      {popularProducts[0]?.name ?? "สินค้าแนะนำ"}
+                      {pcFirstProduct?.name ?? "สินค้าแนะนำ"}
                     </h3>
                     <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
-                      {popularProducts[0]?.description ??
+                      {pcFirstProduct?.description ??
                         "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
                     </p>
                     <div className="mt-3 flex items-end gap-2">
                       <span className="text-xl font-black text-cyan-300 sm:text-2xl">
-                        {formatBaht(popularProducts[0]?.price ?? 0)}
+                        {formatBaht(pcFirstProduct?.price ?? 0)}
                       </span>
                       <span className="text-xs text-zinc-500 line-through sm:text-sm">
-                        {formatBaht(popularProducts[0]?.oldPrice ?? 0)}
+                        {formatBaht(pcFirstProduct?.oldPrice ?? 0)}
                       </span>
                     </div>
                   </div>
