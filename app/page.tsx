@@ -756,7 +756,7 @@ const products: Product[] = [
 },
 {
   id: 46,
-  name: "Minecraft PC (Java / Bedrock) เมลเเชร์ของทางร้าน",
+  name: "Minecraft PC (Java / Bedrock) เมลเเชร์",
   price: 99,
   oldPrice: 1115,
   platform: ["PC"],
@@ -771,7 +771,7 @@ const products: Product[] = [
 },
 {
   id: 47,
-  name: "Minecraft PC (Java / Bedrock) เมลส่วนตัว",
+  name: "Minecraft PC (Java / Bedrock)เมลส่วนตัว",
   price: 459,
   oldPrice: 1115,
   platform: ["PC"],
@@ -782,7 +782,7 @@ const products: Product[] = [
   popular: true,
   description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว เปลี่ยนเมล เปลี่ยนรหัสได้เอง",
   rating: 5.0,
-  sold: 50
+  sold: 29
 }
 ];
 
