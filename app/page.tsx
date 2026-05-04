@@ -765,7 +765,22 @@ const products: Product[] = [
   badge: "PC",
   image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
   popular: true,
-  description: " Minecraft สำหรับ PC คุณจะได้รับทั้งเวอร์ชัน Java Edition และ Bedrock Edition รวมกันในแพ็กเดียว ซึ่งทั้งสองเวอร์ชันมีจุดเด่นที่ตอบโจทย์ผู้เล่นต่างสไตล์กัน",
+  description: " Minecraft สำหรับ PC เป็นเมลเเชร์ของทางร้าน สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว",
+  rating: 5.0,
+  sold: 50
+},
+{
+  id: 47,
+  name: "Minecraft PC (Java / Bedrock)",
+  price: 459,
+  oldPrice: 1115,
+  platform: ["PC"],
+  category: "Sandbox",
+  type: "เกม",
+  badge: "PC",
+  image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
+  popular: true,
+  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว เปลี่ยนเมล เปลี่ยนรหัสได้เอง",
   rating: 5.0,
   sold: 50
 }
