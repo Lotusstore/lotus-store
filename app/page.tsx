@@ -1021,7 +1021,7 @@ ${lines.join("\n")}
                 setTimeout(() => setShowSuggestions(false), 150);
               }}
               placeholder="ค้นหาเกมหรือแอพ..."
-              className="relative z-10 h-10 w-full rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10 sm:h-11"
+              className="relative z-10 h-10 w-full rounded-full border border-white/10 bg-white/5 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10 sm:h-11"
             />
 
             {showSuggestions && query.trim() !== "" && searchSuggestions.length > 0 && (
@@ -1032,7 +1032,7 @@ ${lines.join("\n")}
                     type="button"
                     onMouseDown={(e) => e.preventDefault()}
                     onClick={() => scrollToProduct(product)}
-                    className="flex w-full items-center gap-3 border-b border-white/5 px-3 py-3 text-left transition hover:bg-white/5 last:border-b-0"
+                    className="flex w-full items-center gap-3 border-b border-white/5 px-3 py-3 text-left transition hover:bg-white/5 backdrop-blur-xl last:border-b-0"
                   >
                     <img
                       src={product.image}
@@ -1083,10 +1083,10 @@ ${lines.join("\n")}
       </header>
 
       <main className="pb-32 pt-14 sm:pt-16">
-        <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_top_right,rgba(255,0,0,0.18),transparent_28%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
+        <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.25),transparent_40%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
           <div className="mx-auto grid max-w-7xl gap-6 px-3 py-6 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
             <div className="relative z-10">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs font-semibold text-zinc-200 backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xlpx-3 py-2 text-xs font-semibold text-zinc-200 backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
                 <Sparkles className="h-4 w-4" />
                 Premium mobile game & app storefront
               </div>
@@ -1118,7 +1118,7 @@ ${lines.join("\n")}
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:px-6"
+                  className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:px-6"
                 >
                   ทักแชทเลย
                 </a>
@@ -1133,7 +1133,7 @@ ${lines.join("\n")}
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-md sm:rounded-3xl sm:p-4"
+                    className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-3 backdrop-blur-md sm:rounded-3xl sm:p-4"
                   >
                     <item.icon className="mb-2 h-5 w-5 text-white sm:mb-3" />
                     <p className="text-sm font-bold text-white sm:text-base">
@@ -1204,7 +1204,7 @@ ${lines.join("\n")}
         </section>
 
         <section className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
-          <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-white/5 p-3 backdrop-blur-md sm:rounded-[28px] sm:p-4">
+          <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-3 backdrop-blur-md sm:rounded-[28px] sm:p-4">
             <div className="flex gap-2 overflow-x-auto no-scrollbar">
               {typeFilters.map((type) => (
                 <button
@@ -1213,7 +1213,7 @@ ${lines.join("\n")}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
                     activeType === type
                       ? "bg-white text-black"
-                      : "bg-white/5 text-zinc-300 border border-white/10"
+                      : "bg-white/5 backdrop-blur-xl text-zinc-300 border border-white/10"
                   }`}
                 >
                   {type}
@@ -1229,7 +1229,7 @@ ${lines.join("\n")}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
                     activeFilter === filter
                       ? "bg-red-600 text-white"
-                      : "bg-white/5 text-zinc-300 border border-white/10"
+                      : "bg-white/5 backdrop-blur-xltext-zinc-300 border border-white/10"
                   }`}
                 >
                   {filter}
@@ -1242,7 +1242,7 @@ ${lines.join("\n")}
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="h-11 w-full appearance-none rounded-full border border-white/10 bg-white/5 pl-11 pr-4 text-sm text-white outline-none"
+                className="h-11 w-full appearance-none rounded-full border border-white/10 bg-white/5 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none"
               >
                 <option value="popular" className="text-black">
                   เรียงตามความนิยม
@@ -1278,13 +1278,13 @@ ${lines.join("\n")}
               <button
                 key={product.id}
                 onClick={() => setSelectedProduct(product)}
-                className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 text-left transition hover:scale-[1.01]"
+                className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl text-left transition hover:scale-[1.01]"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.src = "https://placehold.co/500x500";
                     }}
@@ -1317,7 +1317,7 @@ ${lines.join("\n")}
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-center">
+            <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-center">
               <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
               <p className="mt-2 text-sm text-zinc-400">
                 ลองเปลี่ยนคำค้นหรือหมวดสินค้า
@@ -1331,17 +1331,18 @@ ${lines.join("\n")}
   ref={(el) => {
     productRefs.current[product.id] = el;
   }}
-  className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 shadow-xl shadow-black/20 transition"
+  className="group overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl backdrop-blur-xl shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,0,0,0.35)]"
 >
                   <button
                     onClick={() => setSelectedProduct(product)}
                     className="block w-full text-left"
                   >
                     <div className="relative aspect-[4/4.8] overflow-hidden bg-[#111111]">
+                     <div className="absolute inset-0 bg-black/40 opacity-0 transition group-hover:opacity-100"></div>
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                         onError={(e) => {
                           e.currentTarget.src = "https://placehold.co/600x800";
                         }}
@@ -1350,7 +1351,7 @@ ${lines.join("\n")}
                         {product.badge}
                       </span>
                       {discountPercent(product.price, product.oldPrice) > 0 && (
-                        <span className="absolute right-2 top-2 rounded-full bg-red-600 px-2 py-1 text-[10px] font-bold text-white">
+                        <span className="absolute right-2 top-2 rounded-full bg-red-600 px-2 py-1 text-[10px] font-bold text-white shadow-[0_0_10px_rgba(255,0,0,0.7)]">
                           -{discountPercent(product.price, product.oldPrice)}%
                         </span>
                       )}
@@ -1382,13 +1383,13 @@ ${lines.join("\n")}
                     <div className="mt-3 grid grid-cols-1 gap-2">
                       <button
                         onClick={() => setSelectedProduct(product)}
-                        className="rounded-full border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-white/10"
+                        className="rounded-full border border-white/10 bg-white/5 backdrop-blur px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.03]"
                       >
                         ดูรายละเอียด
                       </button>
                       <button
                         onClick={() => addToCart(product)}
-                        className="rounded-full bg-red-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-red-700"
+                        className="rounded-full bg-gradient-to-r from-red-600 to-pink-500 px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:from-red-500 hover:to-pink-400 hover:scale-[1.03] shadow-[0_0_15px_rgba(255,0,0,0.5)]"
                       >
                         เพิ่มลงตะกร้า
                       </button>
@@ -1431,10 +1432,10 @@ ${lines.join("\n")}
               </h3>
 
               <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
-                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                <span className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-3 py-1">
                   {selectedProduct.badge}
                 </span>
-                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1">
+                <span className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-3 py-1">
                   {selectedProduct.category}
                 </span>
               </div>
@@ -1463,7 +1464,7 @@ ${lines.join("\n")}
               <div className="mt-5 grid grid-cols-2 gap-2">
                 <button
                   onClick={() => addToCart(selectedProduct)}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-bold text-white"
+                  className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-3 text-sm font-bold text-white"
                 >
                   เพิ่มลงตะกร้า
                 </button>
@@ -1510,7 +1511,7 @@ ${lines.join("\n")}
 
             <div className="flex-1 overflow-y-auto p-4">
               {cart.length === 0 ? (
-                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6 text-center">
+                <div className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center">
                   <p className="font-bold text-white">ยังไม่มีสินค้าในตะกร้า</p>
                   <p className="mt-2 text-sm text-zinc-400">
                     เพิ่มสินค้าแล้วกลับมาดูได้ที่นี่
@@ -1521,7 +1522,7 @@ ${lines.join("\n")}
                   {cart.map((item) => (
                     <div
                       key={item.product.id}
-                      className="rounded-[24px] border border-white/10 bg-white/5 p-3"
+                      className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-3"
                     >
                       <div className="flex gap-3">
                         <img
@@ -1576,7 +1577,7 @@ ${lines.join("\n")}
             </div>
 
             <div className="border-t border-white/10 p-4">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-4">
+              <div className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-4">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-zinc-400">ยอดรวม</span>
                   <span className="font-bold text-white">
