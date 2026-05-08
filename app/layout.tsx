@@ -13,13 +13,11 @@ const notoThai = Noto_Sans_Thai({
   variable: "--font-thai",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Lotus Store",
-  description: "Mobile Game & App Shop",
+  description: "Premium Game Store",
   icons: {
     icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
   },
 };
 
