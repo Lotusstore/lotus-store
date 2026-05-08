@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 const facebookPage = "https://m.me/LotusstoreTH";
-const logoUrl = "/logo.png";
+const logoUrl = "/logo.jpg";
 
 type Product = {
   id: number;
