@@ -771,7 +771,7 @@ const products: Product[] = [
 },
 {
   id: 47,
-  name: "Minecraft PC (Java / Bedrock) เป็นบัญชีส่วนตัว",
+  name: "Minecraft PC (Bedrock ) เป็นบัญชีส่วนตัว",
   price: 259,
   oldPrice: 1115,
   platform: ["PC"],
