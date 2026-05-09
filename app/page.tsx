@@ -765,12 +765,27 @@ const products: Product[] = [
   badge: "PC",
   image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
   popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลเเชร์ของทางร้าน สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว",
+  description: " Minecraft สำหรับ PC เป็นเมลเเชร์ของทางร้าน✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅",
   rating: 4.8,
   sold: 50
 },
 {
   id: 47,
+  name: "Minecraft PC (Java / Bedrock) เป็นบัญชีส่วนตัว",
+  price: 259,
+  oldPrice: 1115,
+  platform: ["PC"],
+  category: "Sandbox",
+  type: "เกม",
+  badge: "PC",
+  image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
+  popular: true,
+  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นเเค่ Bedrock Edition ✅ DonutSMP ไม่ถูกแบน ✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง ✅",
+  rating: 4.9,
+  sold: 46
+},
+{
+  id: 48,
   name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
   price: 389,
   oldPrice: 1115,
@@ -780,12 +795,12 @@ const products: Product[] = [
   badge: "PC",
   image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
   popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว เล่นhypixelไม่ได้ สามารถเล่นได้ทั้ง Java และ Bedrock Edition  ในราคาเดียว เปลี่ยนเมล เปลี่ยนรหัสได้เอง",
+  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว✅ เล่นhypixelไม่ได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition  ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
   rating: 4.7,
   sold: 38
 },
 {
-  id: 48,
+  id: 49,
   name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
   price: 459,
   oldPrice: 1115,
@@ -795,7 +810,7 @@ const products: Product[] = [
   badge: "PC",
   image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
   popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว เปลี่ยนเมล เปลี่ยนรหัสได้เอง",
+  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว ✅ เล่นhypixelได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
   rating: 4.9,
   sold: 29
 }
