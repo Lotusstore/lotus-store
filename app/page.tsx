@@ -933,6 +933,36 @@ const products: Product[] = [
   description: "ELDEN RING เป็นเกมแอ็คชันที่ผสมผสานระหว่างโลกแฟนตาซีและฟิสิกส์ที่สมจริง คุณจะได้รับโอกาสในการสำรวจโลกที่กว้างใหญ่และเผชิญหน้ากับศัตรูที่หลากหลาย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.8,
   sold: 9
+},
+{
+  id: 58,
+  name: "Raft - Steam Account (บัญชีส่วนตัว ) ",
+  price: 199,
+  oldPrice: 369,
+  platform: ["PC"],
+  category: "เกมผจญภัย ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://store-images.s-microsoft.com/image/apps.32463.14102062639781722.573266e7-686b-44fb-9e48-a2585bc2170f.5424f649-5154-402f-88e5-905dae685f22",
+  popular: true,
+  description: "Raft เป็นเกมผจญภัยแบบเปิดโลกที่คุณจะต้องอยู่รอดบนเรือไม้เล็กๆ ที่ลอยอยู่บนทะเล คุณจะต้องหาวัสดุรวบรวมอาหาร และสร้างสิ่งของเพื่อเอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 35
+},
+{
+  id: 59,
+  name: "Left 4 Dead 2 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 99,
+  oldPrice: 220,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/capsule_616x353.jpg?t=1772742214",
+  popular: true,
+  description: "Left 4 Dead 2 เป็นเกมแอ็คชั่นสยองขวัญแบบเล่นร่วมกัน (FPS) ที่มีฉากหลังเป็นโลกที่เต็มไปด้วยซอมบี้ พาคุณและเพื่อนๆ ไปผจญภัยในเมือง บึง และสุสานต่างๆ ในภาคใต้ของสหรัฐฯ ตั้งแต่เมืองซาวานนาห์ไปจนถึงนิวออร์ลีนส์ ใน 5 แคมเปญขนาดใหญ่ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 29
 }
 ];
 
