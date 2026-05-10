@@ -993,6 +993,66 @@ const products: Product[] = [
   description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
   sold: 10
+},
+{
+  id: 62,
+  name: "Project Zomboid- Steam Account (บัญชีส่วนตัว ) ",
+  price: 129,
+  oldPrice: 400,
+  platform: ["PC"],
+  category: "  เกมเล่นระหว่างการพัฒนา ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://assets-prd.ignimgs.com/2023/07/21/projectzomboid-1689959989039.jpg",
+  popular: true,
+  description: "Project Zomboid คือสุดยอดเกมเอาชีวิตรอดจากซอมบี้ เล่นคนเดียวหรือเล่นหลายคนก็ได้ คุณจะต้องเก็บของ สร้างสิ่งก่อสร้าง ประดิษฐ์สิ่งของ ต่อสู้ ทำฟาร์ม และตกปลาเพื่อเอาชีวิตรอด ระบบทักษะ RPG สุดเข้มข้น แผนที่ขนาดใหญ่ โหมดแซนด์บ็อกซ์ที่ปรับแต่งได้มากมาย และแรคคูนตัวน้อยน่ารักที่จะช่วยสอนวิธีการเล่นรอผู้เล่นอยู่ แล้วคุณจะตายอย่างไร? แค่โดนกัดครั้งเดียวก็ตายแล้ว... ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 20
+},
+{
+  id: 63,
+  name: "Valheim- Steam Account (บัญชีส่วนตัว ) ",
+  price: 209,
+  oldPrice: 499,
+  platform: ["PC"],
+  category: "   เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://gaming-cdn.com/images/products/7119/orig/valheim-pc-mac-game-steam-cover.jpg?v=1706800610",
+  popular: true,
+  description: "เกมสำรวจและเอาชีวิตรอดสุดโหดสำหรับผู้เล่น 1-10 คน ในดินแดนที่สร้างขึ้นแบบสุ่มโดยได้รับแรงบันดาลใจจากวัฒนธรรมไวกิ้ง ต่อสู้ สร้าง และพิชิตดินแดนเพื่อสร้างมหากาพย์ที่คู่ควรกับการอุปถัมภ์ของเทพโอดิน! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 15
+},
+{
+  id: 64,
+  name: "7 Days to Die - Steam Account (บัญชีส่วนตัว ) ",
+  price: 289,
+  oldPrice: 809,
+  platform: ["PC"],
+  category: "   เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90wYJszrnTsdAXOdfF7QNgbjMfekx-9ALmw&s",
+  popular: true,
+  description: "7 Days to Die เป็นเกมโอเพ่นเวิลด์ที่ผสมผสานองค์ประกอบต่างๆ เข้าด้วยกันอย่างลงตัว ไม่ว่าจะเป็นเกมยิงมุมมองบุคคลที่หนึ่ง เกมเอาชีวิตรอดจากซอมบี้ เกมป้องกันหอคอย และเกมสวมบทบาท มาเล่นเกม RPG เอาชีวิตรอดจากซอมบี้แบบแซนด์บ็อกซ์สุดคลาสสิกที่มาก่อนใคร! นาเวซกาเนรอคุณอยู่! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 20
+},
+{
+  id: 65,
+  name: "Sekiro: Shadows Die Twice - Steam Account (บัญชีส่วนตัว ) ",
+  price: 359,
+  oldPrice: 809,
+  platform: ["PC"],
+  category: "   เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://image.api.playstation.com/cdn/HP0506/CUSA13910_00/QKJRzanGk86ezpx2pk5QqQaduoXGJV3u8vHIejSav4MYiHA3F7zNgxSOF9bJmt2T.png",
+  popular: true,
+  description: "เกมแห่งปี - The Game Awards 2019 เกมแอ็กชั่นยอดเยี่ยมแห่งปี 2019 - IGN สร้างเส้นทางแห่งการแก้แค้นอันชาญฉลาดของคุณเองในเกมผจญภัยที่ได้รับรางวัลจากผู้พัฒนา FromSoftware ผู้สร้าง Bloodborne และซีรีส์ Dark Souls แก้แค้น กอบกู้เกียรติยศ สังหารอย่างแยบยล ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 20
 }
 ];
 
