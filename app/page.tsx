@@ -918,6 +918,21 @@ const products: Product[] = [
   description: "Garry's Mod เป็นเกมจำลองฟิสิกส์แบบแซนด์บ็อกซ์ ไม่มีเป้าหมายหรือจุดประสงค์ที่กำหนดไว้ล่วงหน้า เราให้เครื่องมือแก่คุณ แล้วปล่อยให้คุณเล่นอย่างอิสระ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
   sold: 28
+},
+{
+  id: 57,
+  name: "ELDEN RING - Steam Account (บัญชีส่วนตัว ) ",
+  price: 789,
+  oldPrice: 1790,
+  platform: ["PC"],
+  category: "เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg",
+  popular: true,
+  description: "ELDEN RING เป็นเกมแอ็คชันที่ผสมผสานระหว่างโลกแฟนตาซีและฟิสิกส์ที่สมจริง คุณจะได้รับโอกาสในการสำรวจโลกที่กว้างใหญ่และเผชิญหน้ากับศัตรูที่หลากหลาย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 9
 }
 ];
 
