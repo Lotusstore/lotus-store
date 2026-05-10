@@ -988,7 +988,7 @@ const products: Product[] = [
   category: "  เกมแอ็คชัน ",
   type: "เกม",
   badge: "PC",
-  image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Black_Myth_Wukong_cover_art.jpg",
+  image: "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg",
   popular: true,
   description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
