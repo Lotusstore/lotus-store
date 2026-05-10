@@ -831,7 +831,7 @@ const products: Product[] = [
 },
 {
   id: 51,
-  name: "Squad - Steam Account (บัญชีส่วนตัว มือ2) ",
+  name: "Squad - Steam Account (บัญชีส่วนตัว ) ",
   price: 299,
   oldPrice: 899,
   platform: ["PC"],
