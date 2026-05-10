@@ -1199,7 +1199,7 @@ ${lines.join("\n")}
             <img
               src={logoUrl}
               alt="Lotus Store"
-              className="h-9 w-9 rounded-2xl object-contain ring-1 ring-white/10 sm:h-10 sm:w-10"
+              className="h-9 w-9 rounded-2xl object-cover ring-1 ring-white/10 sm:h-10 sm:w-10"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
@@ -1235,7 +1235,7 @@ ${lines.join("\n")}
             />
 
             {showSuggestions && query.trim() !== "" && searchSuggestions.length > 0 && (
-              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-y-auto rounded-2xl border border-white/10 bg-[#111111] shadow-2xl shadow-black/40">
+              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-white/10 bg-[#111111] shadow-2xl shadow-black/40">
                 {searchSuggestions.map((product) => (
                   <button
                     key={product.id}
@@ -1247,7 +1247,7 @@ ${lines.join("\n")}
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="h-12 w-12 rounded-xl object-contain"
+                      className="h-12 w-12 rounded-xl object-cover"
                       onError={(e) => {
                         e.currentTarget.src = "https://placehold.co/100x100";
                       }}
@@ -1293,7 +1293,7 @@ ${lines.join("\n")}
       </header>
 
       <main className="pb-32 pt-14 sm:pt-16">
-        <section className="relative overflow-y-auto border-b border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.25),transparent_40%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
+        <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.25),transparent_40%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
           <div className="mx-auto grid max-w-7xl gap-6 px-3 py-6 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
             <div className="relative z-10">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xlpx-3 py-2 text-xs font-semibold text-zinc-200 backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
@@ -1369,7 +1369,7 @@ ${lines.join("\n")}
                   <img
                     src={pcFirstProduct?.image ?? "https://placehold.co/400x400"}
                     alt={pcFirstProduct?.name ?? "สินค้าแนะนำ"}
-                    className="h-32 w-32 sm:h-40 sm:w-40 rounded-2xl bg-[#191919] object-contain"
+                    className="h-32 w-32 sm:h-40 sm:w-40 rounded-2xl bg-[#191919] object-cover"
                   />
                   <div className="min-w-0">
                     <h3 className="line-clamp-2 text-xl sm:text-2xl font-black">
@@ -1488,13 +1488,13 @@ ${lines.join("\n")}
               <button
                 key={product.id}
                 onClick={() => setSelectedProduct(product)}
-                className="overflow-y-auto rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl text-left transition hover:scale-[1.01]"
+                className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl text-left transition hover:scale-[1.01]"
               >
-                <div className="aspect-square overflow-y-auto">
+                <div className="aspect-square overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-contain transition duration-500 group-hover:scale-110"
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.src = "https://placehold.co/500x500";
                     }}
@@ -1541,18 +1541,18 @@ ${lines.join("\n")}
   ref={(el) => {
     productRefs.current[product.id] = el;
   }}
-  className="group overflow-y-auto rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl backdrop-blur-xl shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,0,0,0.35)]"
+  className="group overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl backdrop-blur-xl shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,0,0,0.35)]"
 >
                   <button
                     onClick={() => setSelectedProduct(product)}
                     className="block w-full text-left"
                   >
-                    <div className="relative aspect-[4/4.8] overflow-y-auto bg-[#111111]">
+                    <div className="relative aspect-[4/4.8] overflow-hidden bg-[#111111]">
                      <div className="absolute inset-0 bg-black/40 opacity-0 transition group-hover:opacity-100"></div>
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="h-full w-full object-contain transition duration-500 group-hover:scale-110"
+                        className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                         onError={(e) => {
                           e.currentTarget.src = "https://placehold.co/600x800";
                         }}
@@ -1614,7 +1614,7 @@ ${lines.join("\n")}
 
       {selectedProduct && (
         <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4">
-          <div className="max-h-screen w-full overflow-y-auto rounded-t-[28px] border border-white/10 bg-[#0c0c0c] shadow-2xl shadow-black/50 sm:max-w-4xl sm:rounded-[32px]">
+          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-white/10 bg-[#0c0c0c] shadow-2xl shadow-black/50 sm:max-w-lg sm:rounded-[32px]">
             <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4 backdrop-blur">
               <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
               <button
@@ -1626,11 +1626,11 @@ ${lines.join("\n")}
             </div>
 
             <div className="p-4">
-              <div className="overflow-y-auto rounded-[24px] bg-[#111111]">
+              <div className="overflow-hidden rounded-[24px] bg-[#111111]">
                 <img
                   src={selectedProduct.image}
                   alt={selectedProduct.name}
-                  className="aspect-[4/3] w-full object-contain"
+                  className="aspect-[4/3] w-full object-cover"
                   onError={(e) => {
                     e.currentTarget.src = "https://placehold.co/800x600";
                   }}
@@ -1738,7 +1738,7 @@ ${lines.join("\n")}
                         <img
                           src={item.product.image}
                           alt={item.product.name}
-                          className="h-20 w-20 rounded-2xl object-contain"
+                          className="h-20 w-20 rounded-2xl object-cover"
                           onError={(e) => {
                             e.currentTarget.src = "https://placehold.co/200x200";
                           }}
@@ -1815,7 +1815,7 @@ ${lines.join("\n")}
         </div>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/80 p-6 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/80 p-3 backdrop-blur md:hidden">
         <div className="mx-auto flex max-w-7xl items-center gap-2">
           <button
             onClick={() => setShowCart(true)}
