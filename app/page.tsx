@@ -828,6 +828,36 @@ const products: Product[] = [
   description: " ขุด, ต่อสู้, สำรวจ, สร้าง! สัมผัสเกมผจญภัยแนว Sandbox ยอดฮิตระดับตำนานในราคาคุ้มค่า✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
   sold: 22
+},
+{
+  id: 51,
+  name: "Squad - Steam Account (บัญชีส่วนตัว มือ2) ",
+  price: 299,
+  oldPrice: 899,
+  platform: ["PC"],
+  category: "เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://cdn.prod.website-files.com/651dd1cea3817995c17fa3c1/65e0e49452009f2a2920f3ce_1200x630-key-art.jpeg",
+  popular: true,
+  description: " Squad เป็นเกม FPS เชิงกลยุทธ์ที่มอบประสบการณ์การต่อสู้ที่สมจริงผ่านการทำงานเป็นทีม การสื่อสาร และการต่อสู้ที่สมจริง มันผสมผสานระหว่างเกมยิงแบบอาร์เคดและความสมจริงทางทหารด้วยการต่อสู้ที่มีผู้เล่นสูงสุด 100 คน การรบแบบผสมผสาน และการสร้างฐานทัพ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 19
+},
+{
+  id: 52,
+  name: "SCUM - Steam Account (บัญชีส่วนตัว ) ",
+  price: 319,
+  oldPrice: 999,
+  platform: ["PC"],
+  category: "Open-world Survival",
+  type: "เกม",
+  badge: "PC",
+  image: "https://imgproxy.eneba.games/c5LirgQDjLllv9YYX0ytZXzcQsAqP6tk_0AJsmausdI/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9n/b291c1VuZHM2V0p4/eUdENlNJM1REX0ky/LTVMM2JNUTRjMjlO/dEl3YjVVLmpwZWc",
+  popular: true,
+  description: "ผจญภัยในสภาพแวดล้อมที่โหดร้าย เก็บไอเทม สร้างสิ่งของ และหลบหลีกภัยคุกคามต่อชีวิตอย่างต่อเนื่อง ระบบการปรับแต่งและพัฒนาตัวละครที่ไม่เคยมีมาก่อนคือเครื่องมือสำคัญในการเอาชีวิตรอดของคุณ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 33
 }
 ];
 
