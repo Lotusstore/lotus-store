@@ -823,7 +823,7 @@ const products: Product[] = [
   category: " เกมอินดี้ ",
   type: "เกม",
   badge: "PC",
-  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1769844435",
+  image: "https://upload.wikimedia.org/wikipedia/en/1/1a/Terraria_Steam_artwork.jpg",
   popular: true,
   description: " ขุด, ต่อสู้, สำรวจ, สร้าง! สัมผัสเกมผจญภัยแนว Sandbox ยอดฮิตระดับตำนานในราคาคุ้มค่า✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
