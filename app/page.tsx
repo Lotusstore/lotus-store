@@ -903,6 +903,21 @@ const products: Product[] = [
   description: "คุณได้รับมรดกเป็นที่ดินทำฟาร์มเก่าของคุณปู่ในเกม Stardew Valley พร้อมด้วยเครื่องมือเก่าๆ และเงินเพียงเล็กน้อย คุณเริ่มต้นชีวิตใหม่ คุณจะสามารถเรียนรู้ที่จะหาเลี้ยงชีพจากที่ดินและเปลี่ยนทุ่งนาที่รกร้างเหล่านี้ให้กลายเป็นบ้านที่เจริญรุ่งเรืองได้หรือไม่? ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
   sold: 35
+},
+{
+  id: 56,
+  name: "Garry's Mod - Steam Account (บัญชีส่วนตัว ) ",
+  price: 149,
+  oldPrice: 219,
+  platform: ["PC"],
+  category: "  เกมอินดี้",
+  type: "เกม",
+  badge: "PC",
+  image: "https://m.media-amazon.com/images/M/MV5BMjY4ZWU0Y2YtZWViMi00YjE0LWJjYTItZTk3MWFlYzMyYjUwXkEyXkFqcGc@._V1_.jpg",
+  popular: true,
+  description: "Garry's Mod เป็นเกมจำลองฟิสิกส์แบบแซนด์บ็อกซ์ ไม่มีเป้าหมายหรือจุดประสงค์ที่กำหนดไว้ล่วงหน้า เราให้เครื่องมือแก่คุณ แล้วปล่อยให้คุณเล่นอย่างอิสระ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 28
 }
 ];
 
