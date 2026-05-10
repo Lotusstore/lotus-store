@@ -813,6 +813,21 @@ const products: Product[] = [
   description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว ✅ เล่นhypixelได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
   rating: 4.9,
   sold: 29
+},
+{
+  id: 50,
+  name: "Terraria - Steam Account (บัญชีส่วนตัว) ",
+  price: 99,
+  oldPrice: 220,
+  platform: ["PC"],
+  category: " เกมอินดี้ ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/header.jpg?t=1769844435",
+  popular: true,
+  description: " ขุด, ต่อสู้, สำรวจ, สร้าง! สัมผัสเกมผจญภัยแนว Sandbox ยอดฮิตระดับตำนานในราคาคุ้มค่า✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 22
 }
 ];
 
