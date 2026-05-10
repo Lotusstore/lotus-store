@@ -858,6 +858,51 @@ const products: Product[] = [
   description: "ผจญภัยในสภาพแวดล้อมที่โหดร้าย เก็บไอเทม สร้างสิ่งของ และหลบหลีกภัยคุกคามต่อชีวิตอย่างต่อเนื่อง ระบบการปรับแต่งและพัฒนาตัวละครที่ไม่เคยมีมาก่อนคือเครื่องมือสำคัญในการเอาชีวิตรอดของคุณ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.8,
   sold: 33
+},
+{
+  id: 53,
+  name: "Arma 3 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 189,
+  oldPrice: 999,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://imgproxy.eneba.games/bUl7e9q7gGKNFDI9PEj1HC-HxbDOHyfghk7cul8SvX8/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9a/bkNiZmFWLmpwZw",
+  popular: true,
+  description: "สัมผัสประสบการณ์การเล่นเกมต่อสู้ที่สมจริงในสมรภูมิรบขนาดใหญ่ วางแผนการรบด้วยเนื้อหาแบบเล่นคนเดียวและเล่นหลายคนมากมาย คลังอาวุธและยานพาหนะทันสมัยขนาดใหญ่ และโอกาสในการสร้างสรรค์เนื้อหาอย่างไม่จำกัด สมจริง หลากหลาย เปิดกว้าง - Arma 3 จะพาคุณเข้าสู่สงคราม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 22
+},
+{
+  id: 54,
+  name: "Peak - Steam Account (บัญชีส่วนตัว ) ",
+  price: 129,
+  oldPrice: 159,
+  platform: ["PC"],
+  category: "  เกมอินดี้",
+  type: "เกม",
+  badge: "PC",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlemGZ0zMbpr_iOpejkuoo6gFvILqvB-WfPA&s",
+  popular: true,
+  description: "PEAK เป็นเกมปีนเขาแบบร่วมมือกันที่ความผิดพลาดเพียงเล็กน้อยก็สามารถทำให้คุณชะตาขาดได้ ไม่ว่าจะเป็นการเล่นเดี่ยวหรือเป็นกลุ่มลูกเสือที่ออกไปศึกษาธรรมชาติแล้วหลงทาง ความหวังเดียวที่จะช่วยเหลือคุณออกจากเกาะลึกลับได้คือการปีนเขาที่ตั้งอยู่กลางเกาะ คุณมีคุณสมบัติเพียงพอที่จะพิชิตยอดเขาสูงสุดหรือไม่ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 42
+},
+{
+  id: 55,
+  name: "Stardew Valley - Steam Account (บัญชีส่วนตัว ) ",
+  price: 149,
+  oldPrice: 315,
+  platform: ["PC"],
+  category: "  เกมอินดี้",
+  type: "เกม",
+  badge: "PC",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcwlMJFs08nzPUB1cjJITCbeRvytEK0U86yw&s",
+  popular: true,
+  description: "คุณได้รับมรดกเป็นที่ดินทำฟาร์มเก่าของคุณปู่ในเกม Stardew Valley พร้อมด้วยเครื่องมือเก่าๆ และเงินเพียงเล็กน้อย คุณเริ่มต้นชีวิตใหม่ คุณจะสามารถเรียนรู้ที่จะหาเลี้ยงชีพจากที่ดินและเปลี่ยนทุ่งนาที่รกร้างเหล่านี้ให้กลายเป็นบ้านที่เจริญรุ่งเรืองได้หรือไม่? ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 35
 }
 ];
 
