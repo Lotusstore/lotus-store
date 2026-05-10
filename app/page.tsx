@@ -951,18 +951,33 @@ const products: Product[] = [
 },
 {
   id: 59,
-  name: "Left 4 Dead 2 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 99,
-  oldPrice: 220,
+  name: "Astroneer- Steam Account (บัญชีส่วนตัว ) ",
+  price: 289,
+  oldPrice: 590,
   platform: ["PC"],
-  category: " เกมแอ็คชัน ",
+  category: "  เกมผจญภัย ",
   type: "เกม",
   badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/550/capsule_616x353.jpg?t=1772742214",
+  image: "https://upload.wikimedia.org/wikipedia/en/a/a9/Astroneer_cover_art.jpg",
   popular: true,
-  description: "Left 4 Dead 2 เป็นเกมแอ็คชั่นสยองขวัญแบบเล่นร่วมกัน (FPS) ที่มีฉากหลังเป็นโลกที่เต็มไปด้วยซอมบี้ พาคุณและเพื่อนๆ ไปผจญภัยในเมือง บึง และสุสานต่างๆ ในภาคใต้ของสหรัฐฯ ตั้งแต่เมืองซาวานนาห์ไปจนถึงนิวออร์ลีนส์ ใน 5 แคมเปญขนาดใหญ่ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  description: "Astroneer เป็นเกมผจญภัยในอวกาศที่คุณจะต้องสำรวจและสร้างสรรค์บนดาวเคราะห์ต่างๆ คุณจะต้องจัดการทรัพยากร สร้างฐานที่อยู่ และรักษาชีวิตในสภาพแวดล้อมที่ไม่เอื้ออำนวย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
-  sold: 29
+  sold: 20
+},
+{
+  id: 60,
+  name: "Palworld- Steam Account (บัญชีส่วนตัว ) ",
+  price: 259,
+  oldPrice: 590,
+  platform: ["PC"],
+  category: "  เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Palworld_Steam_artwork.jpg",
+  popular: true,
+  description: "Palworld เป็นเกมต่อสู้ ทำฟาร์ม สร้างสิ่งก่อสร้าง และทำงานร่วมกับสิ่งมีชีวิตลึกลับที่เรียกว่า \"เพื่อน\" ในเกมเอาชีวิตรอดและสร้างสิ่งของแบบโอเพ่นเวิลด์สำหรับผู้เล่นหลายคนรูปแบบใหม่ล่าสุดนี้ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 15
 }
 ];
 
