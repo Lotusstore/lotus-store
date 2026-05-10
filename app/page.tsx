@@ -196,7 +196,7 @@ const products: Product[] = [
     type: "เกม",
     badge: "iOS / Android",
     image:
-      "https://play-lh.googleusercontent.com/gfNz1N2GNi5piz24IB08RQ4ZGfUnN_kOH8Edhh7uCiotI2P7IBWBXdHzR8gC01ppNnU=w720-h405-rw",
+      "https://media.nichegamer.com/wp-content/uploads/2022/06/Minecraft-characters-trading-with-villager-1024x512.jpg",
     popular: false,
     description: "เอาชีวิตรอดได้ตามจินตนาการอย่างไร้ขีดจำกัด",
     rating: 5.0,
