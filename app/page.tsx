@@ -1153,7 +1153,7 @@ const products: Product[] = [
   category: " เกมแอ็คชัน",
   type: "เกม",
   badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1326470/header.jpg?t=1708624856",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg?t=1769695513",
   popular: true,
   description: "คุณจะเอาชีวิตรอดในโลกหลังวันสิ้นโลกได้นานแค่ไหน? ดินแดนที่เต็มไปด้วยประชากร ซอมบี้ ที่ติดเชื้อ และคุณต้องแข่งขันกับผู้รอดชีวิตคนอื่นๆ เพื่อแย่งชิงทรัพยากรที่มีจำกัด คุณจะร่วมมือกับคนแปลกหน้าและยืนหยัดไปด้วยกันหรือไม่? หรือจะเล่นแบบหมาป่าเดียวดายเพื่อหลีกเลี่ยงการถูกทรยศ? นี่คือ DayZ  นี่คือเรื่องราวของคุณ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
