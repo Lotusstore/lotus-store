@@ -1041,6 +1041,21 @@ const products: Product[] = [
 },
 {
   id: 65,
+  name: "Overcooked! 2 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 199,
+  oldPrice: 490,
+  platform: ["PC"],
+  category: "   เกมอินดี้  ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728880/header.jpg?t=1776856665",
+  popular: true,
+  description: "Overcooked กลับมาอีกครั้งพร้อมความสนุกสนานวุ่นวายในการทำอาหาร! กลับสู่ดินแดนแห่งหัวหอมและรวบรวมทีมเชฟของคุณในโหมดเล่นร่วมกันแบบคลาสสิก หรือเล่นออนไลน์ได้สูงสุดถึงสี่คน เตรียมผ้ากันเปื้อนให้พร้อม...ถึงเวลาช่วยโลกอีกครั้งแล้ว! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 18
+},
+{
+  id: 66,
   name: "Sekiro: Shadows Die Twice - Steam Account (บัญชีส่วนตัว ) ",
   price: 359,
   oldPrice: 809,
@@ -1053,6 +1068,215 @@ const products: Product[] = [
   description: "เกมแห่งปี - The Game Awards 2019 เกมแอ็กชั่นยอดเยี่ยมแห่งปี 2019 - IGN สร้างเส้นทางแห่งการแก้แค้นอันชาญฉลาดของคุณเองในเกมผจญภัยที่ได้รับรางวัลจากผู้พัฒนา FromSoftware ผู้สร้าง Bloodborne และซีรีส์ Dark Souls แก้แค้น กอบกู้เกียรติยศ สังหารอย่างแยบยล ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.8,
   sold: 20
+},
+{
+  id: 67,
+  name: "The Isle - Steam Account (บัญชีส่วนตัว ) ",
+  price: 279,
+  oldPrice: 400,
+  platform: ["PC"],
+  category: "   เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/376210/header.jpg?t=1653237914",
+  popular: true,
+  description: "สัมผัสประสบการณ์เกมเอาชีวิตรอดในโลกเปิดสุดโหด ในขณะที่คุณพยายามเอาชีวิตรอดบนเกาะที่ไร้ความปรานีซึ่งเต็มไปด้วยไดโนเสาร์! ล่า ขยายอาณาเขต เอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 15
+},
+{
+  id: 68,
+  name: "FC 26 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 499,
+  oldPrice: 1999,
+  platform: ["PC"],
+  category: "เกมกีฬา",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3405690/2d96aa1b06e453cd62dae9029d412f19e61932c3/header.jpg?t=1777414590",
+  popular: true,
+  description: "ควบคุมสโมสรดั่งใจคุณใน EA SPORTS FC™ 26 เล่นในสไตล์ของคุณเองด้วยประสบการณ์เกมเพลย์รูปแบบใหม่ที่ขับเคลื่อนด้วยความคิดเห็นจากชุมชน ชาเลนจ์ผู้จัดการแบบสดที่เพิ่มเนื้อเรื่องใหม่ๆ มาสู่ฤดูกาลใหม่ และต้นแบบที่ได้รับแรงบันดาลใจจากเหล่านักเตะในตำนานของเกม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 10
+},
+{
+  id: 69,
+  name: "NBA 2K26 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 499,
+  oldPrice: 1790,
+  platform: ["PC"],
+  category: "เกมกีฬา",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3472040/f7e126add75c3b09779b44cd349be93d31b0a80b/header.jpg?t=1776196566",
+  popular: true,
+  description: "การแข่งขันชิงชัยชิงชัยในโหมด MyCAREER, MyTEAM, MyNBA, The W และ Play Now โชว์ลีลาการเล่นของคุณด้วยความสมจริงขั้นสุด ด้วยเทคโนโลยี ProPLAY™ และท้าทายเพื่อนหรือคู่แข่งของคุณในโหมดการแข่งขันของ NBA 2K26 เพื่อให้ทุกคนได้เห็นว่าคุณคือเจ้าแห่งสนาม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 9
+},
+{
+  id: 70,
+  name: "Hunt: Showdown 1896 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 299,
+  oldPrice: 619,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/28c28099187e199e397f64f6bb879bec236549f9/header_alt_assets_24.jpg?t=1778239999",
+  popular: true,
+  description: "Hunt: Showdown 1896 คือเกมยิงปืนเอาชีวิตรอดสุดโหดที่ให้รางวัลอย่างคุ้มค่า ไล่ล่าสัตว์ประหลาดสุดบิดเบี้ยวและเอาชนะการต่อสู้แบบ PvP ที่ไร้ความปราณี รับภารกิจล่าค่าหัวในพื้นที่ทุรกันดารที่ถูกลืมเลือนไปตามกาลเวลา ด้วยทีม คุณอาจรอดชีวิตได้ ตายไปโดยไม่มีอะไรติดมือ หรือหนีออกมาพร้อมทุกอย่าง ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 11
+},
+{
+  id: 71,
+  name: "Sons Of The Forest - Steam Account (บัญชีส่วนตัว ) ",
+  price: 239,
+  oldPrice: 590,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1326470/header.jpg?t=1708624856",
+  popular: true,
+  description: "Sons Of The Forest คือเกมเอาชีวิตรอดในโลกเปิดสุดโหดที่ให้รางวัลอย่างคุ้มค่า ไล่ล่าสัตว์ประหลาดสุดบิดเบี้ยวและเอาชนะการต่อสู้แบบ PvP ที่ไร้ความปราณี รับภารกิจล่าค่าหัวในพื้นที่ทุรกันดารที่ถูกลืมเลือนไปตามกาลเวลา ด้วยทีม คุณอาจรอดชีวิตได้ ตายไปโดยไม่มีอะไรติดมือ หรือหนีออกมาพร้อมทุกอย่าง ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 17
+},
+{
+  id: 72,
+  name: "DayZ - Steam Account (บัญชีส่วนตัว ) ",
+  price: 589,
+  oldPrice: 1749,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1326470/header.jpg?t=1708624856",
+  popular: true,
+  description: "คุณจะเอาชีวิตรอดในโลกหลังวันสิ้นโลกได้นานแค่ไหน? ดินแดนที่เต็มไปด้วยประชากร ซอมบี้ ที่ติดเชื้อ และคุณต้องแข่งขันกับผู้รอดชีวิตคนอื่นๆ เพื่อแย่งชิงทรัพยากรที่มีจำกัด คุณจะร่วมมือกับคนแปลกหน้าและยืนหยัดไปด้วยกันหรือไม่? หรือจะเล่นแบบหมาป่าเดียวดายเพื่อหลีกเลี่ยงการถูกทรยศ? นี่คือ DayZ  นี่คือเรื่องราวของคุณ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 12
+},
+{
+  id: 73,
+  name: "Little Nightmares III - Steam Account (บัญชีส่วนตัว ) ",
+  price: 659,
+  oldPrice: 1690,
+  platform: ["PC"],
+  category: "เกมผจญภัย",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1392860/7aba96b32736990ec8a131bfdf395d2dc35b282b/header.jpg?t=1767887616",
+  popular: true,
+  description: "สิ่งเล็กๆ ในห้วงฝันร้าย III เป็นเกมผจญภัยที่จะพาคุณติดตามการเดินทางของสองเพื่อนรัก โลว์และอะโลน เพื่อช่วยกันหาทางออกจาก ดินแดนไร้จุดหมาย ไม่ว่าคุณจะเล่นแบบออนไลน์โดยผู้เล่น 2 คน หรือจะเล่นคนเดียวไปกับคู่หู AI คุณจะต้องร่วมมือกันไขปริศนาและเอาชีวิตรอดจากโลกที่ราวกับฝันร้ายนี้ให้ได้ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 14
+},
+{
+  id: 74,
+  name: "GTA 5 - Steam Account (บัญชีส่วนตัว ) ",
+  price: 539,
+  oldPrice: 959,
+  platform: ["PC"],
+  category: " เกมแอ็คชัน",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1765479644",
+  popular: true,
+  description: "สัมผัสประสบการณ์ความบันเทิงระดับบล็อกบัสเตอร์ Grand Theft Auto V และ Grand Theft Auto Online ที่ได้รับการอัปเกรดใหม่สำหรับยุคใหม่ ด้วยภาพกราฟิกที่สวยงามตระการตา การโหลดที่เร็วขึ้น เสียง 3 มิติ และอื่นๆ อีกมากมาย พร้อมเนื้อหาพิเศษสำหรับผู้เล่น GTA Online เท่านั้น ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.9,
+  sold: 20
+}
+];
+
+const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
+const typeFilters: Array<"เกม" | "แอพ"> = ["เกม", "แอพ"];
+
+function formatBaht(value: number) {
+  return `฿${value.toLocaleString("th-TH")}`;
+}
+
+function discountPercent(price: number, oldPrice: number) {
+  if (oldPrice <= 0 || oldPrice <= price) return 0;
+  return Math.round(((oldPrice - price) / oldPrice) * 100);
+}
+
+export default function LotusStorePage() {
+  const [activeType, setActiveType] = useState<"เกม" | "แอพ">("เกม");
+  const [activeFilter, setActiveFilter] = useState("ทั้งหมด");
+  const [query, setQuery] = useState("");
+  const [sortBy, setSortBy] = useState("popular");
+  const [showCart, setShowCart] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const productRefs = useRef<Record<number, HTMLDivElement | null>>({});
+
+  const popularProducts = useMemo(() => {
+    return products.filter((p) => p.popular && p.type === activeType).slice(0, 4);
+  }, [activeType]);
+  const pcFirstProduct = useMemo(() => {
+  return products.find((p) => p.id === 46);
+  }, []);
+
+  const filteredProducts = useMemo(() => {
+    const keyword = query.trim().toLowerCase();
+
+    const result = products.filter((product) => {
+      const matchesType = product.type === activeType;
+
+      const matchesPlatform =
+        activeFilter === "ทั้งหมด"
+          ? true
+          : activeFilter === "iOS / Android"
+            ? product.platform.includes("iOS") &&
+              product.platform.includes("Android")
+            : product.platform.includes(activeFilter);
+
+      const matchesKeyword =
+        keyword === ""
+          ? true
+          : product.name.toLowerCase().includes(keyword) ||
+            product.category.toLowerCase().includes(keyword) ||
+            product.description.toLowerCase().includes(keyword);
+
+      return matchesType && matchesPlatform && matchesKeyword;
+    });
+
+    const sorted = [...result];
+
+    switch (sortBy) {
+      case "price-low":
+        sorted.sort((a, b) => a.price - b.price);
+        break;
+      case "price-high":
+        sorted.sort((a, b) => b.price - a.price);
+        break;
+      case "discount":
+        sorted.sort(
+          (a, b) =>
+            discountPercent(b.price, b.oldPrice) -
+            discountPercent(a.price, a.oldPrice)
+        );
+        break;
+      case "rating":
+        sorted.sort((a, b) => b.rating - a.rating);
+        break;
+      default:
+        sorted.sort(
+          (a, b) => Number(b.popular) - Number(a.popular) || b.sold - a.sold
+        );
+  platform: ["PC"],
+  category: "   เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/376210/header.jpg?t=1653237914",
+  popular: true,
+  description: "สัมผัสประสบการณ์เกมเอาชีวิตรอดในโลกเปิดสุดโหด ในขณะที่คุณพยายามเอาชีวิตรอดบนเกาะที่ไร้ความปรานีซึ่งเต็มไปด้วยไดโนเสาร์! ล่า ขยายอาณาเขต เอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+  rating: 4.8,
+  sold: 15
 }
 ];
 
