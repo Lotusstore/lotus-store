@@ -1255,7 +1255,7 @@ const products: Product[] = [
   price: 399,
   oldPrice: 1599,
   platform: ["PC"],
-  category: " เกมแอ็คชัน ",
+  category: "  เกมแข่งความเร็ว  ",
   type: "เกม",
   badge: "PC",
   image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3059520/37f833ca5bd3d5c3eec2b411131f3e00f580bbe7/header.jpg?t=1777395603",
