@@ -1251,7 +1251,7 @@ const products: Product[] = [
 },
 {
   id: 79,
-  name: " F1® 25 - Steam Account (บัญชีออฟไลน์ ) ",
+  name: " F1® 25 - Steam Account (บัญชีส่วนตัว ) ",
   price: 399,
   oldPrice: 1599,
   platform: ["PC"],
