@@ -1263,6 +1263,21 @@ const products: Product[] = [
   description: "จารึกสถิติของคุณไว้บนโลกของการแข่งรถใน F1® 25 ซึ่งเป็นวิดีโอเกมอย่างเป็นทางการของ 2025 FIA Formula One World Championship™ ที่มีทั้งโหมด My Team ที่ปรับปรุงใหม่ บทที่สามสุดเร้าใจในโหมด Braking Point และอีกมากมาย! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
   rating: 4.9,
   sold: 28
+},
+{
+  id: 80,
+  name: "Black Myth: Wukong- Steam Account (บัญชีออฟไลน์ ) ",
+  price: 139,
+  oldPrice: 1799,
+  platform: ["PC"],
+  category: "  เกมแอ็คชัน ",
+  type: "เกม",
+  badge: "PC",
+  image: "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg",
+  popular: true,
+  description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ",
+  rating: 4.9,
+  sold: 10
 }
 ];
 
