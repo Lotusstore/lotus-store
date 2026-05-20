@@ -1278,6 +1278,21 @@ const products: Product[] = [
   description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ",
   rating: 4.9,
   sold: 10
+},
+{
+   id: 81,
+  name: "Minecraft PC (Java ) เป็นบัญชีเช่ารายเดือน ",
+  price: 49,
+  oldPrice: 1115,
+  platform: ["PC"],
+  category: "Sandbox",
+  type: "เกม",
+  badge: "PC",
+  image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
+  popular: true,
+  description: " Minecraft สำหรับ PC เป็นบัญเช่ารายเดือน สำหรับ Java Edition ✅",
+  rating: 4.9,
+  sold: 2
 }
 ];
 
