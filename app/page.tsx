@@ -1288,7 +1288,7 @@ const products: Product[] = [
   category: "Sandbox",
   type: "เกม",
   badge: "PC",
-  image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
+  image: "https://chatgpt.com/backend-api/estuary/content?id=file_00000000ceac7206b0d6913ec51dc959&ts=494237&p=fs&cid=1&sig=02421b4116f00d477a9ad73972b7605a96989255bb2b95dac9fe8ce73898b90f&v=0",
   popular: true,
   description: " Minecraft สำหรับ PC เป็นบัญเช่ารายเดือน สำหรับ Java Edition ✅",
   rating: 4.9,
