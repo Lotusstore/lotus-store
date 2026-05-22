@@ -1280,20 +1280,21 @@ const products: Product[] = [
   sold: 10
 },
 {
-   id: 81,
-  name: "Minecraft PC (Java ) เป็นบัญชีเช่ารายเดือน ",
-  price: 49,
-  oldPrice: 1115,
-  platform: ["PC"],
-  category: "Sandbox",
-  type: "เกม",
-  badge: "PC",
-  image: "https://chatgpt.com/backend-api/estuary/content?id=file_00000000ceac7206b0d6913ec51dc959&ts=494237&p=fs&cid=1&sig=02421b4116f00d477a9ad73972b7605a96989255bb2b95dac9fe8ce73898b90f&v=0",
-  popular: true,
-  description: " Minecraft สำหรับ PC เป็นบัญเช่ารายเดือน สำหรับ Java Edition ✅",
-  rating: 4.9,
-  sold: 2
-}
+    id: 81,
+    name: "ChatGPT Plus -Account (บัญชีส่วนตัว ) ",
+    price: 69,
+    oldPrice: 839,
+    platform: ["iOS"],
+    category: "AI",
+    type: "แอพ",
+    badge: "iOS / Android",
+    image:
+      "https://reviewintrendy.com/wp-content/uploads/2023/06/%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%87%E0%B8%B2%E0%B8%99-PBN3-4.jpg",
+    popular: false,
+    description: "แอพ ChatGPT Plus  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ ChatGPT เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 12,
+  }
 ];
 
 const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
