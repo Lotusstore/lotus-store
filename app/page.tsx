@@ -1318,15 +1318,14 @@ const storeProducts: Product[] = products.map((product) => {
   return product;
 });
 
-const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
-const typeFilters: Array<"เกม" | "แอพ"> = ["เกม", "แอพ"];
-const categoryFilters = [
+const mainCategories = [
   "ทั้งหมด",
   "Minecraft",
-  "ChatGPT / AI",
   "เกมมือถือ",
   "เกม PC",
   "แอพพรีเมียม",
+  "ChatGPT / AI",
+  "ขายดี",
 ];
 
 function formatBaht(value: number) {
@@ -1339,8 +1338,6 @@ function discountPercent(price: number, oldPrice: number) {
 }
 
 export default function LotusStorePage() {
-  const [activeType, setActiveType] = useState<"เกม" | "แอพ">("เกม");
-  const [activeFilter, setActiveFilter] = useState("ทั้งหมด");
   const [activeCategory, setActiveCategory] = useState("ทั้งหมด");
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
@@ -1352,9 +1349,9 @@ export default function LotusStorePage() {
 
   const popularProducts = useMemo(() => {
     return storeProducts
-      .filter((p) => p.popular && p.type === activeType)
+      .filter((p) => p.popular)
       .slice(0, 4);
-  }, [activeType]);
+  }, []);
 
   const pcFirstProduct = useMemo(() => {
     return storeProducts.find((p) => p.id === 46);
@@ -1364,35 +1361,29 @@ export default function LotusStorePage() {
     const keyword = query.trim().toLowerCase();
 
     const result = storeProducts.filter((product) => {
-      const matchesType = product.type === activeType;
-
-      const matchesPlatform =
-        activeFilter === "ทั้งหมด"
-          ? true
-          : activeFilter === "iOS / Android"
-            ? product.platform.includes("iOS") &&
-              product.platform.includes("Android")
-            : product.platform.includes(activeFilter);
+      const name = product.name.toLowerCase();
+      const isMinecraft = name.includes("minecraft") || product.category === "Minecraft";
+      const isChatGPT =
+        name.includes("chatgpt") ||
+        name.includes("chat gpt") ||
+        product.category === "ChatGPT / AI";
 
       const matchesCategory =
         activeCategory === "ทั้งหมด"
           ? true
           : activeCategory === "Minecraft"
-            ? product.category === "Minecraft"
-            : activeCategory === "ChatGPT / AI"
-              ? product.category === "ChatGPT / AI"
-              : activeCategory === "เกมมือถือ"
-                ? product.type === "เกม" &&
-                  !product.platform.includes("PC") &&
-                  product.category !== "Minecraft"
-                : activeCategory === "เกม PC"
-                  ? product.type === "เกม" &&
-                    product.platform.includes("PC") &&
-                    product.category !== "Minecraft"
-                  : activeCategory === "แอพพรีเมียม"
-                    ? product.type === "แอพ" &&
-                      product.category !== "ChatGPT / AI"
-                    : true;
+            ? isMinecraft
+            : activeCategory === "เกมมือถือ"
+              ? product.type === "เกม" && !product.platform.includes("PC") && !isMinecraft
+              : activeCategory === "เกม PC"
+                ? product.type === "เกม" && product.platform.includes("PC") && !isMinecraft
+                : activeCategory === "แอพพรีเมียม"
+                  ? product.type === "แอพ" && !isChatGPT
+                  : activeCategory === "ChatGPT / AI"
+                    ? isChatGPT
+                    : activeCategory === "ขายดี"
+                      ? product.popular === true
+                      : true;
 
       const matchesKeyword =
         keyword === ""
@@ -1401,7 +1392,7 @@ export default function LotusStorePage() {
             product.category.toLowerCase().includes(keyword) ||
             product.description.toLowerCase().includes(keyword);
 
-      return matchesType && matchesPlatform && matchesCategory && matchesKeyword;
+      return matchesCategory && matchesKeyword;
     });
 
     const sorted = [...result];
@@ -1431,7 +1422,7 @@ export default function LotusStorePage() {
     }
 
     return sorted;
-  }, [activeFilter, activeCategory, activeType, query, sortBy]);
+  }, [activeCategory, query, sortBy]);
 
   const searchSuggestions = useMemo(() => {
     const keyword = query.trim().toLowerCase();
@@ -1439,13 +1430,9 @@ export default function LotusStorePage() {
     if (!keyword) return [];
 
     return storeProducts
-      .filter((product) => {
-        const matchesType = product.type === activeType;
-        const matchesName = product.name.toLowerCase().includes(keyword);
-        return matchesType && matchesName;
-      })
+      .filter((product) => product.name.toLowerCase().includes(keyword))
       .slice(0, 6);
-  }, [query, activeType]);
+  }, [query]);
 
   const cartCount = useMemo(() => {
     return cart.reduce((sum, item) => sum + item.qty, 0);
@@ -1770,53 +1757,35 @@ ${lines.join("\n")}
         <section className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
           <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-3 backdrop-blur-md sm:rounded-[28px] sm:p-4">
             <div className="flex gap-2 overflow-x-auto no-scrollbar">
-              {typeFilters.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setActiveType(type)}
-                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
-                    activeType === type
-                      ? "bg-white text-black"
-                      : "bg-white/5 backdrop-blur-xl text-zinc-300 border border-white/10"
-                  }`}
-                >
-                  {type}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex gap-2 overflow-x-auto no-scrollbar">
-              {platformFilters.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
-                    activeFilter === filter
-                      ? "bg-red-600 text-white"
-                      : "border border-white/10 bg-white/5 text-zinc-300 backdrop-blur-xl"
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </div>
-
-            <div className="flex gap-2 overflow-x-auto no-scrollbar">
-              {categoryFilters.map((category) => (
+              {mainCategories.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
                     activeCategory === category
-                      ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/25"
+                      ? category === "Minecraft"
+                        ? "bg-green-500 text-black shadow-lg shadow-green-500/30"
+                        : category === "ChatGPT / AI"
+                          ? "bg-purple-500 text-white shadow-lg shadow-purple-500/30"
+                          : category === "ขายดี"
+                            ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
+                            : "bg-red-600 text-white shadow-lg shadow-red-600/30"
                       : "border border-white/10 bg-white/5 text-zinc-300 backdrop-blur-xl hover:bg-white/10"
                   }`}
                 >
                   {category === "Minecraft"
                     ? "🟩 Minecraft"
-                    : category === "ChatGPT / AI"
-                      ? "🤖 ChatGPT / AI"
-                      : category}
+                    : category === "เกมมือถือ"
+                      ? "🎮 เกมมือถือ"
+                      : category === "เกม PC"
+                        ? "💻 เกม PC"
+                        : category === "แอพพรีเมียม"
+                          ? "📱 แอพพรีเมียม"
+                          : category === "ChatGPT / AI"
+                            ? "🤖 ChatGPT / AI"
+                            : category === "ขายดี"
+                              ? "🔥 ขายดี"
+                              : "ทั้งหมด"}
                 </button>
               ))}
             </div>
