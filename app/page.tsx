@@ -192,7 +192,7 @@ const products: Product[] = [
     price: 20,
     oldPrice: 79,
     platform: ["iOS", "Android"],
-    category: "เกมจำลองการสร้างบล็อก",
+    category: "Minecraft",
     type: "เกม",
     badge: "iOS / Android",
     image:
@@ -760,7 +760,7 @@ const products: Product[] = [
   price: 99,
   oldPrice: 1115,
   platform: ["PC"],
-  category: "Sandbox",
+  category: "Minecraft",
   type: "เกม",
   badge: "PC",
   image: "https://static.kinguin.net/media/images/products/_MinecraftJavaBedrock800.jpg",
@@ -775,7 +775,7 @@ const products: Product[] = [
   price: 259,
   oldPrice: 1115,
   platform: ["PC"],
-  category: "Sandbox",
+  category: "Minecraft",
   type: "เกม",
   badge: "PC",
   image: "https://images.macrumors.com/t/Hf47y2TV-MCKPOUMyJ1vT7oahzc=/1600x/article-new/2022/07/Minecraft-Banner.jpg",
@@ -790,7 +790,7 @@ const products: Product[] = [
   price: 389,
   oldPrice: 1115,
   platform: ["PC"],
-  category: "Sandbox",
+  category: "Minecraft",
   type: "เกม",
   badge: "PC",
   image: "https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Hero-Image_Vanilla_Standard_1200x675.jpg",
@@ -805,7 +805,7 @@ const products: Product[] = [
   price: 459,
   oldPrice: 1115,
   platform: ["PC"],
-  category: "Sandbox",
+  category: "Minecraft",
   type: "เกม",
   badge: "PC",
   image: "https://royalcdkeys.com/cdn/shop/files/Y8UgMa9JNPWEjbE3oWbtrf.jpg?v=1746645858&width=1946",
@@ -1285,7 +1285,7 @@ const products: Product[] = [
     price: 379,
     oldPrice: 699,
     platform: ["iOS", "Android"],
-    category: "AI",
+    category: "ChatGPT / AI",
     type: "แอพ",
     badge: "iOS / Android",
     image:
@@ -1297,8 +1297,37 @@ const products: Product[] = [
   }
 ];
 
+const storeProducts: Product[] = products.map((product) => {
+  const name = product.name.toLowerCase();
+
+  if (name.includes("minecraft")) {
+    return {
+      ...product,
+      category: "Minecraft",
+    };
+  }
+
+  if (name.includes("chatgpt") || name.includes("chat gpt")) {
+    return {
+      ...product,
+      category: "ChatGPT / AI",
+      type: "แอพ",
+    };
+  }
+
+  return product;
+});
+
 const platformFilters = ["ทั้งหมด", "iOS", "Android", "iOS / Android", "PC"];
 const typeFilters: Array<"เกม" | "แอพ"> = ["เกม", "แอพ"];
+const categoryFilters = [
+  "ทั้งหมด",
+  "Minecraft",
+  "ChatGPT / AI",
+  "เกมมือถือ",
+  "เกม PC",
+  "แอพพรีเมียม",
+];
 
 function formatBaht(value: number) {
   return `฿${value.toLocaleString("th-TH")}`;
@@ -1312,6 +1341,7 @@ function discountPercent(price: number, oldPrice: number) {
 export default function LotusStorePage() {
   const [activeType, setActiveType] = useState<"เกม" | "แอพ">("เกม");
   const [activeFilter, setActiveFilter] = useState("ทั้งหมด");
+  const [activeCategory, setActiveCategory] = useState("ทั้งหมด");
   const [query, setQuery] = useState("");
   const [sortBy, setSortBy] = useState("popular");
   const [showCart, setShowCart] = useState(false);
@@ -1321,16 +1351,19 @@ export default function LotusStorePage() {
   const productRefs = useRef<Record<number, HTMLDivElement | null>>({});
 
   const popularProducts = useMemo(() => {
-    return products.filter((p) => p.popular && p.type === activeType).slice(0, 4);
+    return storeProducts
+      .filter((p) => p.popular && p.type === activeType)
+      .slice(0, 4);
   }, [activeType]);
+
   const pcFirstProduct = useMemo(() => {
-  return products.find((p) => p.id === 46);
+    return storeProducts.find((p) => p.id === 46);
   }, []);
 
   const filteredProducts = useMemo(() => {
     const keyword = query.trim().toLowerCase();
 
-    const result = products.filter((product) => {
+    const result = storeProducts.filter((product) => {
       const matchesType = product.type === activeType;
 
       const matchesPlatform =
@@ -1341,6 +1374,26 @@ export default function LotusStorePage() {
               product.platform.includes("Android")
             : product.platform.includes(activeFilter);
 
+      const matchesCategory =
+        activeCategory === "ทั้งหมด"
+          ? true
+          : activeCategory === "Minecraft"
+            ? product.category === "Minecraft"
+            : activeCategory === "ChatGPT / AI"
+              ? product.category === "ChatGPT / AI"
+              : activeCategory === "เกมมือถือ"
+                ? product.type === "เกม" &&
+                  !product.platform.includes("PC") &&
+                  product.category !== "Minecraft"
+                : activeCategory === "เกม PC"
+                  ? product.type === "เกม" &&
+                    product.platform.includes("PC") &&
+                    product.category !== "Minecraft"
+                  : activeCategory === "แอพพรีเมียม"
+                    ? product.type === "แอพ" &&
+                      product.category !== "ChatGPT / AI"
+                    : true;
+
       const matchesKeyword =
         keyword === ""
           ? true
@@ -1348,7 +1401,7 @@ export default function LotusStorePage() {
             product.category.toLowerCase().includes(keyword) ||
             product.description.toLowerCase().includes(keyword);
 
-      return matchesType && matchesPlatform && matchesKeyword;
+      return matchesType && matchesPlatform && matchesCategory && matchesKeyword;
     });
 
     const sorted = [...result];
@@ -1378,14 +1431,14 @@ export default function LotusStorePage() {
     }
 
     return sorted;
-  }, [activeFilter, activeType, query, sortBy]);
+  }, [activeFilter, activeCategory, activeType, query, sortBy]);
 
   const searchSuggestions = useMemo(() => {
     const keyword = query.trim().toLowerCase();
 
     if (!keyword) return [];
 
-    return products
+    return storeProducts
       .filter((product) => {
         const matchesType = product.type === activeType;
         const matchesName = product.name.toLowerCase().includes(keyword);
@@ -1696,7 +1749,7 @@ ${lines.join("\n")}
                 {[
                   { label: "รีวิวลูกค้า", value: "4.9/5" },
                   { label: "ออเดอร์รวม", value: "1,500+" },
-                  { label: "สินค้า", value: `${products.length}+` },
+                  { label: "สินค้า", value: `${storeProducts.length}+` },
                   { label: "พร้อมตอบ", value: "ทุกวัน" },
                 ].map((item) => (
                   <div
@@ -1740,10 +1793,30 @@ ${lines.join("\n")}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold transition ${
                     activeFilter === filter
                       ? "bg-red-600 text-white"
-                      : "bg-white/5 backdrop-blur-xltext-zinc-300 border border-white/10"
+                      : "border border-white/10 bg-white/5 text-zinc-300 backdrop-blur-xl"
                   }`}
                 >
                   {filter}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex gap-2 overflow-x-auto no-scrollbar">
+              {categoryFilters.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setActiveCategory(category)}
+                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
+                    activeCategory === category
+                      ? "bg-emerald-500 text-black shadow-lg shadow-emerald-500/25"
+                      : "border border-white/10 bg-white/5 text-zinc-300 backdrop-blur-xl hover:bg-white/10"
+                  }`}
+                >
+                  {category === "Minecraft"
+                    ? "🟩 Minecraft"
+                    : category === "ChatGPT / AI"
+                      ? "🤖 ChatGPT / AI"
+                      : category}
                 </button>
               ))}
             </div>
@@ -1848,14 +1921,14 @@ ${lines.join("\n")}
                     onClick={() => setSelectedProduct(product)}
                     className="block w-full text-left"
                   >
-                    <div className="relative aspect-[4/4.8] overflow-hidden bg-[#111111]">
+                    <div className="relative aspect-square overflow-hidden bg-[#111111]">
                      <div className="absolute inset-0 bg-black/40 opacity-0 transition group-hover:opacity-100"></div>
                       <img
                         src={product.image}
                         alt={product.name}
                         className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
                         onError={(e) => {
-                          e.currentTarget.src = "https://placehold.co/600x800";
+                          e.currentTarget.src = "https://placehold.co/600x600";
                         }}
                       />
                       <span className="absolute left-2 top-2 rounded-full bg-black/70 px-2 py-1 text-[10px] font-bold text-white backdrop-blur">
