@@ -1284,7 +1284,7 @@ const products: Product[] = [
     name: "ChatGPT Plus -Account (บัญชีส่วนตัว) / เดือน  ",
     price: 299,
     oldPrice: 699,
-    platform: ["iOS", "Android"],
+    platform: ["iOS", "Android","PC"],
     category: "ChatGPT / AI",
     type: "แอพ",
     badge: "iOS / Android",
