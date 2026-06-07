@@ -1284,14 +1284,30 @@ const products: Product[] = [
     name: "ChatGPT Plus -Account (บัญชีส่วนตัว) / เดือน  ",
     price: 299,
     oldPrice: 699,
-    platform: ["iOS", "Android"],
-    category: "ChatGPT / AI",
+    platform: ["iOS", "Android", "PC"],
+    category: "ChatGPT / Capcut",
     type: "แอพ",
-    badge: "iOS / Android",
+    badge: "iOS / Android / PC",
     image:
       "https://reviewintrendy.com/wp-content/uploads/2023/06/%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%87%E0%B8%B2%E0%B8%99-PBN3-4.jpg",
     popular: false,
     description: "แอพ ChatGPT Plus  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ ChatGPT เมลร้าน ใช้ส่วนตัว เปลี่ยนรหัสผ่านได้ ",
+    rating: 4.9,
+    sold: 12,
+  },
+  {
+    id: 82,
+    name: "Capcut PRO -Account (บัญชีส่วนตัว) / เดือน  ",
+    price: 219,
+    oldPrice: 300,
+    platform: ["iOS", "Android", "PC"],
+    category: "ChatGPT / Capcut",
+    type: "แอพ",
+    badge: "iOS / Android / PC",
+    image:
+      "https://scontent.fbkk4-4.fna.fbcdn.net/v/t39.30808-6/714503684_122182497260907123_8710507438714942463_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1536&ctp=p526x296&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHF9AC-mXadBtApFCp0455rDfA1I7zvuo0N8DUjvO-6jayKWMXE3z0396C6ZEOu52vHsU-jtqeLwkbrD-zkb1gY&_nc_ohc=KavqLSrd2YMQ7kNvwGA8X1J&_nc_oc=AdqFebuz99nx-syKSynJiUaDF1RuHS6qtsi26ten2TPS0hBqCFVyOhq84zuEuwnMlbc&_nc_zt=23&_nc_ht=scontent.fbkk4-4.fna&_nc_gid=sk4N9z7W5Li16Ah2kUq-Gg&_nc_ss=7b2a8&oh=00_Af9w7HDZCntdSDxry3RqcwPZDi4BzVJOSuVKTcm3-703ag&oe=6A2ADA13",
+    popular: false,
+    description: "แอพ Capcut PRO  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ Capcut เมลร้าน ใช้ส่วนตัว  ",
     rating: 4.9,
     sold: 12,
   }
@@ -1310,7 +1326,7 @@ const storeProducts: Product[] = products.map((product) => {
   if (name.includes("chatgpt") || name.includes("chat gpt")) {
     return {
       ...product,
-      category: "ChatGPT / AI",
+      category: "ChatGPT / Capcut",
       type: "แอพ",
     };
   }
@@ -1324,7 +1340,7 @@ const mainCategories = [
   "เกมมือถือ",
   "เกม PC",
   "แอพพรีเมียม",
-  "ChatGPT / AI",
+  "ChatGPT / Capcut",
   "ขายดี",
 ];
 
@@ -1379,7 +1395,7 @@ export default function LotusStorePage() {
       const isChatGPT =
         name.includes("chatgpt") ||
         name.includes("chat gpt") ||
-        product.category === "ChatGPT / AI";
+        product.category === "ChatGPT / Capcut";
 
       const matchesCategory =
         activeCategory === "ทั้งหมด"
@@ -1392,7 +1408,7 @@ export default function LotusStorePage() {
                 ? product.type === "เกม" && product.platform.includes("PC") && !isMinecraft
                 : activeCategory === "แอพพรีเมียม"
                   ? product.type === "แอพ" && !isChatGPT
-                  : activeCategory === "ChatGPT / AI"
+                  : activeCategory === "ChatGPT / Capcut"
                     ? isChatGPT
                     : activeCategory === "ขายดี"
                       ? product.popular === true
@@ -1782,7 +1798,7 @@ ${lines.join("\n")}
                     activeCategory === category
                       ? category === "Minecraft"
                         ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
-                        : category === "ChatGPT / AI"
+                        : category === "ChatGPT / Capcut"
                           ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-purple-500/40"
                           : category === "ขายดี"
                             ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-cyan-400/30"
@@ -1798,8 +1814,8 @@ ${lines.join("\n")}
                         ? "💻 เกม PC"
                         : category === "แอพพรีเมียม"
                           ? "📱 แอพพรีเมียม"
-                          : category === "ChatGPT / AI"
-                            ? "🤖 ChatGPT / AI"
+                          : category === "ChatGPT / Capcut"
+                            ? "🤖 ChatGPT / Capcut"
                             : category === "ขายดี"
                               ? "🔥 ขายดี"
                               : "ทั้งหมด"}
