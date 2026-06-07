@@ -1284,7 +1284,7 @@ const products: Product[] = [
     name: "ChatGPT Plus -Account (บัญชีส่วนตัว) / เดือน  ",
     price: 299,
     oldPrice: 699,
-    platform: ["iOS", "Android","PC"],
+    platform: ["iOS", "Android"],
     category: "ChatGPT / AI",
     type: "แอพ",
     badge: "iOS / Android",
@@ -1547,22 +1547,22 @@ ${lines.join("\n")}
 
   return (
     <div className="min-h-screen bg-[#050505] text-white">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-pink-500/20 bg-[#050505]/80 shadow-[0_0_30px_rgba(255,43,214,0.18)] backdrop-blur-2xl">
         <div className="mx-auto flex h-14 max-w-7xl items-center gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 lg:px-8">
           <div className="flex min-w-0 items-center gap-2 sm:gap-3">
             <img
               src={logoUrl}
               alt="Lotus Store"
-              className="h-9 w-9 rounded-2xl object-cover ring-1 ring-white/10 sm:h-10 sm:w-10"
+              className="h-9 w-9 rounded-2xl object-cover ring-1 ring-pink-500/40 drop-shadow-[0_0_18px_rgba(255,43,214,0.9)] sm:h-10 sm:w-10"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
             />
             <div className="hidden sm:block">
-              <p className="text-lg font-black tracking-tight text-white">
+              <p className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300 bg-clip-text text-lg font-black tracking-tight text-transparent drop-shadow-[0_0_12px_rgba(255,43,214,0.65)]">
                 Lotus Store
               </p>
-              <p className="text-xs text-zinc-400">Game & App Shop • ตอบไวผ่านเพจ</p>
+              <p className="text-xs text-zinc-400">Neon Gaming • Premium Store</p>
             </div>
           </div>
 
@@ -1585,7 +1585,7 @@ ${lines.join("\n")}
                 setTimeout(() => setShowSuggestions(false), 150);
               }}
               placeholder="ค้นหาเกมหรือแอพ..."
-              className="relative z-10 h-10 w-full rounded-full border border-white/10 bg-white/5 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-white/20 focus:bg-white/10 sm:h-11"
+              className="relative z-10 h-10 w-full rounded-full border border-pink-500/25 bg-[#111111]/80 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-cyan-300/60 focus:bg-white/10 focus:shadow-[0_0_22px_rgba(255,43,214,0.3)] sm:h-11"
             />
 
             {showSuggestions && query.trim() !== "" && searchSuggestions.length > 0 && (
@@ -1612,7 +1612,7 @@ ${lines.join("\n")}
                       </p>
                       <p className="text-xs text-zinc-400">{product.category}</p>
                     </div>
-                    <span className="shrink-0 text-sm font-bold text-red-400">
+                    <span className="shrink-0 text-sm font-bold text-pink-300">
                       {formatBaht(product.price)}
                     </span>
                   </button>
@@ -1627,18 +1627,18 @@ ${lines.join("\n")}
             )}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-red-600 px-4 py-2 text-sm font-bold text-white transition hover:scale-[1.02] hover:bg-red-700 md:inline-flex"
+            className="hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-2 text-sm font-bold text-white shadow-[0_0_22px_rgba(255,43,214,0.45)] transition hover:scale-[1.02] md:inline-flex"
           >
             ติดต่อเพจ
           </a>
 
           <button
             onClick={() => setShowCart(true)}
-            className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white text-black shadow-lg shadow-black/40 transition hover:scale-[1.03] hover:bg-zinc-200 sm:h-11 sm:w-11"
+            className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-pink-500/30 bg-[#111111] text-pink-300 shadow-[0_0_18px_rgba(255,43,214,0.25)] transition hover:scale-[1.03] hover:border-cyan-300/60 sm:h-11 sm:w-11"
           >
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold text-white ring-1 ring-white/10">
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-pink-500 px-1 text-[10px] font-bold text-white ring-1 ring-white/10">
                 {cartCount}
               </span>
             )}
@@ -1647,32 +1647,36 @@ ${lines.join("\n")}
       </header>
 
       <main className="pb-32 pt-14 sm:pt-16">
-        <section className="relative overflow-hidden border-b border-white/10 bg-[radial-gradient(circle_at_center,rgba(255,0,0,0.25),transparent_40%),linear-gradient(135deg,#0b0b0b_0%,#050505_45%,#111111_100%)]">
+        <section className="relative overflow-hidden border-b border-pink-500/20 bg-[radial-gradient(circle_at_25%_20%,rgba(255,43,214,0.30),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(0,213,255,0.22),transparent_30%),linear-gradient(135deg,#050505_0%,#0b0612_45%,#080b18_100%)]">
           <div className="mx-auto grid max-w-7xl gap-6 px-3 py-6 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
             <div className="relative z-10">
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xlpx-3 py-2 text-xs font-semibold text-zinc-200 backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
+              <img
+                src={logoUrl}
+                alt="Lotus Store"
+                className="mb-5 h-24 w-24 rounded-[28px] object-cover ring-1 ring-pink-500/40 drop-shadow-[0_0_30px_rgba(255,43,214,0.95)]"
+              />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-pink-500/25 bg-pink-500/10 px-3 py-2 text-xs font-semibold text-pink-100 shadow-[0_0_18px_rgba(255,43,214,0.18)] backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
                 <Sparkles className="h-4 w-4" />
                 Premium mobile game & app storefront
               </div>
 
               <h1 className="max-w-3xl leading-[0.95] tracking-tight">
-                <span className="block text-3xl font-black text-white sm:text-5xl lg:text-7xl">
-                  ซื้อเกมและแอพราคาคุ้ม
+                <span className="block bg-gradient-to-r from-pink-300 via-fuchsia-400 to-cyan-300 bg-clip-text text-4xl font-black text-transparent drop-shadow-[0_0_22px_rgba(255,43,214,0.75)] sm:text-6xl lg:text-7xl">
+                  LOTUS STORE
                 </span>
-                <span className="mt-2 block text-base font-medium text-zinc-400 sm:mt-3 sm:text-2xl lg:text-3xl">
-                  ดูง่าย กดสั่งซื้อได้ทันที
+                <span className="mt-2 block text-base font-semibold text-zinc-300 sm:mt-3 sm:text-2xl lg:text-3xl">
+                  Neon Gaming • Minecraft • PC Games • AI Premium
                 </span>
               </h1>
 
               <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7 lg:text-lg">
-                รวมเกมและแอพยอดนิยมสำหรับ iOS และ Android เลือกง่าย
-                สั่งไว และคุยกับเพจได้ทันทีในหน้าต่างแชท
+                ร้านเกมและแอพพรีเมียมสไตล์ Neon Gaming เลือกหมวดง่าย สั่งซื้อไว ทักเพจได้ทันที
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
                 <a
                   href="#products"
-                  className="rounded-full bg-red-600 px-5 py-3 text-sm font-bold text-white transition hover:scale-[1.02] hover:bg-red-700 sm:px-6"
+                  className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-5 py-3 text-sm font-bold text-white shadow-[0_0_24px_rgba(255,43,214,0.45)] transition hover:scale-[1.02] sm:px-6"
                 >
                   เริ่มเลือกสินค้า
                 </a>
@@ -1682,7 +1686,7 @@ ${lines.join("\n")}
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 sm:px-6"
+                  className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 backdrop-blur transition hover:bg-cyan-400/20 sm:px-6"
                 >
                   ทักแชทเลย
                 </a>
@@ -1697,7 +1701,7 @@ ${lines.join("\n")}
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-3 backdrop-blur-md sm:rounded-3xl sm:p-4"
+                    className="rounded-2xl border border-pink-500/20 bg-[#111111]/75 p-3 shadow-[0_0_18px_rgba(255,43,214,0.10)] backdrop-blur-md sm:rounded-3xl sm:p-4"
                   >
                     <item.icon className="mb-2 h-5 w-5 text-white sm:mb-3" />
                     <p className="text-sm font-bold text-white sm:text-base">
@@ -1710,10 +1714,10 @@ ${lines.join("\n")}
             </div>
 
             <div className="relative z-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="rounded-[28px] border border-white/10 bg-[#111111] p-4 text-white shadow-2xl shadow-black/40 sm:rounded-[32px] sm:p-5">
+              <div className="rounded-[28px] border border-pink-500/25 bg-[#111111]/90 p-4 text-white shadow-[0_0_35px_rgba(255,43,214,0.18)] sm:rounded-[32px] sm:p-5">
                 <div className="mb-4 flex items-center justify-between">
                   <p className="text-sm font-bold text-white">🎮 เกม PC เกมแรก มาแล้ว!</p>
-                  <span className="rounded-full bg-red-600 px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-gradient-to-r from-pink-500 to-cyan-400 px-3 py-1 text-xs font-bold text-white shadow-[0_0_14px_rgba(255,43,214,0.45)]">
                     ลดสูงสุด{" "}
                     {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
                   </span>
@@ -1754,7 +1758,7 @@ ${lines.join("\n")}
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-[28px] border border-white/10 bg-[#111111] p-6 sm:p-8 text-white shadow-2xl"
+                    className="rounded-[28px] border border-pink-500/20 bg-[#111111]/90 p-6 text-white shadow-[0_0_28px_rgba(255,43,214,0.12)] sm:p-8"
                   >
                     <p className="text-xl font-black sm:text-2xl">{item.value}</p>
                     <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
@@ -1768,7 +1772,7 @@ ${lines.join("\n")}
         </section>
 
         <section className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
-          <div className="flex flex-col gap-3 rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-3 backdrop-blur-md sm:rounded-[28px] sm:p-4">
+          <div className="flex flex-col gap-3 rounded-[24px] border border-pink-500/20 bg-[#0b0b0b]/80 p-3 shadow-[0_0_28px_rgba(255,43,214,0.12)] backdrop-blur-xl sm:rounded-[28px] sm:p-4">
             <div className="flex gap-2 overflow-x-auto no-scrollbar">
               {mainCategories.map((category) => (
                 <button
@@ -1777,13 +1781,13 @@ ${lines.join("\n")}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
                     activeCategory === category
                       ? category === "Minecraft"
-                        ? "bg-green-500 text-black shadow-lg shadow-green-500/30"
+                        ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
                         : category === "ChatGPT / AI"
-                          ? "bg-purple-500 text-white shadow-lg shadow-purple-500/30"
+                          ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-purple-500/40"
                           : category === "ขายดี"
-                            ? "bg-orange-500 text-white shadow-lg shadow-orange-500/30"
-                            : "bg-red-600 text-white shadow-lg shadow-red-600/30"
-                      : "border border-white/10 bg-white/5 text-zinc-300 backdrop-blur-xl hover:bg-white/10"
+                            ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-cyan-400/30"
+                            : "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
+                      : "border border-pink-500/20 bg-[#111111]/80 text-zinc-300 backdrop-blur-xl hover:border-cyan-300/50 hover:text-white hover:shadow-[0_0_18px_rgba(255,43,214,0.25)]"
                   }`}
                 >
                   {category === "Minecraft"
@@ -1808,7 +1812,7 @@ ${lines.join("\n")}
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="h-11 w-full appearance-none rounded-full border border-white/10 bg-white/5 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none"
+                className="h-11 w-full appearance-none rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none focus:border-cyan-300/50"
               >
                 <option value="popular" className="text-black">
                   เรียงตามความนิยม
@@ -1833,7 +1837,7 @@ ${lines.join("\n")}
         <section className="mx-auto max-w-7xl px-3 pb-3 sm:px-6 lg:px-8">
           <div className="mb-3 flex items-center justify-between">
             <h2 className="text-lg font-black text-white sm:text-xl">สินค้าขายดี</h2>
-            <span className="inline-flex items-center gap-1 text-sm text-red-400">
+            <span className="inline-flex items-center gap-1 text-sm text-pink-300 drop-shadow-[0_0_10px_rgba(255,43,214,0.9)]">
               <Flame className="h-4 w-4" />
               Hot
             </span>
@@ -1844,7 +1848,7 @@ ${lines.join("\n")}
               <button
                 key={product.id}
                 onClick={() => setSelectedProduct(product)}
-                className="overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl text-left transition hover:scale-[1.01]"
+                className="overflow-hidden rounded-[24px] border border-pink-500/20 bg-[#111111]/90 text-left shadow-[0_0_22px_rgba(255,43,214,0.10)] transition hover:scale-[1.01] hover:border-cyan-300/50"
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -1861,7 +1865,7 @@ ${lines.join("\n")}
                     {product.name}
                   </p>
                   <div className="mt-2 flex items-end gap-2">
-                    <span className="text-base font-black text-red-400 sm:text-lg">
+                    <span className="text-base font-black text-pink-300 sm:text-lg">
                       {formatBaht(product.price)}
                     </span>
                     <span className="text-xs text-zinc-500 line-through">
@@ -1883,7 +1887,7 @@ ${lines.join("\n")}
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div className="rounded-[28px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-center">
+            <div className="rounded-[28px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-8 text-center">
               <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
               <p className="mt-2 text-sm text-zinc-400">
                 ลองเปลี่ยนคำค้นหรือหมวดสินค้า
@@ -1897,7 +1901,7 @@ ${lines.join("\n")}
   ref={(el) => {
     productRefs.current[product.id] = el;
   }}
-  className="group overflow-hidden rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl backdrop-blur-xl shadow-xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,0,0,0.35)]"
+  className="group overflow-hidden rounded-[24px] border border-pink-500/20 bg-[#111111]/90 shadow-[0_0_22px_rgba(255,43,214,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-cyan-300/60 hover:shadow-[0_0_32px_rgba(255,43,214,0.35)]"
 >
                   <button
                     onClick={() => setSelectedProduct(product)}
@@ -1917,7 +1921,7 @@ ${lines.join("\n")}
                         {product.badge}
                       </span>
                       {discountPercent(product.price, product.oldPrice) > 0 && (
-                        <span className="absolute right-2 top-2 rounded-full bg-red-600 px-2 py-1 text-[10px] font-bold text-white shadow-[0_0_10px_rgba(255,0,0,0.7)]">
+                        <span className="absolute right-2 top-2 rounded-full bg-gradient-to-r from-pink-500 to-cyan-400 px-2 py-1 text-[10px] font-bold text-white shadow-[0_0_12px_rgba(255,43,214,0.8)]">
                           -{discountPercent(product.price, product.oldPrice)}%
                         </span>
                       )}
@@ -1938,7 +1942,7 @@ ${lines.join("\n")}
                     </div>
 
                     <div className="mt-3 flex items-end gap-2">
-                      <span className="text-lg font-black text-red-400">
+                      <span className="text-lg font-black text-pink-300">
                         {formatBaht(product.price)}
                       </span>
                       <span className="text-xs text-zinc-500 line-through">
@@ -1949,13 +1953,13 @@ ${lines.join("\n")}
                     <div className="mt-3 grid grid-cols-1 gap-2">
                       <button
                         onClick={() => setSelectedProduct(product)}
-                        className="rounded-full border border-white/10 bg-white/5 backdrop-blur px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:bg-white/10 hover:scale-[1.03]"
+                        className="rounded-full border border-pink-500/20 bg-[#111111]/80 px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:border-cyan-300/50"
                       >
                         ดูรายละเอียด
                       </button>
                       <button
                         onClick={() => addToCart(product)}
-                        className="rounded-full bg-gradient-to-r from-red-600 to-pink-500 px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:from-red-500 hover:to-pink-400 hover:scale-[1.03] shadow-[0_0_15px_rgba(255,0,0,0.5)]"
+                        className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-2.5 text-sm font-bold text-white shadow-[0_0_18px_rgba(255,43,214,0.45)] transition-all duration-300 hover:scale-[1.03]"
                       >
                         เพิ่มลงตะกร้า
                       </button>
@@ -1969,8 +1973,8 @@ ${lines.join("\n")}
       </main>
 
       {selectedProduct && (
-        <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/70 p-0 sm:items-center sm:p-4">
-          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-white/10 bg-[#0c0c0c] shadow-2xl shadow-black/50 sm:max-w-lg sm:rounded-[32px]">
+        <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-4">
+          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-pink-500/25 bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,43,214,0.22)] sm:max-w-lg sm:rounded-[32px]">
             <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4 backdrop-blur">
               <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
               <button
@@ -1998,16 +2002,16 @@ ${lines.join("\n")}
               </h3>
 
               <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
-                <span className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-3 py-1">
+                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
                   {selectedProduct.badge}
                 </span>
-                <span className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-3 py-1">
+                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
                   {selectedProduct.category}
                 </span>
               </div>
 
               <div className="mt-4 flex items-center gap-2">
-                <span className="text-2xl font-black text-red-400">
+                <span className="text-2xl font-black text-pink-300">
                   {formatBaht(selectedProduct.price)}
                 </span>
                 <span className="text-sm text-zinc-500 line-through">
@@ -2030,7 +2034,7 @@ ${lines.join("\n")}
               <div className="mt-5 grid grid-cols-2 gap-2">
                 <button
                   onClick={() => addToCart(selectedProduct)}
-                  className="rounded-full border border-white/10 bg-white/5 backdrop-blur-xl px-4 py-3 text-sm font-bold text-white"
+                  className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-4 py-3 text-sm font-bold text-white"
                 >
                   เพิ่มลงตะกร้า
                 </button>
@@ -2039,7 +2043,7 @@ ${lines.join("\n")}
                   href={`${facebookPage}?text=${selectedCheckoutMessage}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-red-600 px-4 py-3 text-center text-sm font-bold text-white"
+                  className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-center text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
                 >
                   ซื้อเลย
                 </a>
@@ -2077,7 +2081,7 @@ ${lines.join("\n")}
 
             <div className="flex-1 overflow-y-auto p-4">
               {cart.length === 0 ? (
-                <div className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-6 text-center">
+                <div className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-6 text-center">
                   <p className="font-bold text-white">ยังไม่มีสินค้าในตะกร้า</p>
                   <p className="mt-2 text-sm text-zinc-400">
                     เพิ่มสินค้าแล้วกลับมาดูได้ที่นี่
@@ -2088,7 +2092,7 @@ ${lines.join("\n")}
                   {cart.map((item) => (
                     <div
                       key={item.product.id}
-                      className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-3"
+                      className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-3"
                     >
                       <div className="flex gap-3">
                         <img
@@ -2104,7 +2108,7 @@ ${lines.join("\n")}
                           <p className="line-clamp-2 text-sm font-bold text-white">
                             {item.product.name}
                           </p>
-                          <p className="mt-1 text-sm font-bold text-red-400">
+                          <p className="mt-1 text-sm font-bold text-pink-300">
                             {formatBaht(item.product.price)}
                           </p>
 
@@ -2129,7 +2133,7 @@ ${lines.join("\n")}
 
                             <button
                               onClick={() => removeFromCart(item.product.id)}
-                              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-red-600/15 text-red-400"
+                              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-pink-500/15 text-pink-300"
                             >
                               <Trash2 className="h-4 w-4" />
                             </button>
@@ -2143,7 +2147,7 @@ ${lines.join("\n")}
             </div>
 
             <div className="border-t border-white/10 p-4">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl p-4">
+              <div className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-4">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-zinc-400">ยอดรวม</span>
                   <span className="font-bold text-white">
@@ -2162,7 +2166,7 @@ ${lines.join("\n")}
                 href={`${facebookPage}?text=${checkoutMessage}`}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-red-600 px-4 py-3 text-sm font-bold text-white"
+                className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
               >
                 ซื้อเลยผ่าน Messenger
               </a>
@@ -2171,7 +2175,7 @@ ${lines.join("\n")}
         </div>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-black/80 p-3 backdrop-blur md:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-pink-500/20 bg-[#050505]/90 p-3 shadow-[0_0_24px_rgba(255,43,214,0.18)] backdrop-blur md:hidden">
         <div className="mx-auto flex max-w-7xl items-center gap-2">
           <button
             onClick={() => setShowCart(true)}
@@ -2179,7 +2183,7 @@ ${lines.join("\n")}
           >
             <ShoppingCart className="h-5 w-5" />
             {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold text-white">
+              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-pink-500 px-1 text-[10px] font-bold text-white">
                 {cartCount}
               </span>
             )}
@@ -2189,7 +2193,7 @@ ${lines.join("\n")}
             href={`${facebookPage}?text=${checkoutMessage}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-red-600 px-4 text-sm font-black text-white"
+            className="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 text-sm font-black text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
           >
             ซื้อเลย / ทักเพจ
           </a>
