@@ -241,10 +241,10 @@ const products: Product[] = [
     name: "GTA San Andreas Definitive Edition",
     price: 129,
     oldPrice: 500,
-    platform: ["iOS"],
+    platform: "iOS / Android",
     category: "แอ็กชัน-ผจญภัย",
     type: "เกม",
-    badge: "iOS Only",
+    badge: "iOS / Android",
     image:
       "https://cdn1.epicgames.com/offer/3262906d93334603b399e106492b1217/EGS_GrandTheftAutoSanAndreasTheDefinitiveEdition_RockstarGames_S1_2560x1440-3daa3396c39d5310e071d9093689fdde",
     popular: false,
