@@ -1346,6 +1346,19 @@ export default function LotusStorePage() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const productRefs = useRef<Record<number, HTMLDivElement | null>>({});
+  const productsSectionRef = useRef<HTMLElement | null>(null);
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+    setShowSuggestions(false);
+
+    setTimeout(() => {
+      productsSectionRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 120);
+  };
 
   const popularProducts = useMemo(() => {
     return storeProducts
@@ -1760,7 +1773,7 @@ ${lines.join("\n")}
               {mainCategories.map((category) => (
                 <button
                   key={category}
-                  onClick={() => setActiveCategory(category)}
+                  onClick={() => handleCategoryClick(category)}
                   className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
                     activeCategory === category
                       ? category === "Minecraft"
@@ -1861,9 +1874,9 @@ ${lines.join("\n")}
           </div>
         </section>
 
-        <section id="products" className="mx-auto max-w-7xl px-3 py-4 sm:px-6 lg:px-8">
+        <section ref={productsSectionRef} id="products" className="scroll-mt-24 mx-auto max-w-7xl px-3 py-4 sm:px-6 lg:px-8">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-black text-white sm:text-xl">สินค้าทั้งหมด</h2>
+            <h2 className="text-lg font-black text-white sm:text-xl">{activeCategory === "ทั้งหมด" ? "สินค้าทั้งหมด" : activeCategory}</h2>
             <p className="text-xs text-zinc-400 sm:text-sm">
               พบ {filteredProducts.length} รายการ
             </p>
