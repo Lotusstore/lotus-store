@@ -1281,8 +1281,8 @@ const products: Product[] = [
 },
 {
     id: 81,
-    name: "ChatGPT Plus -Account (บัญชีส่วนตัว ) / เดือน  ",
-    price: 379,
+    name: "ChatGPT Plus -Account (บัญชีส่วนตัว) / เดือน  ",
+    price: 299,
     oldPrice: 699,
     platform: ["iOS", "Android"],
     category: "ChatGPT / AI",
@@ -1291,7 +1291,7 @@ const products: Product[] = [
     image:
       "https://reviewintrendy.com/wp-content/uploads/2023/06/%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%87%E0%B8%B2%E0%B8%99-PBN3-4.jpg",
     popular: false,
-    description: "แอพ ChatGPT Plus  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ ChatGPT เปลี่ยนรหัสได้✅",
+    description: "แอพ ChatGPT Plus  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ ChatGPT เมลร้าน ใช้ส่วนตัว เปลี่ยนรหัสผ่านได้ ",
     rating: 4.9,
     sold: 12,
   }
