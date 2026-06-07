@@ -1305,7 +1305,7 @@ const products: Product[] = [
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
-      "https://scontent.fbkk4-4.fna.fbcdn.net/v/t39.30808-6/714503684_122182497260907123_8710507438714942463_n.jpg?stp=dst-jpg_tt6&cstp=mx1024x1536&ctp=p526x296&_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHF9AC-mXadBtApFCp0455rDfA1I7zvuo0N8DUjvO-6jayKWMXE3z0396C6ZEOu52vHsU-jtqeLwkbrD-zkb1gY&_nc_ohc=KavqLSrd2YMQ7kNvwGA8X1J&_nc_oc=AdqFebuz99nx-syKSynJiUaDF1RuHS6qtsi26ten2TPS0hBqCFVyOhq84zuEuwnMlbc&_nc_zt=23&_nc_ht=scontent.fbkk4-4.fna&_nc_gid=sk4N9z7W5Li16Ah2kUq-Gg&_nc_ss=7b2a8&oh=00_Af9w7HDZCntdSDxry3RqcwPZDi4BzVJOSuVKTcm3-703ag&oe=6A2ADA13",
+      "https://m.media-amazon.com/images/I/21Nd1a0j87L.jpg",
     popular: false,
     description: "แอพ Capcut PRO  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ Capcut เมลร้าน ใช้ส่วนตัว  ",
     rating: 4.9,
