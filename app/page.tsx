@@ -241,7 +241,7 @@ const products: Product[] = [
     name: "GTA San Andreas Definitive Edition",
     price: 129,
     oldPrice: 500,
-    platform: "iOS / Android",
+    platform: ["iOS", "Android"],
     category: "แอ็กชัน-ผจญภัย",
     type: "เกม",
     badge: "iOS / Android",
