@@ -46,7 +46,7 @@ const products: Product[] = [
   {
     id: 1,
     name: "Red Dead Redemption",
-    price: 99,
+    price: 129,
     oldPrice: 1270,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -157,7 +157,7 @@ const products: Product[] = [
   {
     id: 8,
     name: "Tomb Raider",
-    price: 79,
+    price: 99,
     oldPrice: 549,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -239,7 +239,7 @@ const products: Product[] = [
   {
     id: 13,
     name: "GTA San Andreas Definitive Edition",
-    price: 79,
+    price: 129,
     oldPrice: 500,
     platform: ["iOS"],
     category: "แอ็กชัน-ผจญภัย",
@@ -255,7 +255,7 @@ const products: Product[] = [
   {
     id: 14,
     name: "Dealer's Life Legend",
-    price: 59,
+    price: 79,
     oldPrice: 249,
     platform: ["iOS", "Android"],
     category: "จำลองสถานการณ์บริหารร้านรับจำนำ",
@@ -373,7 +373,7 @@ const products: Product[] = [
   {
     id: 21,
     name: "Naruto: Ultimate Ninja Storm",
-    price: 69,
+    price: 79,
     oldPrice: 479,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -517,7 +517,7 @@ const products: Product[] = [
 {
   id: 30,
   name: "Human: Fall Flat",
-  price: 59,
+  price: 69,
   oldPrice: 249,
   platform: ["iOS", "Android"],
   category: "ปริศนา",
@@ -697,7 +697,7 @@ const products: Product[] = [
 {
   id: 42,
   name: "Stardew Valley",
-  price: 59,
+  price: 69,
   oldPrice: 199,
   platform: ["iOS", "Android"],
   category: "จำลองชีวิต",
