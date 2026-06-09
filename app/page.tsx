@@ -1368,7 +1368,77 @@ function discountPercent(price: number, oldPrice: number) {
   if (oldPrice <= 0 || oldPrice <= price) return 0;
   return Math.round(((oldPrice - price) / oldPrice) * 100);
 }
+function StoreInfoSections() {
+  return (
+    <div className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
+      <section
+        id="about"
+        className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+      >
+        <h2 className="text-2xl font-bold text-white">เกี่ยวกับเรา</h2>
+        <p className="mt-3 text-gray-300">
+          LOTUS STORE จำหน่ายเกม ซอฟต์แวร์ และบริการดิจิทัลออนไลน์
+          สำหรับ iOS, Android และ PC พร้อมบริการหลังการขาย
+          และให้คำแนะนำการใช้งานอย่างเป็นกันเอง
+        </p>
+      </section>
 
+      <section
+        id="contact"
+        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+      >
+        <h2 className="text-2xl font-bold text-white">ติดต่อเรา</h2>
+        <div className="mt-3 space-y-2 text-gray-300">
+          <p>Facebook: Lotus Store</p>
+          <p>Email: tus7234@gmail.com</p>
+          <p>โทร: 061-028-3272</p>
+          <p>เวลาทำการ: ทุกวัน 09:00 - 24:00 น.</p>
+        </div>
+      </section>
+
+      <section
+        id="warranty"
+        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+      >
+        <h2 className="text-2xl font-bold text-white">เงื่อนไขการรับประกัน</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-300">
+          <li>รับประกันตามเงื่อนไขของสินค้าแต่ละประเภท</li>
+          <li>หากได้รับข้อมูลไม่ครบ สามารถติดต่อร้านเพื่อตรวจสอบได้</li>
+          <li>ห้ามนำสินค้าไปใช้งานผิดวัตถุประสงค์ หรือฝ่าฝืนเงื่อนไขของระบบ</li>
+          <li>กรณีมีปัญหาจากระบบ สามารถแจ้งร้านเพื่อรับการช่วยเหลือได้</li>
+          <li>การรับประกันไม่ครอบคลุมกรณีลูกค้าเปลี่ยนข้อมูลผิดพลาดเอง</li>
+        </ul>
+      </section>
+
+      <section
+        id="privacy"
+        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+      >
+        <h2 className="text-2xl font-bold text-white">นโยบายความเป็นส่วนตัว</h2>
+        <p className="mt-3 text-gray-300">
+          LOTUS STORE ใช้ข้อมูลของลูกค้า เช่น ชื่อผู้ติดต่อ ช่องทางติดต่อ
+          และรายละเอียดคำสั่งซื้อ เพื่อดำเนินการขาย ให้บริการหลังการขาย
+          และติดต่อกลับเท่านั้น ร้านจะไม่เปิดเผยข้อมูลลูกค้าแก่บุคคลภายนอก
+          เว้นแต่จำเป็นตามกฎหมาย
+        </p>
+      </section>
+
+      <section
+        id="terms"
+        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
+      >
+        <h2 className="text-2xl font-bold text-white">ข้อกำหนดการใช้งาน</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-300">
+          <li>ลูกค้าควรอ่านรายละเอียดสินค้าก่อนสั่งซื้อทุกครั้ง</li>
+          <li>สินค้าดิจิทัลบางรายการอาจมีเงื่อนไขการใช้งานเฉพาะ</li>
+          <li>หลังได้รับสินค้าแล้ว ควรตรวจสอบและแจ้งปัญหาทันที</li>
+          <li>ห้ามนำสินค้าไปใช้ในทางที่ผิดกฎหมายหรือผิดเงื่อนไขของผู้ให้บริการ</li>
+          <li>ร้านขอสงวนสิทธิ์เปลี่ยนแปลงราคาและเงื่อนไขโดยไม่ต้องแจ้งล่วงหน้า</li>
+        </ul>
+      </section>
+    </div>
+  );
+}
 export default function LotusStorePage() {
   const [activeCategory, setActiveCategory] = useState("ทั้งหมด");
   const [query, setQuery] = useState("");
@@ -2002,6 +2072,40 @@ ${lines.join("\n")}
             </div>
           )}
         </section>
+        <StoreInfoSections />
+
+<footer className="mt-20 border-t border-white/10 bg-black/30 px-4 py-10 text-center text-sm text-gray-400">
+  <img
+    src={logoUrl}
+    alt="LOTUS STORE"
+    className="mx-auto mb-4 h-16 w-16 rounded-2xl object-cover"
+  />
+
+  <h3 className="text-xl font-bold text-white">LOTUS STORE</h3>
+
+  <p className="mt-2">
+    จำหน่ายเกม ซอฟต์แวร์ และบริการดิจิทัลออนไลน์
+  </p>
+
+  <div className="mt-4 space-y-1">
+    <p>Facebook: Lotus Store</p>
+    <p>Email: tus7234@gmail.com</p>
+    <p>โทร: 061-028-3272</p>
+    <p>เวลาทำการ: ทุกวัน 09:00 - 24:00 น.</p>
+  </div>
+
+  <div className="mt-5 flex flex-wrap justify-center gap-4 text-xs">
+    <a href="#about" className="hover:text-white">เกี่ยวกับเรา</a>
+    <a href="#contact" className="hover:text-white">ติดต่อเรา</a>
+    <a href="#warranty" className="hover:text-white">การรับประกัน</a>
+    <a href="#privacy" className="hover:text-white">Privacy Policy</a>
+    <a href="#terms" className="hover:text-white">Terms</a>
+  </div>
+
+  <div className="mt-6 text-xs text-gray-500">
+    © 2026 LOTUS STORE. All Rights Reserved.
+  </div>
+</footer>
       </main>
 
       {selectedProduct && (
