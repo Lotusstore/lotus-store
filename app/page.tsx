@@ -1285,7 +1285,7 @@ const products: Product[] = [
     price: 299,
     oldPrice: 699,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut",
+    category: "ChatGPT / Capcut/ Microsoft 365",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
@@ -1301,13 +1301,29 @@ const products: Product[] = [
     price: 219,
     oldPrice: 300,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut",
+    category: "ChatGPT / Capcut/ Microsoft 365",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
       "https://m.media-amazon.com/images/I/21Nd1a0j87L.jpg",
     popular: false,
     description: "แอพ Capcut PRO  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ Capcut เมลร้าน ใช้ส่วนตัว  ",
+    rating: 4.9,
+    sold: 12,
+  },
+  {
+    id: 83,
+    name: "Microsoft 365 (บัญชีใช้งานส่วนตัว) / ปี ",
+    price: 299,
+    oldPrice: 2999,
+    platform: ["iOS", "Android", "PC"],
+    category: "ChatGPT / Capcut/ Microsoft 365",
+    type: "แอพ",
+    badge: "iOS / Android / PC",
+    image:
+      "https://www.fordham.edu/media/home/departments-centers-and-offices/fordham-it/ms365.png",
+    popular: false,
+    description: "ใช้งานโปรแกรม Microsoft Office ได้อย่างเต็มรูปแบบ ไม่ว่าจะเป็น Word, Excel, PowerPoint, Outlook, Teams และ OneNote เหมาะสำหรับนักเรียน นักศึกษา พนักงานออฟฟิศ และผู้ที่ต้องการใช้งานเอกสารในชีวิตประจำวัน ",
     rating: 4.9,
     sold: 12,
   }
@@ -1326,7 +1342,7 @@ const storeProducts: Product[] = products.map((product) => {
   if (name.includes("chatgpt") || name.includes("chat gpt")) {
     return {
       ...product,
-      category: "ChatGPT / Capcut",
+      category: "ChatGPT / Capcut/ Microsoft 365",
       type: "แอพ",
     };
   }
@@ -1340,7 +1356,7 @@ const mainCategories = [
   "เกมมือถือ",
   "เกม PC",
   "แอพพรีเมียม",
-  "ChatGPT / Capcut",
+  "ChatGPT / Capcut/ Microsoft 365",
   "ขายดี",
 ];
 
@@ -1395,7 +1411,7 @@ export default function LotusStorePage() {
       const isChatGPT =
         name.includes("chatgpt") ||
         name.includes("chat gpt") ||
-        product.category === "ChatGPT / Capcut";
+        product.category === "ChatGPT / Capcut/ Microsoft 365";
 
       const matchesCategory =
         activeCategory === "ทั้งหมด"
@@ -1408,7 +1424,7 @@ export default function LotusStorePage() {
                 ? product.type === "เกม" && product.platform.includes("PC") && !isMinecraft
                 : activeCategory === "แอพพรีเมียม"
                   ? product.type === "แอพ" && !isChatGPT
-                  : activeCategory === "ChatGPT / Capcut"
+                  : activeCategory === "ChatGPT / Capcut/ Microsoft 365"
                     ? isChatGPT
                     : activeCategory === "ขายดี"
                       ? product.popular === true
@@ -1798,7 +1814,7 @@ ${lines.join("\n")}
                     activeCategory === category
                       ? category === "Minecraft"
                         ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
-                        : category === "ChatGPT / Capcut"
+                        : category === "ChatGPT / Capcut/ Microsoft 365"
                           ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-purple-500/40"
                           : category === "ขายดี"
                             ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-cyan-400/30"
@@ -1814,8 +1830,8 @@ ${lines.join("\n")}
                         ? "💻 เกม PC"
                         : category === "แอพพรีเมียม"
                           ? "📱 แอพพรีเมียม"
-                          : category === "ChatGPT / Capcut"
-                            ? "🤖 ChatGPT / Capcut"
+                          : category === "ChatGPT / Capcut/ Microsoft 365"
+                            ? "🤖 ChatGPT / Capcut / Microsoft 365"
                             : category === "ขายดี"
                               ? "🔥 ขายดี"
                               : "ทั้งหมด"}
