@@ -1337,7 +1337,7 @@ const products: Product[] = [
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
-      "https://www.fordham.edu/media/home/departments-centers-and-offices/fordham-it/ms365.png",
+      "https://chatgpt.com/backend-api/estuary/content?id=file_0000000042d0720b9df66214ea635775&ts=494740&p=fs&cid=1&sig=2df17da72a0eef39c4cfbf1243fad1d28a43bf0ebb65acb7781444e05f0ba0bb&v=0",
     popular: false,
     description: "ใช้งานโปรแกรม Microsoft Office ได้อย่างเต็มรูปแบบ ไม่ว่าจะเป็น Word, Excel, PowerPoint, Outlook และ OneNote เหมาะสำหรับนักเรียน นักศึกษา พนักงานออฟฟิศ และผู้ที่ต้องการใช้งานเอกสารในชีวิตประจำวัน โดยไม่ต้องกังวลเรื่องการต่ออายุ ",
     rating: 4.9,
