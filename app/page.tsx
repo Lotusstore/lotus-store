@@ -1337,7 +1337,7 @@ const products: Product[] = [
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
-      "https://chatgpt.com/backend-api/estuary/content?id=file_0000000042d0720b9df66214ea635775&ts=494740&p=fs&cid=1&sig=2df17da72a0eef39c4cfbf1243fad1d28a43bf0ebb65acb7781444e05f0ba0bb&v=0",
+      "https://scontent.fbkk4-3.fna.fbcdn.net/v/t39.30808-6/721297673_122183322056907123_5093074739548421274_n.jpg?stp=dst-jpg_tt6&cstp=mx1086x1448&ctp=s1086x1448&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFFE-y4K0r_6k5M3IAPdwenPgCqG0gbDqU-AKobSBsOpWamBPBeEegPGlHk0iYd9Zk4HHUjavcGpVyoiXLaQUHx&_nc_ohc=ctXznvOkf_YQ7kNvwGS9aDJ&_nc_oc=Adohf0YjL7mmTonXYejsJfe6VOQyh1mbCRH-Fz-Tk87gqgYw_pU1H_N4Ty9aK-Xh71I&_nc_zt=23&_nc_ht=scontent.fbkk4-3.fna&_nc_gid=QBAlqR3LoCxZhl1-pfGO7Q&_nc_ss=7b2a8&oh=00_Af_gOofETkfRjdyJY5e-oZn-GUfqFzUwEC0-K4MDxVtbQg&oe=6A2EC080",
     popular: false,
     description: "ใช้งานโปรแกรม Microsoft Office ได้อย่างเต็มรูปแบบ ไม่ว่าจะเป็น Word, Excel, PowerPoint, Outlook และ OneNote เหมาะสำหรับนักเรียน นักศึกษา พนักงานออฟฟิศ และผู้ที่ต้องการใช้งานเอกสารในชีวิตประจำวัน โดยไม่ต้องกังวลเรื่องการต่ออายุ ",
     rating: 4.9,
