@@ -1285,7 +1285,7 @@ const products: Product[] = [
     price: 299,
     oldPrice: 699,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut/ Microsoft ",
+    category: "ChatGPT",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
@@ -1301,7 +1301,7 @@ const products: Product[] = [
     price: 219,
     oldPrice: 300,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut/ Microsoft ",
+    category: "CapCut",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
@@ -1317,7 +1317,7 @@ const products: Product[] = [
     price: 299,
     oldPrice: 2999,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut/ Microsoft",
+    category: "Microsoft 365",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
@@ -1333,7 +1333,7 @@ const products: Product[] = [
     price: 259,
     oldPrice: 2999,
     platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT / Capcut/ Microsoft",
+    category: "Microsoft 365",
     type: "แอพ",
     badge: "iOS / Android / PC",
     image:
@@ -1358,7 +1358,23 @@ const storeProducts: Product[] = products.map((product) => {
   if (name.includes("chatgpt") || name.includes("chat gpt")) {
     return {
       ...product,
-      category: "ChatGPT / Capcut/ Microsoft ",
+      category: "ChatGPT",
+      type: "แอพ",
+    };
+  }
+
+  if (name.includes("capcut")) {
+    return {
+      ...product,
+      category: "CapCut",
+      type: "แอพ",
+    };
+  }
+
+  if (name.includes("microsoft") || name.includes("office")) {
+    return {
+      ...product,
+      category: "Microsoft 365",
       type: "แอพ",
     };
   }
@@ -1371,8 +1387,10 @@ const mainCategories = [
   "Minecraft",
   "เกมมือถือ",
   "เกม PC",
+  "ChatGPT",
+  "CapCut",
+  "Microsoft 365",
   "แอพพรีเมียม",
-  "ChatGPT / Capcut/ Microsoft ",
   "ขายดี",
 ];
 
@@ -1494,10 +1512,10 @@ export default function LotusStorePage() {
     const result = storeProducts.filter((product) => {
       const name = product.name.toLowerCase();
       const isMinecraft = name.includes("minecraft") || product.category === "Minecraft";
-      const isChatGPT =
-        name.includes("chatgpt") ||
-        name.includes("chat gpt") ||
-        product.category === "ChatGPT / Capcut/ Microsoft ";
+      const isChatGPT = product.category === "ChatGPT";
+      const isCapCut = product.category === "CapCut";
+      const isMicrosoft = product.category === "Microsoft 365";
+      const isSpecialApp = isChatGPT || isCapCut || isMicrosoft;
 
       const matchesCategory =
         activeCategory === "ทั้งหมด"
@@ -1508,13 +1526,17 @@ export default function LotusStorePage() {
               ? product.type === "เกม" && !product.platform.includes("PC") && !isMinecraft
               : activeCategory === "เกม PC"
                 ? product.type === "เกม" && product.platform.includes("PC") && !isMinecraft
-                : activeCategory === "แอพพรีเมียม"
-                  ? product.type === "แอพ" && !isChatGPT
-                  : activeCategory === "ChatGPT / Capcut/ Microsoft "
-                    ? isChatGPT
-                    : activeCategory === "ขายดี"
-                      ? product.popular === true
-                      : true;
+                : activeCategory === "ChatGPT"
+                  ? isChatGPT
+                  : activeCategory === "CapCut"
+                    ? isCapCut
+                    : activeCategory === "Microsoft 365"
+                      ? isMicrosoft
+                      : activeCategory === "แอพพรีเมียม"
+                        ? product.type === "แอพ" && !isSpecialApp
+                        : activeCategory === "ขายดี"
+                          ? product.popular === true
+                          : true;
 
       const matchesKeyword =
         keyword === ""
@@ -1900,7 +1922,7 @@ ${lines.join("\n")}
                     activeCategory === category
                       ? category === "Minecraft"
                         ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
-                        : category === "ChatGPT / Capcut/ Microsoft "
+                        : (category === "ChatGPT" || category === "CapCut" || category === "Microsoft 365")
                           ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-purple-500/40"
                           : category === "ขายดี"
                             ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-cyan-400/30"
@@ -1914,13 +1936,17 @@ ${lines.join("\n")}
                       ? "🎮 เกมมือถือ"
                       : category === "เกม PC"
                         ? "💻 เกม PC"
-                        : category === "แอพพรีเมียม"
-                          ? "📱 แอพพรีเมียม"
-                          : category === "ChatGPT / Capcut/ Microsoft "
-                            ? "🤖 ChatGPT / Capcut / Microsoft "
-                            : category === "ขายดี"
-                              ? "🔥 ขายดี"
-                              : "ทั้งหมด"}
+                        : category === "ChatGPT"
+                          ? "🤖 ChatGPT"
+                          : category === "CapCut"
+                            ? "🎬 CapCut"
+                            : category === "Microsoft 365"
+                              ? "📊 Microsoft 365"
+                              : category === "แอพพรีเมียม"
+                                ? "📱 แอพพรีเมียม"
+                                : category === "ขายดี"
+                                  ? "🔥 ขายดี"
+                                  : "ทั้งหมด"}
                 </button>
               ))}
             </div>
