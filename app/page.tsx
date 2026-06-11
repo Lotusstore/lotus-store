@@ -1702,7 +1702,7 @@ ${lines.join("\n")}
               <p className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300 bg-clip-text text-lg font-black tracking-tight text-transparent drop-shadow-[0_0_12px_rgba(255,43,214,0.65)]">
                 Lotus Store
               </p>
-              <p className="text-xs text-zinc-400">Neon Gaming • Premium Store</p>
+              <p className="text-xs text-zinc-400"> Gaming • Premium Store</p>
             </div>
           </div>
 
@@ -1805,12 +1805,12 @@ ${lines.join("\n")}
                   LOTUS STORE
                 </span>
                 <span className="mt-2 block text-base font-semibold text-zinc-300 sm:mt-3 sm:text-2xl lg:text-3xl">
-                  Neon Gaming • Minecraft • PC Games • AI Premium
+                  Gaming • Minecraft • PC Games • AI Premium
                 </span>
               </h1>
 
               <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7 lg:text-lg">
-                ร้านเกมและแอพพรีเมียมสไตล์ Neon Gaming เลือกหมวดง่าย สั่งซื้อไว ทักเพจได้ทันที
+                ร้านเกมและแอพพรีเมียมสไตล์  Gaming เลือกหมวดง่าย สั่งซื้อไว ทักเพจได้ทันที
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
