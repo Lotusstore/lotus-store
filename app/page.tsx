@@ -2151,86 +2151,86 @@ ${lines.join("\n")}
       </main>
 
       {selectedProduct && (
-  <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-4">
-    <div className="flex max-h-[92vh] w-full flex-col overflow-hidden rounded-t-[28px] border border-pink-500/25 bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,43,214,0.22)] sm:max-w-lg sm:rounded-[32px]">
-      
-      <div className="flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4">
-        <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
-        <button
-          onClick={() => setSelectedProduct(null)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-        >
-          <X className="h-5 w-5" />
-        </button>
-      </div>
+        <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-4">
+          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-pink-500/25 bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,43,214,0.22)] sm:max-w-lg sm:rounded-[32px]">
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4 backdrop-blur">
+              <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
+              <button
+                onClick={() => setSelectedProduct(null)}
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-      <div className="flex-1 overflow-y-auto p-4 pb-3">
-        <div className="overflow-hidden rounded-[24px] bg-[#111111]">
-          <img
-            src={selectedProduct.image}
-            alt={selectedProduct.name}
-            className="h-[260px] w-full object-cover sm:h-[300px]"
-            onError={(e) => {
-              e.currentTarget.src = "https://placehold.co/800x600";
-            }}
-          />
+            <div className="p-4">
+              <div className="overflow-hidden rounded-[24px] bg-[#111111]">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.name}
+                  className="aspect-[4/3] w-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.src = "https://placehold.co/800x600";
+                  }}
+                />
+              </div>
+
+              <h3 className="mt-4 text-xl font-black text-white">
+                {selectedProduct.name}
+              </h3>
+
+              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
+                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
+                  {selectedProduct.badge}
+                </span>
+                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
+                  {selectedProduct.category}
+                </span>
+              </div>
+
+              <div className="mt-4 flex items-center gap-2">
+                <span className="text-2xl font-black text-pink-300">
+                  {formatBaht(selectedProduct.price)}
+                </span>
+                <span className="text-sm text-zinc-500 line-through">
+                  {formatBaht(selectedProduct.oldPrice)}
+                </span>
+              </div>
+
+              <div className="mt-2 flex items-center gap-3 text-sm text-zinc-400">
+                <span className="inline-flex items-center gap-1">
+                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                  {selectedProduct.rating}
+                </span>
+                <span>ขายแล้ว {selectedProduct.sold}</span>
+              </div>
+
+              <p className="mt-4 text-sm leading-7 text-zinc-300">
+                {selectedProduct.description}
+              </p>
+
+              <div className="mt-5 grid grid-cols-2 gap-2">
+                <button
+                  onClick={() => addToCart(selectedProduct)}
+                  className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-4 py-3 text-sm font-bold text-white"
+                >
+                  เพิ่มลงตะกร้า
+                </button>
+
+                <a
+                  href={`${facebookPage}?text=${selectedCheckoutMessage}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-center text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
+                >
+                  ซื้อเลย
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      )}
 
-        <h3 className="mt-4 text-xl font-black text-white">
-          {selectedProduct.name}
-        </h3>
-
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
-          <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 px-3 py-1">
-            {selectedProduct.badge}
-          </span>
-          <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 px-3 py-1">
-            {selectedProduct.category}
-          </span>
-        </div>
-
-        <div className="mt-4 flex items-center gap-2">
-          <span className="text-2xl font-black text-pink-300">
-            {formatBaht(selectedProduct.price)}
-          </span>
-          <span className="text-sm text-zinc-500 line-through">
-            {formatBaht(selectedProduct.oldPrice)}
-          </span>
-        </div>
-
-        <div className="mt-2 flex items-center gap-3 text-sm text-zinc-400">
-          <span className="inline-flex items-center gap-1">
-            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-            {selectedProduct.rating}
-          </span>
-          <span>ขายแล้ว {selectedProduct.sold}</span>
-        </div>
-
-        <p className="mt-4 text-sm leading-7 text-zinc-300">
-          {selectedProduct.description}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-2 border-t border-white/10 bg-[#0c0c0c] p-4">
-        <button
-          onClick={() => addToCart(selectedProduct)}
-          className="rounded-full border border-pink-500/20 bg-[#111111] px-4 py-3 text-sm font-bold text-white"
-        >
-          เพิ่มลงตะกร้า
-        </button>
-
-        <a
-          href={`${facebookPage}?text=${selectedCheckoutMessage}`}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-center text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
-        >
-          ซื้อเลย
-        </a>
-      </div>
-    </div>
-  </div>
-)}
 
       <div
         className={`fixed inset-y-0 right-0 z-[80] flex w-full justify-end bg-black/50 transition ${
