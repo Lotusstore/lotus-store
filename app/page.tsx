@@ -25,6 +25,8 @@ type Product = {
   id: number;
   name: string;
   price: number;
+  priceiOS?: number;
+  priceAndroid?: number;
   oldPrice: number;
   platform: string[];
   category: string;
@@ -47,6 +49,8 @@ const products: Product[] = [
     id: 1,
     name: "Red Dead Redemption",
     price: 129,
+    priceiOS: 129,
+    priceAndroid: 129,
     oldPrice: 1270,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -62,6 +66,8 @@ const products: Product[] = [
     id: 2,
     name: "Hitman: Absolution",
     price: 219,
+    priceiOS: 219,
+    priceAndroid: 219,
     oldPrice: 419,
     platform: ["iOS", "Android"],
     category: "การลอบสังหาร",
@@ -78,6 +84,7 @@ const products: Product[] = [
     id: 3,
     name: "GRID Legends",
     price: 79,
+    priceiOS: 79,
     oldPrice: 419,
     platform: ["iOS"],
     category: "แข่งรถ",
@@ -94,6 +101,8 @@ const products: Product[] = [
     id: 4,
     name: "GRID Autosport",
     price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
     oldPrice: 419,
     platform: ["iOS", "Android"],
     category: "แข่งรถ",
@@ -110,6 +119,7 @@ const products: Product[] = [
     id: 5,
     name: "Rome: Total War",
     price: 69,
+    priceiOS: 69,
     oldPrice: 279,
     platform: ["iOS"],
     category: "ยุทธศาสตร์",
@@ -126,6 +136,7 @@ const products: Product[] = [
     id: 6,
     name: "Medieval II: Total War",
     price: 69,
+    priceiOS: 69,
     oldPrice: 419,
     platform: ["iOS"],
     category: "ยุทธศาสตร์",
@@ -142,6 +153,7 @@ const products: Product[] = [
     id: 7,
     name: "Empire: Total War",
     price: 79,
+    priceiOS: 79,
     oldPrice: 549,
     platform: ["iOS"],
     category: "ยุทธศาสตร์",
@@ -158,6 +170,8 @@ const products: Product[] = [
     id: 8,
     name: "Tomb Raider",
     price: 99,
+    priceiOS: 99,
+    priceAndroid: 99,
     oldPrice: 549,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -174,6 +188,7 @@ const products: Product[] = [
     id: 9,
     name: "Monoposto",
     price: 59,
+    priceiOS: 59,
     oldPrice: 129,
     platform: ["iOS"],
     category: "แข่งรถ",
@@ -190,6 +205,8 @@ const products: Product[] = [
     id: 10,
     name: "Minecraft",
     price: 20,
+    priceiOS: 20,
+    priceAndroid: 20,
     oldPrice: 79,
     platform: ["iOS", "Android"],
     category: "Minecraft",
@@ -206,6 +223,8 @@ const products: Product[] = [
     id: 11,
     name: "Bully",
     price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
     oldPrice: 249,
     platform: ["iOS", "Android"],
     category: "ผจญภัย",
@@ -223,6 +242,8 @@ const products: Product[] = [
     id: 12,
     name: "Dealers Life 2",
     price: 59,
+    priceiOS: 59,
+    priceAndroid: 59,
     oldPrice: 249,
     platform: ["iOS", "Android"],
     category: "จำลองสถานการณ์บริหารร้านรับจำนำ",
@@ -240,6 +261,8 @@ const products: Product[] = [
     id: 13,
     name: "GTA San Andreas Definitive Edition",
     price: 129,
+    priceiOS: 129,
+    priceAndroid: 129,
     oldPrice: 500,
     platform: ["iOS", "Android"],
     category: "แอ็กชัน-ผจญภัย",
@@ -256,6 +279,8 @@ const products: Product[] = [
     id: 14,
     name: "Dealer's Life Legend",
     price: 79,
+    priceiOS: 79,
+    priceAndroid: 79,
     oldPrice: 249,
     platform: ["iOS", "Android"],
     category: "จำลองสถานการณ์บริหารร้านรับจำนำ",
@@ -273,6 +298,7 @@ const products: Product[] = [
     id: 15,
     name: "Subnautica",
     price: 69,
+    priceiOS: 69,
     oldPrice: 299,
     platform: ["iOS"],
     category: "ผจญภัย",
@@ -289,6 +315,7 @@ const products: Product[] = [
     id: 16,
     name: "Balatro",
     price: 69,
+    priceiOS: 69,
     oldPrice: 349,
     platform: ["iOS"],
     category: "การ์ด",
@@ -306,6 +333,7 @@ const products: Product[] = [
     id: 17,
     name: "Maneater",
     price: 69,
+    priceiOS: 69,
     oldPrice: 179,
     platform: ["iOS"],
     category: "แอ็กชั่น",
@@ -323,6 +351,8 @@ const products: Product[] = [
     id: 18,
     name: "Passpartout: Starving Artist",
     price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
     oldPrice: 199,
     platform: ["iOS", "Android"],
     category: "จำลองสถานการณ์",
@@ -340,6 +370,8 @@ const products: Product[] = [
     id: 19,
     name: "Subnautica Below Zero",
     price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
     oldPrice: 399,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -357,6 +389,7 @@ const products: Product[] = [
     id: 20,
     name: "Way of the Hunter: Wild Europe",
     price: 69,
+    priceiOS: 69,
     oldPrice: 179,
     platform: ["iOS"],
     category: "เกมจำลองการล่าสัตว์",
@@ -374,6 +407,8 @@ const products: Product[] = [
     id: 21,
     name: "Naruto: Ultimate Ninja Storm",
     price: 79,
+    priceiOS: 79,
+    priceAndroid: 79,
     oldPrice: 479,
     platform: ["iOS", "Android"],
     category: "แอ็กชั่น",
@@ -391,6 +426,8 @@ const products: Product[] = [
     id: 22,
     name: "Farming Simulator 23 Mobile",
     price: 49,
+    priceiOS: 49,
+    priceAndroid: 49,
     oldPrice: 99,
     platform: ["iOS", "Android"],
     category: "จำลองสถานการณ์",
@@ -408,6 +445,7 @@ const products: Product[] = [
     id: 23,
     name: "Nomad Sculpt",
     price: 69,
+    priceiOS: 69,
     oldPrice: 699,
     platform: ["iOS"],
     category: "ปั้นโมเดล 3 มิติ",
@@ -425,6 +463,7 @@ const products: Product[] = [
     id: 24,
     name: "Procreate",
     price: 69,
+    priceiOS: 69,
     oldPrice: 399,
     platform: ["iOS"],
     category: "วาดภาพ",
@@ -441,6 +480,7 @@ const products: Product[] = [
     id: 25,
     name: "LumaFusion",
     price: 99,
+    priceiOS: 99,
     oldPrice: 999,
     platform: ["iOS"],
     category: "ตัดต่อวิดีโอ",
@@ -457,6 +497,7 @@ const products: Product[] = [
     id: 26,
     name: "GoodNotes 6",
     price: 69,
+    priceiOS: 69,
     oldPrice: 839,
     platform: ["iOS"],
     category: "จดโน้ต",
@@ -470,1914 +511,1103 @@ const products: Product[] = [
     sold: 77,
   },
   {
-  id: 27,
-  name: "Terraria",
-  price: 59,
-  oldPrice: 199,
-  platform: ["iOS", "Android"],
-  category: "เอาชีวิตรอด",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://m.media-amazon.com/images/I/31V6N3J7NVL.png",
-  popular: false,
-  description: "เกมเอาชีวิตรอด 2D สุดฮิต เล่นฟรียาวมาก",
-  rating: 4.9,
-  sold: 180,
-},
-{
-  id: 28,
-  name: "Unpacking",
-  price: 69,
-  oldPrice: 299,
-  platform: ["iOS"],
-  category: "ผ่อนคลาย",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://store-images.s-microsoft.com/image/apps.13051.13636460453065260.ecf51b77-0a2c-413e-97f7-3aacd9282ab3.dd5a85c1-2cf9-4128-850a-e931036fb1b6",
-  popular: false,
-  description: "เกมจัดของสุดชิล เล่นเพลินแบบไม่รู้ตัว",
-  rating: 4.8,
-  sold: 95,
-},
-{
-  id: 29,
-  name: "Townscaper",
-  price: 59,
-  oldPrice: 199,
-  platform: ["iOS"],
-  category: "จำลอง",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6wtwZFQjolF9jjqCKLJXseEY4Zy3h7Y_DKQ&s",
-  popular: false,
-  description: "สร้างเมืองสวยๆ ได้แบบง่ายๆ โคตรเพลิน",
-  rating: 4.8,
-  sold: 88,
-},
-{
-  id: 30,
-  name: "Human: Fall Flat",
-  price: 69,
-  oldPrice: 249,
-  platform: ["iOS", "Android"],
-  category: "ปริศนา",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://cdn1.idcgames.com/storage/image/1348/game_banner/4x5_1-1_72.jpg",
-  popular: false,
-  description: "เกมแก้ปริศนาฮาๆ เล่นกับเพื่อนได้",
-  rating: 4.8,
-  sold: 120,
-},
-{
-  id: 31,
-  name: "Incredibox",
-  price: 69,
-  oldPrice: 199,
-  platform: ["iOS"],
-  category: "ดนตรี",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf4MWsSNpl1U_lBoNfsXlDdPgm4Q6J4ZMb2w&s",
-  popular: false,
-  description: "สร้างเพลงเองได้แบบง่ายๆ โคตรเท่",
-  rating: 4.9,
-  sold: 70,
-},
-{
-  id: 32,
-  name: "Don't Starve Shipwrecked",
-  price: 69,
-  oldPrice: 249,
-  platform: ["iOS"],
-  category: "เอาชีวิตรอด",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOQDtAiRHUwofdF-0oioS8fOzD9SjIq2xmQ&s",
-  popular: false,
-  description: "เอาชีวิตรอดบนเกาะ โหดแต่โคตรมัน",
-  rating: 4.8,
-  sold: 90,
-},
-{
-  id: 33,
-  name: "Construction Simulator 4",
-  price: 59,
-  oldPrice: 199,
-  platform: ["iOS", "Android"],
-  category: "จำลอง",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://play-lh.googleusercontent.com/XgzdBgl_62OgGF1PqpnfFTzRjJL6tlc39wFo6eiBETPEMfvZnThTQwtT1V9FFpH-Gg",
-  popular: false,
-  description: "จำลองงานก่อสร้างสมจริง ขับเครื่องจักรครบ",
-  rating: 4.6,
-  sold: 50,
-},
-{
-  id: 34,
-  name: "Little Nightmares",
-  price: 59,
-  oldPrice: 199,
-  platform: ["iOS"],
-  category: "สยองขวัญ",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHIiw5KiPhETgd3ZqCIZiRq4jl2Bn1GBhKw&s",
-  popular: false,
-  description: "เกมสยองขวัญบรรยากาศโคตรดี เล่นแล้วหลอน",
-  rating: 4.9,
-  sold: 110,
-},
-{
-  id: 35,
-  name: "Kingdom Two Crowns",
-  price: 69,
-  oldPrice: 249,
-  platform: ["iOS", "Android"],
-  category: "วางแผน",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/25/e3/5425e30c-03a7-e5cc-8aa2-c11abc30d1c4/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/320x320bb.jpg",
-  popular: false,
-  description: "สร้างอาณาจักร ป้องกันศัตรู เล่นฟรียาว",
-  rating: 4.8,
-  sold: 85,
-},
-{
-  id: 36,
-  name: "My Time at Portia",
-  price: 69,
-  oldPrice: 299,
-  platform: ["iOS"],
-  category: "จำลองชีวิต",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://play-lh.googleusercontent.com/NWmnQmMFKyM-6RrUpa-dbkPehICPanvbw1g5Ec_rA4odTnD-IonuAVeQvUACLNSHmvg=w256",
-  popular: false,
-  description: "ทำฟาร์ม สร้างบ้าน ใช้ชีวิตสุดชิล เล่นฟรียาวมาก",
-  rating: 4.8,
-  sold: 95,
-},
-{
-  id: 37,
-  name: "Tropico",
-  price: 79,
-  oldPrice: 399,
-  platform: ["iOS"],
-  category: "วางแผน",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://play-lh.googleusercontent.com/IlCLh9HJ97jmOVL6PAZ0HRidZodotSp0y4dreOT8bPBr4pzPghRk7rtl9pEnJdkyaw",
-  popular: false,
-  description: "บริหารประเทศแบบผู้นำ สายวางแผนต้องมี",
-  rating: 4.7,
-  sold: 80,
-},
-{
-  id: 38,
-  name: "LIMBO",
-  price: 69,
-  oldPrice: 199,
-  platform: ["iOS"],
-  category: "ปริศนา",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202511/2413/e3c6a091b505264c4f36678473b0439cd2b3b10ade3c6e83.jpg",
-  popular: false,
-  description: "เกมขาวดำสุดลึกลับ ปริศนาลึก เล่นแล้วติด",
-  rating: 4.9,
-  sold: 120,
-},
-{
-  id: 39,
-  name: "Poly Bridge",
-  price: 49,
-  oldPrice: 199,
-  platform: ["iOS", "Android"],
-  category: "ปริศนา",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://img.tapimg.net/market/images/c06e7f9d5d2be430bafff3178f982e2e.png",
-  popular: false,
-  description: "สร้างสะพานให้รถผ่าน ท้าทายและสนุกมาก",
-  rating: 4.7,
-  sold: 70,
-},
-{
-  id: 40,
-  name: "The Bonfire 2: Uncharted Shores",
-  price: 69,
-  oldPrice: 299,
-  platform: ["iOS"],
-  category: "เอาชีวิตรอด",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://play-lh.googleusercontent.com/vth6kp9sWQtbxQr2XeiO5nwIv-j2Jk9cwtKDmePaT_ILBXuy2AVu3wcDbupZVz9Jtv8",
-  popular: false,
-  description: "สร้างเมือง เอาชีวิตรอด และสำรวจโลก",
-  rating: 4.8,
-  sold: 85,
-},
-{
-  id: 41,
-  name: "Very Little Nightmares",
-  price: 69,
-  oldPrice: 299,
-  platform: ["iOS"],
-  category: "สยองขวัญ",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy_eUxGJlDFvIgmijyxC2AeM5WgfyY7ngig&s",
-  popular: false,
-  description: "เกมสยองขวัญแนวปริศนา บรรยากาศโคตรดี",
-  rating: 4.8,
-  sold: 90,
-},
-{
-  id: 42,
-  name: "Stardew Valley",
-  price: 69,
-  oldPrice: 199,
-  platform: ["iOS", "Android"],
-  category: "จำลองชีวิต",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/df/12/0edf1230-3f6e-fbb3-7f72-f2aa844d100a/AppIcons-0-0-1x_U007emarketing-0-8-0-85-220.png/320x320bb.jpg",
-  popular: false,
-  description: "ทำฟาร์ม ปลูกผัก เลี้ยงสัตว์ ใช้ชีวิตชิลๆ เล่นเพลินทั้งวัน",
-  rating: 5.0,
-  sold: 220,
-},
-{
-  id: 43,
-  name: "Surgeon Simulator",
-  price: 59,
-  oldPrice: 199,
-  platform: ["iOS"],
-  category: "จำลอง",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpc8WMmbOpcm9Fol3W4NrZigzcfgieiENnPQ&s",
-  popular: false,
-  description: "เกมผ่าตัดสุดปั่น ฮาๆ เล่นกับเพื่อนโคตรมัน",
-  rating: 4.6,
-  sold: 75,
-},
-{
-  id: 44,
-  name: "Hitman: Blood Money",
-  price: 69,
-  oldPrice: 419,
-  platform: ["iOS"],
-  category: "ลอบสังหาร",
-  type: "เกม",
-  badge: "iOS Only",
-  image: "https://images.nintendolife.com/213989d7c2fac/hitman-blood-money---reprisal-cover.cover_large.jpg",
-  popular: false,
-  description: "เกมลอบเร้นระดับตำนาน วางแผนฆ่าแบบเนียนๆ",
-  rating: 4.9,
-  sold: 130,
-},
-{
-  id: 45,
-  name: "Dead Cells",
-  price: 69,
-  oldPrice: 249,
-  platform: ["iOS", "Android"],
-  category: "แอ็กชั่น",
-  type: "เกม",
-  badge: "iOS / Android",
-  image: "https://assets1.ignimgs.com/2019/06/10/dead-cells---button-fin-1560125633132.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
-  popular: true,
-  description: "เกมแอ็กชั่น Roguelike สุดมัน ตายแล้วเริ่มใหม่ แต่โคตรสนุก",
-  rating: 4.9,
-  sold: 150,
-},
-{
-  id: 46,
-  name: "Minecraft PC (Java / Bedrock) เป็นบัญชีแชร์",
-  price: 99,
-  oldPrice: 1115,
-  platform: ["PC"],
-  category: "Minecraft",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
-  popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลเเชร์ของทางร้าน✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅",
-  rating: 4.8,
-  sold: 50
-},
-{
-  id: 47,
-  name: "Minecraft PC (Bedrock ) เป็นบัญชีส่วนตัว",
-  price: 259,
-  oldPrice: 1115,
-  platform: ["PC"],
-  category: "Minecraft",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
-  popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นเเค่ Bedrock Edition ✅ DonutSMP ไม่ถูกแบน ✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง ✅",
-  rating: 4.9,
-  sold: 46
-},
-{
-  id: 48,
-  name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
-  price: 389,
-  oldPrice: 1115,
-  platform: ["PC"],
-  category: "Minecraft",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
-  popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว✅ เล่นhypixelไม่ได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition  ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
-  rating: 4.7,
-  sold: 38
-},
-{
-  id: 49,
-  name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
-  price: 459,
-  oldPrice: 1115,
-  platform: ["PC"],
-  category: "Minecraft",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
-  popular: true,
-  description: " Minecraft สำหรับ PC เป็นเมลส่วนตัว ✅ เล่นhypixelได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
-  rating: 4.9,
-  sold: 29
-},
-{
-  id: 50,
-  name: "Terraria - Steam Account (บัญชีส่วนตัว) ",
-  price: 99,
-  oldPrice: 220,
-  platform: ["PC"],
-  category: " เกมอินดี้ ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://hb.imgix.net/b7c65e77a5f126a1024a8459ec0fd08f879860f1.jpeg?auto=compress,format&fit=crop&h=353&w=616&s=993b7e1d9df1e22a531675612b644e59",
-  popular: true,
-  description: " ขุด, ต่อสู้, สำรวจ, สร้าง! สัมผัสเกมผจญภัยแนว Sandbox ยอดฮิตระดับตำนานในราคาคุ้มค่า✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 22
-},
-{
-  id: 51,
-  name: "Squad - Steam Account (บัญชีส่วนตัว ) ",
-  price: 299,
-  oldPrice: 899,
-  platform: ["PC"],
-  category: "เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://cdn.prod.website-files.com/651dd1cea3817995c17fa3c1/65e0e49452009f2a2920f3ce_1200x630-key-art.jpeg",
-  popular: true,
-  description: " Squad เป็นเกม FPS เชิงกลยุทธ์ที่มอบประสบการณ์การต่อสู้ที่สมจริงผ่านการทำงานเป็นทีม การสื่อสาร และการต่อสู้ที่สมจริง มันผสมผสานระหว่างเกมยิงแบบอาร์เคดและความสมจริงทางทหารด้วยการต่อสู้ที่มีผู้เล่นสูงสุด 100 คน การรบแบบผสมผสาน และการสร้างฐานทัพ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 19
-},
-{
-  id: 52,
-  name: "SCUM - Steam Account (บัญชีส่วนตัว ) ",
-  price: 319,
-  oldPrice: 999,
-  platform: ["PC"],
-  category: "Open-world Survival",
-  type: "เกม",
-  badge: "PC",
-  image: "https://imgproxy.eneba.games/c5LirgQDjLllv9YYX0ytZXzcQsAqP6tk_0AJsmausdI/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9n/b291c1VuZHM2V0p4/eUdENlNJM1REX0ky/LTVMM2JNUTRjMjlO/dEl3YjVVLmpwZWc",
-  popular: true,
-  description: "ผจญภัยในสภาพแวดล้อมที่โหดร้าย เก็บไอเทม สร้างสิ่งของ และหลบหลีกภัยคุกคามต่อชีวิตอย่างต่อเนื่อง ระบบการปรับแต่งและพัฒนาตัวละครที่ไม่เคยมีมาก่อนคือเครื่องมือสำคัญในการเอาชีวิตรอดของคุณ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 33
-},
-{
-  id: 53,
-  name: "Arma 3 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 189,
-  oldPrice: 999,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://imgproxy.eneba.games/bUl7e9q7gGKNFDI9PEj1HC-HxbDOHyfghk7cul8SvX8/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9a/bkNiZmFWLmpwZw",
-  popular: true,
-  description: "สัมผัสประสบการณ์การเล่นเกมต่อสู้ที่สมจริงในสมรภูมิรบขนาดใหญ่ วางแผนการรบด้วยเนื้อหาแบบเล่นคนเดียวและเล่นหลายคนมากมาย คลังอาวุธและยานพาหนะทันสมัยขนาดใหญ่ และโอกาสในการสร้างสรรค์เนื้อหาอย่างไม่จำกัด สมจริง หลากหลาย เปิดกว้าง - Arma 3 จะพาคุณเข้าสู่สงคราม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 22
-},
-{
-  id: 54,
-  name: "Peak - Steam Account (บัญชีส่วนตัว ) ",
-  price: 129,
-  oldPrice: 159,
-  platform: ["PC"],
-  category: "  เกมอินดี้",
-  type: "เกม",
-  badge: "PC",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlemGZ0zMbpr_iOpejkuoo6gFvILqvB-WfPA&s",
-  popular: true,
-  description: "PEAK เป็นเกมปีนเขาแบบร่วมมือกันที่ความผิดพลาดเพียงเล็กน้อยก็สามารถทำให้คุณชะตาขาดได้ ไม่ว่าจะเป็นการเล่นเดี่ยวหรือเป็นกลุ่มลูกเสือที่ออกไปศึกษาธรรมชาติแล้วหลงทาง ความหวังเดียวที่จะช่วยเหลือคุณออกจากเกาะลึกลับได้คือการปีนเขาที่ตั้งอยู่กลางเกาะ คุณมีคุณสมบัติเพียงพอที่จะพิชิตยอดเขาสูงสุดหรือไม่ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 42
-},
-{
-  id: 55,
-  name: "Stardew Valley - Steam Account (บัญชีส่วนตัว ) ",
-  price: 149,
-  oldPrice: 315,
-  platform: ["PC"],
-  category: "  เกมอินดี้",
-  type: "เกม",
-  badge: "PC",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcwlMJFs08nzPUB1cjJITCbeRvytEK0U86yw&s",
-  popular: true,
-  description: "คุณได้รับมรดกเป็นที่ดินทำฟาร์มเก่าของคุณปู่ในเกม Stardew Valley พร้อมด้วยเครื่องมือเก่าๆ และเงินเพียงเล็กน้อย คุณเริ่มต้นชีวิตใหม่ คุณจะสามารถเรียนรู้ที่จะหาเลี้ยงชีพจากที่ดินและเปลี่ยนทุ่งนาที่รกร้างเหล่านี้ให้กลายเป็นบ้านที่เจริญรุ่งเรืองได้หรือไม่? ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 35
-},
-{
-  id: 56,
-  name: "Garry's Mod - Steam Account (บัญชีส่วนตัว ) ",
-  price: 149,
-  oldPrice: 219,
-  platform: ["PC"],
-  category: "  เกมอินดี้",
-  type: "เกม",
-  badge: "PC",
-  image: "https://m.media-amazon.com/images/M/MV5BMjY4ZWU0Y2YtZWViMi00YjE0LWJjYTItZTk3MWFlYzMyYjUwXkEyXkFqcGc@._V1_.jpg",
-  popular: true,
-  description: "Garry's Mod เป็นเกมจำลองฟิสิกส์แบบแซนด์บ็อกซ์ ไม่มีเป้าหมายหรือจุดประสงค์ที่กำหนดไว้ล่วงหน้า เราให้เครื่องมือแก่คุณ แล้วปล่อยให้คุณเล่นอย่างอิสระ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 28
-},
-{
-  id: 57,
-  name: "ELDEN RING - Steam Account (บัญชีส่วนตัว ) ",
-  price: 789,
-  oldPrice: 1790,
-  platform: ["PC"],
-  category: "เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg",
-  popular: true,
-  description: "ELDEN RING เป็นเกมแอ็คชันที่ผสมผสานระหว่างโลกแฟนตาซีและฟิสิกส์ที่สมจริง คุณจะได้รับโอกาสในการสำรวจโลกที่กว้างใหญ่และเผชิญหน้ากับศัตรูที่หลากหลาย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 9
-},
-{
-  id: 58,
-  name: "Raft - Steam Account (บัญชีส่วนตัว ) ",
-  price: 199,
-  oldPrice: 369,
-  platform: ["PC"],
-  category: "เกมผจญภัย ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://store-images.s-microsoft.com/image/apps.32463.14102062639781722.573266e7-686b-44fb-9e48-a2585bc2170f.5424f649-5154-402f-88e5-905dae685f22",
-  popular: true,
-  description: "Raft เป็นเกมผจญภัยแบบเปิดโลกที่คุณจะต้องอยู่รอดบนเรือไม้เล็กๆ ที่ลอยอยู่บนทะเล คุณจะต้องหาวัสดุรวบรวมอาหาร และสร้างสิ่งของเพื่อเอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 35
-},
-{
-  id: 59,
-  name: "Astroneer- Steam Account (บัญชีส่วนตัว ) ",
-  price: 289,
-  oldPrice: 590,
-  platform: ["PC"],
-  category: "  เกมผจญภัย ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://upload.wikimedia.org/wikipedia/en/a/a9/Astroneer_cover_art.jpg",
-  popular: true,
-  description: "Astroneer เป็นเกมผจญภัยในอวกาศที่คุณจะต้องสำรวจและสร้างสรรค์บนดาวเคราะห์ต่างๆ คุณจะต้องจัดการทรัพยากร สร้างฐานที่อยู่ และรักษาชีวิตในสภาพแวดล้อมที่ไม่เอื้ออำนวย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 20
-},
-{
-  id: 60,
-  name: "Palworld- Steam Account (บัญชีส่วนตัว ) ",
-  price: 259,
-  oldPrice: 590,
-  platform: ["PC"],
-  category: "  เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://upload.wikimedia.org/wikipedia/en/f/fb/Palworld_Steam_artwork.jpg",
-  popular: true,
-  description: "Palworld เป็นเกมต่อสู้ ทำฟาร์ม สร้างสิ่งก่อสร้าง และทำงานร่วมกับสิ่งมีชีวิตลึกลับที่เรียกว่า \"เพื่อน\" ในเกมเอาชีวิตรอดและสร้างสิ่งของแบบโอเพ่นเวิลด์สำหรับผู้เล่นหลายคนรูปแบบใหม่ล่าสุดนี้ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 15
-},
-{
-  id: 61,
-  name: "Black Myth: Wukong- Steam Account (บัญชีส่วนตัว ) ",
-  price: 699,
-  oldPrice: 1799,
-  platform: ["PC"],
-  category: "  เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg",
-  popular: true,
-  description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 10
-},
-{
-  id: 62,
-  name: "Project Zomboid- Steam Account (บัญชีส่วนตัว ) ",
-  price: 129,
-  oldPrice: 400,
-  platform: ["PC"],
-  category: "  เกมเล่นระหว่างการพัฒนา ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://assets-prd.ignimgs.com/2023/07/21/projectzomboid-1689959989039.jpg",
-  popular: true,
-  description: "Project Zomboid คือสุดยอดเกมเอาชีวิตรอดจากซอมบี้ เล่นคนเดียวหรือเล่นหลายคนก็ได้ คุณจะต้องเก็บของ สร้างสิ่งก่อสร้าง ประดิษฐ์สิ่งของ ต่อสู้ ทำฟาร์ม และตกปลาเพื่อเอาชีวิตรอด ระบบทักษะ RPG สุดเข้มข้น แผนที่ขนาดใหญ่ โหมดแซนด์บ็อกซ์ที่ปรับแต่งได้มากมาย และแรคคูนตัวน้อยน่ารักที่จะช่วยสอนวิธีการเล่นรอผู้เล่นอยู่ แล้วคุณจะตายอย่างไร? แค่โดนกัดครั้งเดียวก็ตายแล้ว... ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 20
-},
-{
-  id: 63,
-  name: "Valheim- Steam Account (บัญชีส่วนตัว ) ",
-  price: 209,
-  oldPrice: 499,
-  platform: ["PC"],
-  category: "   เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://gaming-cdn.com/images/products/7119/orig/valheim-pc-mac-game-steam-cover.jpg?v=1706800610",
-  popular: true,
-  description: "เกมสำรวจและเอาชีวิตรอดสุดโหดสำหรับผู้เล่น 1-10 คน ในดินแดนที่สร้างขึ้นแบบสุ่มโดยได้รับแรงบันดาลใจจากวัฒนธรรมไวกิ้ง ต่อสู้ สร้าง และพิชิตดินแดนเพื่อสร้างมหากาพย์ที่คู่ควรกับการอุปถัมภ์ของเทพโอดิน! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 15
-},
-{
-  id: 64,
-  name: "7 Days to Die - Steam Account (บัญชีส่วนตัว ) ",
-  price: 289,
-  oldPrice: 809,
-  platform: ["PC"],
-  category: "   เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90wYJszrnTsdAXOdfF7QNgbjMfekx-9ALmw&s",
-  popular: true,
-  description: "7 Days to Die เป็นเกมโอเพ่นเวิลด์ที่ผสมผสานองค์ประกอบต่างๆ เข้าด้วยกันอย่างลงตัว ไม่ว่าจะเป็นเกมยิงมุมมองบุคคลที่หนึ่ง เกมเอาชีวิตรอดจากซอมบี้ เกมป้องกันหอคอย และเกมสวมบทบาท มาเล่นเกม RPG เอาชีวิตรอดจากซอมบี้แบบแซนด์บ็อกซ์สุดคลาสสิกที่มาก่อนใคร! นาเวซกาเนรอคุณอยู่! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 20
-},
-{
-  id: 65,
-  name: "Overcooked! 2 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 199,
-  oldPrice: 490,
-  platform: ["PC"],
-  category: "   เกมอินดี้  ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728880/header.jpg?t=1776856665",
-  popular: true,
-  description: "Overcooked กลับมาอีกครั้งพร้อมความสนุกสนานวุ่นวายในการทำอาหาร! กลับสู่ดินแดนแห่งหัวหอมและรวบรวมทีมเชฟของคุณในโหมดเล่นร่วมกันแบบคลาสสิก หรือเล่นออนไลน์ได้สูงสุดถึงสี่คน เตรียมผ้ากันเปื้อนให้พร้อม...ถึงเวลาช่วยโลกอีกครั้งแล้ว! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 18
-},
-{
-  id: 66,
-  name: "Sekiro: Shadows Die Twice - Steam Account (บัญชีส่วนตัว ) ",
-  price: 359,
-  oldPrice: 809,
-  platform: ["PC"],
-  category: "   เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://image.api.playstation.com/cdn/HP0506/CUSA13910_00/QKJRzanGk86ezpx2pk5QqQaduoXGJV3u8vHIejSav4MYiHA3F7zNgxSOF9bJmt2T.png",
-  popular: true,
-  description: "เกมแห่งปี - The Game Awards 2019 เกมแอ็กชั่นยอดเยี่ยมแห่งปี 2019 - IGN สร้างเส้นทางแห่งการแก้แค้นอันชาญฉลาดของคุณเองในเกมผจญภัยที่ได้รับรางวัลจากผู้พัฒนา FromSoftware ผู้สร้าง Bloodborne และซีรีส์ Dark Souls แก้แค้น กอบกู้เกียรติยศ สังหารอย่างแยบยล ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 20
-},
-{
-  id: 67,
-  name: "The Isle - Steam Account (บัญชีส่วนตัว ) ",
-  price: 279,
-  oldPrice: 400,
-  platform: ["PC"],
-  category: "   เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/376210/header.jpg?t=1653237914",
-  popular: true,
-  description: "สัมผัสประสบการณ์เกมเอาชีวิตรอดในโลกเปิดสุดโหด ในขณะที่คุณพยายามเอาชีวิตรอดบนเกาะที่ไร้ความปรานีซึ่งเต็มไปด้วยไดโนเสาร์! ล่า ขยายอาณาเขต เอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.8,
-  sold: 15
-},
-{
-  id: 68,
-  name: "FC 26 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 499,
-  oldPrice: 1999,
-  platform: ["PC"],
-  category: "เกมกีฬา",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3405690/2d96aa1b06e453cd62dae9029d412f19e61932c3/header.jpg?t=1777414590",
-  popular: true,
-  description: "ควบคุมสโมสรดั่งใจคุณใน EA SPORTS FC™ 26 เล่นในสไตล์ของคุณเองด้วยประสบการณ์เกมเพลย์รูปแบบใหม่ที่ขับเคลื่อนด้วยความคิดเห็นจากชุมชน ชาเลนจ์ผู้จัดการแบบสดที่เพิ่มเนื้อเรื่องใหม่ๆ มาสู่ฤดูกาลใหม่ และต้นแบบที่ได้รับแรงบันดาลใจจากเหล่านักเตะในตำนานของเกม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 10
-},
-{
-  id: 69,
-  name: "NBA 2K26 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 499,
-  oldPrice: 1790,
-  platform: ["PC"],
-  category: "เกมกีฬา",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3472040/f7e126add75c3b09779b44cd349be93d31b0a80b/header.jpg?t=1776196566",
-  popular: true,
-  description: "การแข่งขันชิงชัยชิงชัยในโหมด MyCAREER, MyTEAM, MyNBA, The W และ Play Now โชว์ลีลาการเล่นของคุณด้วยความสมจริงขั้นสุด ด้วยเทคโนโลยี ProPLAY™ และท้าทายเพื่อนหรือคู่แข่งของคุณในโหมดการแข่งขันของ NBA 2K26 เพื่อให้ทุกคนได้เห็นว่าคุณคือเจ้าแห่งสนาม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 9
-},
-{
-  id: 70,
-  name: "Hunt: Showdown 1896 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 299,
-  oldPrice: 619,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/594650/28c28099187e199e397f64f6bb879bec236549f9/header_alt_assets_24.jpg?t=1778239999",
-  popular: true,
-  description: "Hunt: Showdown 1896 คือเกมยิงปืนเอาชีวิตรอดสุดโหดที่ให้รางวัลอย่างคุ้มค่า ไล่ล่าสัตว์ประหลาดสุดบิดเบี้ยวและเอาชนะการต่อสู้แบบ PvP ที่ไร้ความปราณี รับภารกิจล่าค่าหัวในพื้นที่ทุรกันดารที่ถูกลืมเลือนไปตามกาลเวลา ด้วยทีม คุณอาจรอดชีวิตได้ ตายไปโดยไม่มีอะไรติดมือ หรือหนีออกมาพร้อมทุกอย่าง ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 11
-},
-{
-  id: 71,
-  name: "Sons Of The Forest - Steam Account (บัญชีส่วนตัว ) ",
-  price: 239,
-  oldPrice: 590,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1326470/header.jpg?t=1708624856",
-  popular: true,
-  description: "Sons Of The Forest คือเกมเอาชีวิตรอดในโลกเปิดสุดโหดที่ให้รางวัลอย่างคุ้มค่า ไล่ล่าสัตว์ประหลาดสุดบิดเบี้ยวและเอาชนะการต่อสู้แบบ PvP ที่ไร้ความปราณี รับภารกิจล่าค่าหัวในพื้นที่ทุรกันดารที่ถูกลืมเลือนไปตามกาลเวลา ด้วยทีม คุณอาจรอดชีวิตได้ ตายไปโดยไม่มีอะไรติดมือ หรือหนีออกมาพร้อมทุกอย่าง ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 17
-},
-{
-  id: 72,
-  name: "DayZ - Steam Account (บัญชีส่วนตัว ) ",
-  price: 589,
-  oldPrice: 1749,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/221100/header.jpg?t=1769695513",
-  popular: true,
-  description: "คุณจะเอาชีวิตรอดในโลกหลังวันสิ้นโลกได้นานแค่ไหน? ดินแดนที่เต็มไปด้วยประชากร ซอมบี้ ที่ติดเชื้อ และคุณต้องแข่งขันกับผู้รอดชีวิตคนอื่นๆ เพื่อแย่งชิงทรัพยากรที่มีจำกัด คุณจะร่วมมือกับคนแปลกหน้าและยืนหยัดไปด้วยกันหรือไม่? หรือจะเล่นแบบหมาป่าเดียวดายเพื่อหลีกเลี่ยงการถูกทรยศ? นี่คือ DayZ  นี่คือเรื่องราวของคุณ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 12
-},
-{
-  id: 73,
-  name: "Little Nightmares III - Steam Account (บัญชีส่วนตัว ) ",
-  price: 659,
-  oldPrice: 1690,
-  platform: ["PC"],
-  category: "เกมผจญภัย",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1392860/7aba96b32736990ec8a131bfdf395d2dc35b282b/header.jpg?t=1767887616",
-  popular: true,
-  description: "สิ่งเล็กๆ ในห้วงฝันร้าย III เป็นเกมผจญภัยที่จะพาคุณติดตามการเดินทางของสองเพื่อนรัก โลว์และอะโลน เพื่อช่วยกันหาทางออกจาก ดินแดนไร้จุดหมาย ไม่ว่าคุณจะเล่นแบบออนไลน์โดยผู้เล่น 2 คน หรือจะเล่นคนเดียวไปกับคู่หู AI คุณจะต้องร่วมมือกันไขปริศนาและเอาชีวิตรอดจากโลกที่ราวกับฝันร้ายนี้ให้ได้ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 14
-},
-{
-  id: 74,
-  name: "GTA 5 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 539,
-  oldPrice: 959,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3240220/header.jpg?t=1765479644",
-  popular: true,
-  description: "สัมผัสประสบการณ์ความบันเทิงระดับบล็อกบัสเตอร์ Grand Theft Auto V และ Grand Theft Auto Online ที่ได้รับการอัปเกรดใหม่สำหรับยุคใหม่ ด้วยภาพกราฟิกที่สวยงามตระการตา การโหลดที่เร็วขึ้น เสียง 3 มิติ และอื่นๆ อีกมากมาย พร้อมเนื้อหาพิเศษสำหรับผู้เล่น GTA Online เท่านั้น ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 20
-},
-{
-  id: 75,
-  name: " The last of us part 1 and 2- Steam Account (บัญชีออฟไลน์ ) ",
-  price: 149,
-  oldPrice: 2980,
-  platform: ["PC"],
-  category: "  เกมผจญภัย ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/10/tlou-part-1-and-part-2-remastered.jpg",
-  popular: true,
-  description: "ผู้เล่นใช้อาวุธเช่น ปืนพก ไรเฟิล และระเบิดที่ทำขึ้น รวมถึงการโจมตีระยะประชิดด้วยการล็อกคอ ไม้เบสบอล และท่อเหล็กเพื่อป้องกันตัวเองจากผู้ติดเชื้อและมนุษย์ผู้รอดชีวิตคนอื่นๆ ผู้เล่นยังสามารถเข้าสู่ฉากการต่อสู้แบบลอบเร้นที่ใช้มุมกล้องแบบระยะใกล้ได้ด้วย การโจมตีด้วยอาวุธและระเบิดสามารถส่งผลให้เกิดการตัดหรือฉีกขาดของร่างกายได้ ฉากที่แสดงความรุนแรงอย่างมาก รวมถึงเรื่องการฆ่าตัวตายและการทรมาน ระหว่างเกม ตัวละครใช้คำพูดแบบผู้ใหญ่กับหนังสือสำหรับผู้ใหญ่และมีการแสดงตัวละครอายุน้อยดื่มสิ่งมึนเมา มีการใช้ภาษาที่รุนแรงในไดอะล็อกบ่อยครั้ง",
-  rating: 4.9,
-  sold: 28
-},
-{
-  id: 76,
-  name: " Stellar Blade™ - Steam Account (บัญชีออฟไลน์ ) ",
-  price: 149,
-  oldPrice: 1690,
-  platform: ["PC"],
-  category: "  เกมผจญภัย ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3489700/header.jpg?t=1776466244",
-  popular: true,
-  description: "ช่วยมนุษยชาติจากการสูญพันธุ์ใน Stellar Blade™ เกมแอ็กชันผจญภัยในโลกที่ล่มสลาย สัมผัสเกมการต่อสู้ดุเดือดและเรื่องราวคาดไม่ถึงระหว่างที่คุณเปิดเผยปริศนาการล่มสลายของโลก",
-  rating: 4.9,
-  sold: 22
-},
-{
-  id: 77,
-  name: " Silent Hill F Deluxe Edition - Steam Account (บัญชีออฟไลน์ ) ",
-  price: 149,
-  oldPrice: 2415,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2947440/7e5d923ac622bd1775ebc9b5d4b5b0a24bf5ed40/header.jpg?t=1770169624",
-  popular: true,
-  description: "บ้านเกิดของฮินาโกะถูกปกคลุมไปด้วยหมอก ทำให้เธอต้องต่อสู้กับสัตว์ประหลาดน่าเกลียดน่ากลัวและไขปริศนาสุดลึกลับ ค้นพบความงามอันน่าสะพรึงกลัวที่ซ่อนอยู่ท่ามกลางความหวาดกลัว",
-  rating: 4.9,
-  sold: 19
-},
-{
-  id: 78,
-  name: " Resident Evil 4 Remake - Steam Account (บัญชีออฟไลน์ ) ",
-  price: 149,
-  oldPrice: 1090,
-  platform: ["PC"],
-  category: " เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2050650/header.jpg?t=1772502922",
-  popular: true,
-  description: "การเอาชีวิตรอดเป็นเพียงจุดเริ่มต้นเท่านั้น หกปีผ่านไปนับตั้งแต่ภัยพิบัติทางชีวภาพในเมืองแรคคูนซิตี้ ลีออน เอส. เคนเนดี หนึ่งในผู้รอดชีวิต ติดตามหาลูกสาวของประธานาธิบดีที่ถูกลักพาตัวไปยังหมู่บ้านห่างไกลแห่งหนึ่งในยุโรป ซึ่งมีบางสิ่งผิดปกติอย่างร้ายแรงเกิดขึ้นกับชาวบ้านที่นั่น",
-  rating: 4.9,
-  sold: 25
-},
-{
-  id: 79,
-  name: " F1® 25 - Steam Account (บัญชีส่วนตัว ) ",
-  price: 399,
-  oldPrice: 1599,
-  platform: ["PC"],
-  category: "  เกมแข่งความเร็ว  ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3059520/37f833ca5bd3d5c3eec2b411131f3e00f580bbe7/header.jpg?t=1777395603",
-  popular: true,
-  description: "จารึกสถิติของคุณไว้บนโลกของการแข่งรถใน F1® 25 ซึ่งเป็นวิดีโอเกมอย่างเป็นทางการของ 2025 FIA Formula One World Championship™ ที่มีทั้งโหมด My Team ที่ปรับปรุงใหม่ บทที่สามสุดเร้าใจในโหมด Braking Point และอีกมากมาย! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
-  rating: 4.9,
-  sold: 28
-},
-{
-  id: 80,
-  name: "Black Myth: Wukong- Steam Account (บัญชีออฟไลน์ ) ",
-  price: 139,
-  oldPrice: 1799,
-  platform: ["PC"],
-  category: "  เกมแอ็คชัน ",
-  type: "เกม",
-  badge: "PC",
-  image: "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg",
-  popular: true,
-  description: "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ",
-  rating: 4.9,
-  sold: 10
-},
-{
-    id: 81,
-    name: "ChatGPT Plus -Account (บัญชีส่วนตัว) / เดือน  ",
-    price: 299,
-    oldPrice: 699,
-    platform: ["iOS", "Android", "PC"],
-    category: "ChatGPT",
-    type: "แอพ",
-    badge: "iOS / Android / PC",
-    image:
-      "https://reviewintrendy.com/wp-content/uploads/2023/06/%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94%E0%B8%87%E0%B8%B2%E0%B8%99-PBN3-4.jpg",
+    id: 27,
+    name: "Terraria",
+    price: 59,
+    priceiOS: 59,
+    priceAndroid: 59,
+    oldPrice: 199,
+    platform: ["iOS", "Android"],
+    category: "เอาชีวิตรอด",
+    type: "เกม",
+    badge: "iOS / Android",
+    image: "https://m.media-amazon.com/images/I/31V6N3J7NVL.png",
     popular: false,
-    description: "แอพ ChatGPT Plus  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ ChatGPT เมลร้าน ใช้ส่วนตัว เปลี่ยนรหัสผ่านได้ ต่อเมลเดิมไม่ได้ ",
+    description: "เกมเอาชีวิตรอด 2D สุดฮิต เล่นฟรียาวมาก",
     rating: 4.9,
-    sold: 54,
+    sold: 180,
   },
   {
-    id: 82,
-    name: "Capcut PRO -Account (บัญชีส่วนตัว) / เดือน  ",
-    price: 219,
-    oldPrice: 300,
-    platform: ["iOS", "Android", "PC"],
-    category: "CapCut",
-    type: "แอพ",
-    badge: "iOS / Android / PC",
+    id: 28,
+    name: "Unpacking",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 299,
+    platform: ["iOS"],
+    category: "ผ่อนคลาย",
+    type: "เกม",
+    badge: "iOS Only",
     image:
-      "https://m.media-amazon.com/images/I/21Nd1a0j87L.jpg",
+      "https://store-images.s-microsoft.com/image/apps.13051.13636460453065260.ecf51b77-0a2c-413e-97f7-3aacd9282ab3.dd5a85c1-2cf9-4128-850a-e931036fb1b6",
     popular: false,
-    description: "แอพ Capcut PRO  ที่ให้คุณเข้าถึงฟีเจอร์พิเศษและประสบการณ์การใช้งานที่ดียิ่งขึ้นของ Capcut เมลร้าน ใช้ส่วนตัว  ",
-    rating: 4.9,
-    sold: 18,
+    description: "เกมจัดของสุดชิล เล่นเพลินแบบไม่รู้ตัว",
+    rating: 4.8,
+    sold: 95,
   },
   {
-    id: 83,
-    name: "Microsoft 365 (บัญชีใช้งานส่วนตัว) / ปี ",
-    price: 299,
-    oldPrice: 2999,
-    platform: ["iOS", "Android", "PC"],
-    category: "Microsoft 365",
-    type: "แอพ",
-    badge: "iOS / Android / PC",
+    id: 29,
+    name: "Townscaper",
+    price: 59,
+    priceiOS: 59,
+    oldPrice: 199,
+    platform: ["iOS"],
+    category: "จำลอง",
+    type: "เกม",
+    badge: "iOS Only",
     image:
-      "https://www.fordham.edu/media/home/departments-centers-and-offices/fordham-it/ms365.png",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6wtwZFQjolF9jjqCKLJXseEY4Zy3h7Y_DKQ&s",
     popular: false,
-    description: "ใช้งานโปรแกรม Microsoft Office ได้อย่างเต็มรูปแบบ ไม่ว่าจะเป็น Word, Excel, PowerPoint, Outlook, Teams และ OneNote เหมาะสำหรับนักเรียน นักศึกษา พนักงานออฟฟิศ และผู้ที่ต้องการใช้งานเอกสารในชีวิตประจำวัน ",
+    description: "สร้างเมืองสวยๆ ได้แบบง่ายๆ โคตรเพลิน",
+    rating: 4.8,
+    sold: 88,
+  },
+  {
+    id: 30,
+    name: "Human: Fall Flat",
+    price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
+    oldPrice: 249,
+    platform: ["iOS", "Android"],
+    category: "ปริศนา",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://cdn1.idcgames.com/storage/image/1348/game_banner/4x5_1-1_72.jpg",
+    popular: false,
+    description: "เกมแก้ปริศนาฮาๆ เล่นกับเพื่อนได้",
+    rating: 4.8,
+    sold: 120,
+  },
+  {
+    id: 31,
+    name: "Incredibox",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 199,
+    platform: ["iOS"],
+    category: "ดนตรี",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf4MWsSNpl1U_lBoNfsXlDdPgm4Q6J4ZMb2w&s",
+    popular: false,
+    description: "สร้างเพลงเองได้แบบง่ายๆ โคตรเท่",
+    rating: 4.9,
+    sold: 70,
+  },
+  {
+    id: 32,
+    name: "Don't Starve Shipwrecked",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 249,
+    platform: ["iOS"],
+    category: "เอาชีวิตรอด",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOQDtAiRHUwofdF-0oioS8fOzD9SjIq2xmQ&s",
+    popular: false,
+    description: "เอาชีวิตรอดบนเกาะ โหดแต่โคตรมัน",
+    rating: 4.8,
+    sold: 90,
+  },
+  {
+    id: 33,
+    name: "Construction Simulator 4",
+    price: 59,
+    priceiOS: 59,
+    priceAndroid: 59,
+    oldPrice: 199,
+    platform: ["iOS", "Android"],
+    category: "จำลอง",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://play-lh.googleusercontent.com/XgzdBgl_62OgGF1PqpnfFTzRjJL6tlc39wFo6eiBETPEMfvZnThTQwtT1V9FFpH-Gg",
+    popular: false,
+    description: "จำลองงานก่อสร้างสมจริง ขับเครื่องจักรครบ",
+    rating: 4.6,
+    sold: 50,
+  },
+  {
+    id: 34,
+    name: "Little Nightmares",
+    price: 59,
+    priceiOS: 59,
+    oldPrice: 199,
+    platform: ["iOS"],
+    category: "สยองขวัญ",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWHIiw5KiPhETgd3ZqCIZiRq4jl2Bn1GBhKw&s",
+    popular: false,
+    description: "เกมสยองขวัญบรรยากาศโคตรดี เล่นแล้วหลอน",
+    rating: 4.9,
+    sold: 110,
+  },
+  {
+    id: 35,
+    name: "Kingdom Two Crowns",
+    price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
+    oldPrice: 249,
+    platform: ["iOS", "Android"],
+    category: "วางแผน",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/54/25/e3/5425e30c-03a7-e5cc-8aa2-c11abc30d1c4/AppIcon-1x_U007emarketing-0-8-0-85-220-0.png/320x320bb.jpg",
+    popular: false,
+    description: "สร้างอาณาจักร ป้องกันศัตรู เล่นฟรียาว",
+    rating: 4.8,
+    sold: 85,
+  },
+  {
+    id: 36,
+    name: "My Time at Portia",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 299,
+    platform: ["iOS"],
+    category: "จำลองชีวิต",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/NWmnQmMFKyM-6RrUpa-dbkPehICPanvbw1g5Ec_rA4odTnD-IonuAVeQvUACLNSHmvg=w256",
+    popular: false,
+    description: "ทำฟาร์ม สร้างบ้าน ใช้ชีวิตสุดชิล เล่นฟรียาวมาก",
+    rating: 4.8,
+    sold: 95,
+  },
+  {
+    id: 37,
+    name: "Tropico",
+    price: 79,
+    priceiOS: 79,
+    oldPrice: 399,
+    platform: ["iOS"],
+    category: "วางแผน",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/IlCLh9HJ97jmOVL6PAZ0HRidZodotSp0y4dreOT8bPBr4pzPghRk7rtl9pEnJdkyaw",
+    popular: false,
+    description: "บริหารประเทศแบบผู้นำ สายวางแผนต้องมี",
+    rating: 4.7,
+    sold: 80,
+  },
+  {
+    id: 38,
+    name: "LIMBO",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 199,
+    platform: ["iOS"],
+    category: "ปริศนา",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202511/2413/e3c6a091b505264c4f36678473b0439cd2b3b10ade3c6e83.jpg",
+    popular: false,
+    description: "เกมขาวดำสุดลึกลับ ปริศนาลึก เล่นแล้วติด",
+    rating: 4.9,
+    sold: 120,
+  },
+  {
+    id: 39,
+    name: "Poly Bridge",
+    price: 49,
+    priceiOS: 49,
+    priceAndroid: 49,
+    oldPrice: 199,
+    platform: ["iOS", "Android"],
+    category: "ปริศนา",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://img.tapimg.net/market/images/c06e7f9d5d2be430bafff3178f982e2e.png",
+    popular: false,
+    description: "สร้างสะพานให้รถผ่าน ท้าทายและสนุกมาก",
+    rating: 4.7,
+    sold: 70,
+  },
+  {
+    id: 40,
+    name: "The Bonfire 2: Uncharted Shores",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 299,
+    platform: ["iOS"],
+    category: "เอาชีวิตรอด",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://play-lh.googleusercontent.com/vth6kp9sWQtbxQr2XeiO5nwIv-j2Jk9cwtKDmePaT_ILBXuy2AVu3wcDbupZVz9Jtv8",
+    popular: false,
+    description: "สร้างเมือง เอาชีวิตรอด และสำรวจโลก",
+    rating: 4.8,
+    sold: 85,
+  },
+  {
+    id: 41,
+    name: "Very Little Nightmares",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 299,
+    platform: ["iOS"],
+    category: "สยองขวัญ",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEy_eUxGJlDFvIgmijyxC2AeM5WgfyY7ngig&s",
+    popular: false,
+    description: "เกมสยองขวัญแนวปริศนา บรรยากาศโคตรดี",
+    rating: 4.8,
+    sold: 90,
+  },
+  {
+    id: 42,
+    name: "Stardew Valley",
+    price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
+    oldPrice: 199,
+    platform: ["iOS", "Android"],
+    category: "จำลองชีวิต",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/0e/df/12/0edf1230-3f6e-fbb3-7f72-f2aa844d100a/AppIcons-0-0-1x_U007emarketing-0-8-0-85-220.png/320x320bb.jpg",
+    popular: false,
+    description: "ทำฟาร์ม ปลูกผัก เลี้ยงสัตว์ ใช้ชีวิตชิลๆ เล่นเพลินทั้งวัน",
+    rating: 5.0,
+    sold: 220,
+  },
+  {
+    id: 43,
+    name: "Surgeon Simulator",
+    price: 59,
+    priceiOS: 59,
+    oldPrice: 199,
+    platform: ["iOS"],
+    category: "จำลอง",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpc8WMmbOpcm9Fol3W4NrZigzcfgieiENnPQ&s",
+    popular: false,
+    description: "เกมผ่าตัดสุดปั่น ฮาๆ เล่นกับเพื่อนโคตรมัน",
+    rating: 4.6,
+    sold: 75,
+  },
+  {
+    id: 44,
+    name: "Hitman: Blood Money",
+    price: 69,
+    priceiOS: 69,
+    oldPrice: 419,
+    platform: ["iOS"],
+    category: "ลอบสังหาร",
+    type: "เกม",
+    badge: "iOS Only",
+    image:
+      "https://images.nintendolife.com/213989d7c2fac/hitman-blood-money---reprisal-cover.cover_large.jpg",
+    popular: false,
+    description: "เกมลอบเร้นระดับตำนาน วางแผนฆ่าแบบเนียนๆ",
+    rating: 4.9,
+    sold: 130,
+  },
+  {
+    id: 45,
+    name: "Dead Cells",
+    price: 69,
+    priceiOS: 69,
+    priceAndroid: 69,
+    oldPrice: 249,
+    platform: ["iOS", "Android"],
+    category: "แอ็กชั่น",
+    type: "เกม",
+    badge: "iOS / Android",
+    image:
+      "https://assets1.ignimgs.com/2019/06/10/dead-cells---button-fin-1560125633132.jpg?crop=1%3A1%2Csmart&format=jpg&auto=webp&quality=80",
+    popular: true,
+    description: "เกมแอ็กชั่น Roguelike สุดมัน ตายแล้วเริ่มใหม่ แต่โคตรสนุก",
+    rating: 4.9,
+    sold: 150,
+  },
+  {
+    id: 46,
+    name: "Minecraft PC (Java / Bedrock) เป็นบัญชีแชร์",
+    price: 99,
+    oldPrice: 1115,
+    platform: ["PC"],
+    category: "Minecraft",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
+    popular: true,
+    description:
+      " Minecraft สำหรับ PC เป็นเมลเเชร์ของทางร้าน✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅",
+    rating: 4.8,
+    sold: 50,
+  },
+  {
+    id: 47,
+    name: "Minecraft PC (Bedrock ) เป็นบัญชีส่วนตัว",
+    price: 259,
+    oldPrice: 1115,
+    platform: ["PC"],
+    category: "Minecraft",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
+    popular: true,
+    description:
+      " Minecraft สำหรับ PC เป็นเมลส่วนตัว สามารถเล่นเเค่ Bedrock Edition ✅ DonutSMP ไม่ถูกแบน ✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง ✅",
+    rating: 4.9,
+    sold: 46,
+  },
+  {
+    id: 48,
+    name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
+    price: 389,
+    oldPrice: 1115,
+    platform: ["PC"],
+    category: "Minecraft",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
+    popular: true,
+    description:
+      " Minecraft สำหรับ PC เป็นเมลส่วนตัว✅ เล่นhypixelไม่ได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition  ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
+    rating: 4.7,
+    sold: 38,
+  },
+  {
+    id: 49,
+    name: "Minecraft PC (Java / Bedrock)เป็นบัญชีส่วนตัว",
+    price: 459,
+    oldPrice: 1115,
+    platform: ["PC"],
+    category: "Minecraft",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202407/0401/670c294ded3baf4fa11068db2ec6758c63f7daeb266a35a1.png",
+    popular: true,
+    description:
+      " Minecraft สำหรับ PC เป็นเมลส่วนตัว ✅ เล่นhypixelได้✅ สามารถเล่นได้ทั้ง Java และ Bedrock Edition ในราคาเดียว✅ เปลี่ยนเมล เปลี่ยนรหัสได้เอง✅",
+    rating: 4.9,
+    sold: 29,
+  },
+  {
+    id: 50,
+    name: "Terraria - Steam Account (บัญชีส่วนตัว) ",
+    price: 99,
+    oldPrice: 220,
+    platform: ["PC"],
+    category: " เกมอินดี้ ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://hb.imgix.net/b7c65e77a5f126a1024a8459ec0fd08f879860f1.jpeg?auto=compress,format&fit=crop&h=353&w=616&s=993b7e1d9df1e22a531675612b644e59",
+    popular: true,
+    description:
+      " ขุด, ต่อสู้, สำรวจ, สร้าง! สัมผัสเกมผจญภัยแนว Sandbox ยอดฮิตระดับตำนานในราคาคุ้มค่า✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 22,
+  },
+  {
+    id: 51,
+    name: "Squad - Steam Account (บัญชีส่วนตัว ) ",
+    price: 299,
+    oldPrice: 899,
+    platform: ["PC"],
+    category: "เกมแอ็คชัน",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://cdn.prod.website-files.com/651dd1cea3817995c17fa3c1/65e0e49452009f2a2920f3ce_1200x630-key-art.jpeg",
+    popular: true,
+    description:
+      " Squad เป็นเกม FPS เชิงกลยุทธ์ที่มอบประสบการณ์การต่อสู้ที่สมจริงผ่านการทำงานเป็นทีม การสื่อสาร และการต่อสู้ที่สมจริง มันผสมผสานระหว่างเกมยิงแบบอาร์เคดและความสมจริงทางทหารด้วยการต่อสู้ที่มีผู้เล่นสูงสุด 100 คน การรบแบบผสมผสาน และการสร้างฐานทัพ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 19,
+  },
+  {
+    id: 52,
+    name: "SCUM - Steam Account (บัญชีส่วนตัว ) ",
+    price: 319,
+    oldPrice: 999,
+    platform: ["PC"],
+    category: "Open-world Survival",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://imgproxy.eneba.games/c5LirgQDjLllv9YYX0ytZXzcQsAqP6tk_0AJsmausdI/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9n/b291c1VuZHM2V0p4/eUdENlNJM1REX0ky/LTVMM2JNUTRjMjlO/dEl3YjVVLmpwZWc",
+    popular: true,
+    description:
+      "ผจญภัยในสภาพแวดล้อมที่โหดร้าย เก็บไอเทม สร้างสิ่งของ และหลบหลีกภัยคุกคามต่อชีวิตอย่างต่อเนื่อง ระบบการปรับแต่งและพัฒนาตัวละครที่ไม่เคยมีมาก่อนคือเครื่องมือสำคัญในการเอาชีวิตรอดของคุณ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 33,
+  },
+  {
+    id: 53,
+    name: "Arma 3 - Steam Account (บัญชีส่วนตัว ) ",
+    price: 189,
+    oldPrice: 999,
+    platform: ["PC"],
+    category: " เกมแอ็คชัน",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://imgproxy.eneba.games/bUl7e9q7gGKNFDI9PEj1HC-HxbDOHyfghk7cul8SvX8/rs:fit:300/ar:1/czM6Ly9wcm9kdWN0/cy5lbmViYS5nYW1l/cy9wcm9kdWN0cy9a/bkNiZmFWLmpwZw",
+    popular: true,
+    description:
+      "สัมผัสประสบการณ์การเล่นเกมต่อสู้ที่สมจริงในสมรภูมิรบขนาดใหญ่ วางแผนการรบด้วยเนื้อหาแบบเล่นคนเดียวและเล่นหลายคนมากมาย คลังอาวุธและยานพาหนะทันสมัยขนาดใหญ่ และโอกาสในการสร้างสรรค์เนื้อหาอย่างไม่จำกัด สมจริง หลากหลาย เปิดกว้าง - Arma 3 จะพาคุณเข้าสู่สงคราม ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 22,
+  },
+  {
+    id: 54,
+    name: "Peak - Steam Account (บัญชีส่วนตัว ) ",
+    price: 129,
+    oldPrice: 159,
+    platform: ["PC"],
+    category: "  เกมอินดี้",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlemGZ0zMbpr_iOpejkuoo6gFvILqvB-WfPA&s",
+    popular: true,
+    description:
+      "PEAK เป็นเกมปีนเขาแบบร่วมมือกันที่ความผิดพลาดเพียงเล็กน้อยก็สามารถทำให้คุณชะตาขาดได้ ไม่ว่าจะเป็นการเล่นเดี่ยวหรือเป็นกลุ่มลูกเสือที่ออกไปศึกษาธรรมชาติแล้วหลงทาง ความหวังเดียวที่จะช่วยเหลือคุณออกจากเกาะลึกลับได้คือการปีนเขาที่ตั้งอยู่กลางเกาะ คุณมีคุณสมบัติเพียงพอที่จะพิชิตยอดเขาสูงสุดหรือไม่ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 42,
+  },
+  {
+    id: 55,
+    name: "Stardew Valley - Steam Account (บัญชีส่วนตัว ) ",
+    price: 149,
+    oldPrice: 315,
+    platform: ["PC"],
+    category: "  เกมอินดี้",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcwlMJFs08nzPUB1cjJITCbeRvytEK0U86yw&s",
+    popular: true,
+    description:
+      "คุณได้รับมรดกเป็นที่ดินทำฟาร์มเก่าของคุณปู่ในเกม Stardew Valley พร้อมด้วยเครื่องมือเก่าๆ และเงินเพียงเล็กน้อย คุณเริ่มต้นชีวิตใหม่ คุณจะสามารถเรียนรู้ที่จะหาเลี้ยงชีพจากที่ดินและเปลี่ยนทุ่งนาที่รกร้างเหล่านี้ให้กลายเป็นบ้านที่เจริญรุ่งเรืองได้หรือไม่? ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 35,
+  },
+  {
+    id: 56,
+    name: "Garry's Mod - Steam Account (บัญชีส่วนตัว ) ",
+    price: 149,
+    oldPrice: 219,
+    platform: ["PC"],
+    category: "  เกมอินดี้",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://m.media-amazon.com/images/M/MV5BMjY4ZWU0Y2YtZWViMi00YjE0LWJjYTItZTk3MWFlYzMyYjUwXkEyXkFqcGc@._V1_.jpg",
+    popular: true,
+    description:
+      "Garry's Mod เป็นเกมจำลองฟิสิกส์แบบแซนด์บ็อกซ์ ไม่มีเป้าหมายหรือจุดประสงค์ที่กำหนดไว้ล่วงหน้า เราให้เครื่องมือแก่คุณ แล้วปล่อยให้คุณเล่นอย่างอิสระ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 28,
+  },
+  {
+    id: 57,
+    name: "ELDEN RING - Steam Account (บัญชีส่วนตัว ) ",
+    price: 789,
+    oldPrice: 1790,
+    platform: ["PC"],
+    category: "เกมแอ็คชัน",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/vulcan/ap/rnd/202108/0410/D8mYIXWja8knuqYlwqcqVpi1.jpg",
+    popular: true,
+    description:
+      "ELDEN RING เป็นเกมแอ็คชันที่ผสมผสานระหว่างโลกแฟนตาซีและฟิสิกส์ที่สมจริง คุณจะได้รับโอกาสในการสำรวจโลกที่กว้างใหญ่และเผชิญหน้ากับศัตรูที่หลากหลาย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 9,
+  },
+  {
+    id: 58,
+    name: "Raft - Steam Account (บัญชีส่วนตัว ) ",
+    price: 199,
+    oldPrice: 369,
+    platform: ["PC"],
+    category: "เกมผจญภัย ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://store-images.s-microsoft.com/image/apps.32463.14102062639781722.573266e7-686b-44fb-9e48-a2585bc2170f.5424f649-5154-402f-88e5-905dae685f22",
+    popular: true,
+    description:
+      "Raft เป็นเกมผจญภัยแบบเปิดโลกที่คุณจะต้องอยู่รอดบนเรือไม้เล็กๆ ที่ลอยอยู่บนทะเล คุณจะต้องหาวัสดุรวบรวมอาหาร และสร้างสิ่งของเพื่อเอาชีวิตรอด ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 35,
+  },
+  {
+    id: 59,
+    name: "Astroneer- Steam Account (บัญชีส่วนตัว ) ",
+    price: 289,
+    oldPrice: 590,
+    platform: ["PC"],
+    category: "  เกมผจญภัย ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/a/a9/Astroneer_cover_art.jpg",
+    popular: true,
+    description:
+      "Astroneer เป็นเกมผจญภัยในอวกาศที่คุณจะต้องสำรวจและสร้างสรรค์บนดาวเคราะห์ต่างๆ คุณจะต้องจัดการทรัพยากร สร้างฐานที่อยู่ และรักษาชีวิตในสภาพแวดล้อมที่ไม่เอื้ออำนวย ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 20,
+  },
+  {
+    id: 60,
+    name: "Palworld- Steam Account (บัญชีส่วนตัว ) ",
+    price: 259,
+    oldPrice: 590,
+    platform: ["PC"],
+    category: "  เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://upload.wikimedia.org/wikipedia/en/f/fb/Palworld_Steam_artwork.jpg",
+    popular: true,
+    description:
+      "Palworld เป็นเกมต่อสู้ ทำฟาร์ม สร้างสิ่งก่อสร้าง และทำงานร่วมกับสิ่งมีชีวิตลึกลับที่เรียกว่า \"เพื่อน\" ในเกมเอาชีวิตรอดและสร้างสิ่งของแบบโอเพ่นเวิลด์สำหรับผู้เล่นหลายคนรูปแบบใหม่ล่าสุดนี้ ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
     rating: 4.9,
     sold: 15,
   },
   {
-    id: 84,
-    name: "Microsoft Office LTSC 2024 (บัญชีใช้งานส่วนตัว) / ถาวร ",
-    price: 259,
-    oldPrice: 2999,
-    platform: ["iOS", "Android", "PC"],
-    category: "Microsoft 365",
-    type: "แอพ",
-    badge: "iOS / Android / PC",
+    id: 61,
+    name: "Black Myth: Wukong- Steam Account (บัญชีส่วนตัว ) ",
+    price: 699,
+    oldPrice: 1799,
+    platform: ["PC"],
+    category: "  เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
     image:
-      "https://scontent.fbkk4-3.fna.fbcdn.net/v/t39.30808-6/721297673_122183322056907123_5093074739548421274_n.jpg?stp=dst-jpg_tt6&cstp=mx1086x1448&ctp=s1086x1448&_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFFE-y4K0r_6k5M3IAPdwenPgCqG0gbDqU-AKobSBsOpWamBPBeEegPGlHk0iYd9Zk4HHUjavcGpVyoiXLaQUHx&_nc_ohc=ctXznvOkf_YQ7kNvwGS9aDJ&_nc_oc=Adohf0YjL7mmTonXYejsJfe6VOQyh1mbCRH-Fz-Tk87gqgYw_pU1H_N4Ty9aK-Xh71I&_nc_zt=23&_nc_ht=scontent.fbkk4-3.fna&_nc_gid=QBAlqR3LoCxZhl1-pfGO7Q&_nc_ss=7b2a8&oh=00_Af_gOofETkfRjdyJY5e-oZn-GUfqFzUwEC0-K4MDxVtbQg&oe=6A2EC080",
-    popular: false,
-    description: "ใช้งานโปรแกรม Microsoft Office ได้อย่างเต็มรูปแบบ ไม่ว่าจะเป็น Word, Excel, PowerPoint, Outlook และ OneNote เหมาะสำหรับนักเรียน นักศึกษา พนักงานออฟฟิศ และผู้ที่ต้องการใช้งานเอกสารในชีวิตประจำวัน โดยไม่ต้องกังวลเรื่องการต่ออายุ ",
+      "https://upload.wikimedia.org/wikipedia/en/a/a6/Black_Myth_Wukong_cover_art.jpg",
+    popular: true,
+    description:
+      "Black Myth: Wukong เป็นเกมแอ็กชันเล่นตามบทบาทที่อ้างอิงมาจากตำนานเทพนิยายจีน คุณจะได้สวมบทบาทเป็น ผู้รับลิขิตสวรรค์ เหยียบย่างไปบนเส้นทางสู่ชมพูทวีปซึ่งเต็มไปด้วยภยันตรายและเรื่องน่าประหลาดใจ เพื่อค้นหาความจริงของตำนานเมื่อครั้งอดีต ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
     rating: 4.9,
-    sold: 11,
-  }
+    sold: 10,
+  },
+  {
+    id: 62,
+    name: "Project Zomboid- Steam Account (บัญชีส่วนตัว ) ",
+    price: 129,
+    oldPrice: 400,
+    platform: ["PC"],
+    category: "  เกมเล่นระหว่างการพัฒนา ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://assets-prd.ignimgs.com/2023/07/21/projectzomboid-1689959989039.jpg",
+    popular: true,
+    description:
+      "Project Zomboid คือสุดยอดเกมเอาชีวิตรอดจากซอมบี้ เล่นคนเดียวหรือเล่นหลายคนก็ได้ คุณจะต้องเก็บของ สร้างสิ่งก่อสร้าง ประดิษฐ์สิ่งของ ต่อสู้ ทำฟาร์ม และตกปลาเพื่อเอาชีวิตรอด ระบบทักษะ RPG สุดเข้มข้น แผนที่ขนาดใหญ่ โหมดแซนด์บ็อกซ์ที่ปรับแต่งได้มากมาย และแรคคูนตัวน้อยน่ารักที่จะช่วยสอนวิธีการเล่นรอผู้เล่นอยู่ แล้วคุณจะตายอย่างไร? แค่โดนกัดครั้งเดียวก็ตายแล้ว... ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 20,
+  },
+  {
+    id: 63,
+    name: "Valheim- Steam Account (บัญชีส่วนตัว ) ",
+    price: 209,
+    oldPrice: 499,
+    platform: ["PC"],
+    category: "   เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://gaming-cdn.com/images/products/7119/orig/valheim-pc-mac-game-steam-cover.jpg?v=1706800610",
+    popular: true,
+    description:
+      "เกมสำรวจและเอาชีวิตรอดสุดโหดสำหรับผู้เล่น 1-10 คน ในดินแดนที่สร้างขึ้นแบบสุ่มโดยได้รับแรงบันดาลใจจากวัฒนธรรมไวกิ้ง ต่อสู้ สร้าง และพิชิตดินแดนเพื่อสร้างมหากาพย์ที่คู่ควรกับการอุปถัมภ์ของเทพโอดิน! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.9,
+    sold: 15,
+  },
+  {
+    id: 64,
+    name: "7 Days to Die - Steam Account (บัญชีส่วนตัว ) ",
+    price: 289,
+    oldPrice: 809,
+    platform: ["PC"],
+    category: "   เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ90wYJszrnTsdAXOdfF7QNgbjMfekx-9ALmw&s",
+    popular: true,
+    description:
+      "7 Days to Die เป็นเกมโอเพ่นเวิลด์ที่ผสมผสานองค์ประกอบต่างๆ เข้าด้วยกันอย่างลงตัว ไม่ว่าจะเป็นเกมยิงมุมมองบุคคลที่หนึ่ง เกมเอาชีวิตรอดจากซอมบี้ เกมป้องกันหอคอย และเกมสวมบทบาท มาเล่นเกม RPG เอาชีวิตรอดจากซอมบี้แบบแซนด์บ็อกซ์สุดคลาสสิกที่มาก่อนใคร! นาเวซกาเนรอคุณอยู่! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 20,
+  },
+  {
+    id: 65,
+    name: "Overcooked! 2 - Steam Account (บัญชีส่วนตัว ) ",
+    price: 199,
+    oldPrice: 490,
+    platform: ["PC"],
+    category: "   เกมอินดี้  ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/728880/header.jpg?t=1776856665",
+    popular: true,
+    description:
+      "Overcooked กลับมาอีกครั้งพร้อมความสนุกสนานวุ่นวายในการทำอาหาร! กลับสู่ดินแดนแห่งหัวหอมและรวบรวมทีมเชฟของคุณในโหมดเล่นร่วมกันแบบคลาสสิก หรือเล่นออนไลน์ได้สูงสุดถึงสี่คน เตรียมผ้ากันเปื้อนให้พร้อม...ถึงเวลาช่วยโลกอีกครั้งแล้ว! ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 18,
+  },
+  {
+    id: 66,
+    name: "Sekiro: Shadows Die Twice - Steam Account (บัญชีส่วนตัว ) ",
+    price: 359,
+    oldPrice: 809,
+    platform: ["PC"],
+    category: "   เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://image.api.playstation.com/cdn/HP0506/CUSA13910_00/QKJRzanGk86ezpx2pk5QqQaduoXGJV3u8vHIejSav4MYiHA3F7zNgxSOF9bJmt2T.png",
+    popular: true,
+    description:
+      "เกมแห่งปี - The Game Awards 2019 เกมแอ็กชั่นยอดเยี่ยมแห่งปี 2019 - IGN สร้างเส้นทางแห่งการแก้แค้นอันชาญฉลาดของคุณเองในเกมผจญภัยที่ได้รับรางวัลจากผู้พัฒนา FromSoftware ผู้สร้าง Bloodborne และซีรีส์ Dark Souls แก้แค้น กอบกู้เกียรติยศ สังหารอย่างแยบยล ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.8,
+    sold: 20,
+  },
+  {
+    id: 67,
+    name: "The Isle - Steam Account (บัญชีส่วนตัว ) ",
+    price: 279,
+    oldPrice: 400,
+    platform: ["PC"],
+    category: "   เกมแอ็คชัน ",
+    type: "เกม",
+    badge: "PC",
+    image:
+      "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/376210/header.jpg?t=1708531123",
+    popular: true,
+    description:
+      "The Isle เป็นเกมแนว Open World Survival ยุคดึกดำบรรพ์ ผู้เล่นสามารถเลือกเล่นเป็นไดโนเสาร์หลากหลายสายพันธุ์เพื่อเอาชีวิตรอดในระบบนิเวศที่สมจริง ✅ เปลี่ยนเมล เปลี่ยนรหัสได้✅",
+    rating: 4.7,
+    sold: 15,
+  },
 ];
 
-const storeProducts: Product[] = products.map((product) => {
-  const name = product.name.toLowerCase();
-
-  if (name.includes("minecraft")) {
-    return {
-      ...product,
-      category: "Minecraft",
-    };
-  }
-
-  if (name.includes("chatgpt") || name.includes("chat gpt")) {
-    return {
-      ...product,
-      category: "ChatGPT",
-      type: "แอพ",
-    };
-  }
-
-  if (name.includes("capcut")) {
-    return {
-      ...product,
-      category: "CapCut",
-      type: "แอพ",
-    };
-  }
-
-  if (name.includes("microsoft") || name.includes("office")) {
-    return {
-      ...product,
-      category: "Microsoft 365",
-      type: "แอพ",
-    };
-  }
-
-  return product;
-});
-
-const mainCategories = [
-  "ทั้งหมด",
-  "Minecraft",
-  "เกมมือถือ",
-  "เกม PC",
-  "ChatGPT",
-  "CapCut",
-  "Microsoft 365",
-  "แอพพรีเมียม",
-  "ขายดี",
-];
-
-function formatBaht(value: number) {
-  return `฿${value.toLocaleString("th-TH")}`;
-}
-
-function discountPercent(price: number, oldPrice: number) {
-  if (oldPrice <= 0 || oldPrice <= price) return 0;
-  return Math.round(((oldPrice - price) / oldPrice) * 100);
-}
-function StoreInfoSections() {
-  return (
-    <div className="mx-auto mt-20 max-w-7xl px-4 sm:px-6 lg:px-8">
-      <section
-        id="about"
-        className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
-      >
-        <h2 className="text-2xl font-bold text-white">เกี่ยวกับเรา</h2>
-        <p className="mt-3 text-gray-300">
-          LOTUS STORE จำหน่ายเกม ซอฟต์แวร์ และบริการดิจิทัลออนไลน์
-          สำหรับ iOS, Android และ PC พร้อมบริการหลังการขาย
-          และให้คำแนะนำการใช้งานอย่างเป็นกันเอง
-        </p>
-      </section>
-
-      <section
-        id="contact"
-        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
-      >
-        <h2 className="text-2xl font-bold text-white">ติดต่อเรา</h2>
-        <div className="mt-3 space-y-2 text-gray-300">
-          <p>Facebook: Lotus Store</p>
-          <p>Email: tus7234@gmail.com</p>
-          <p>โทร: 061-028-3272</p>
-          <p>เวลาทำการ: ทุกวัน 09:00 - 24:00 น.</p>
-        </div>
-      </section>
-
-      <section
-        id="warranty"
-        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
-      >
-        <h2 className="text-2xl font-bold text-white">เงื่อนไขการรับประกัน</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-300">
-          <li>รับประกันตามเงื่อนไขของสินค้าแต่ละประเภท</li>
-          <li>หากได้รับข้อมูลไม่ครบ สามารถติดต่อร้านเพื่อตรวจสอบได้</li>
-          <li>ห้ามนำสินค้าไปใช้งานผิดวัตถุประสงค์ หรือฝ่าฝืนเงื่อนไขของระบบ</li>
-          <li>กรณีมีปัญหาจากระบบ สามารถแจ้งร้านเพื่อรับการช่วยเหลือได้</li>
-          <li>การรับประกันไม่ครอบคลุมกรณีลูกค้าเปลี่ยนข้อมูลผิดพลาดเอง</li>
-        </ul>
-      </section>
-
-      <section
-        id="privacy"
-        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
-      >
-        <h2 className="text-2xl font-bold text-white">นโยบายความเป็นส่วนตัว</h2>
-        <p className="mt-3 text-gray-300">
-          LOTUS STORE ใช้ข้อมูลของลูกค้า เช่น ชื่อผู้ติดต่อ ช่องทางติดต่อ
-          และรายละเอียดคำสั่งซื้อ เพื่อดำเนินการขาย ให้บริการหลังการขาย
-          และติดต่อกลับเท่านั้น ร้านจะไม่เปิดเผยข้อมูลลูกค้าแก่บุคคลภายนอก
-          เว้นแต่จำเป็นตามกฎหมาย
-        </p>
-      </section>
-
-      <section
-        id="terms"
-        className="mt-6 rounded-3xl border border-white/10 bg-white/5 p-6 shadow-xl backdrop-blur"
-      >
-        <h2 className="text-2xl font-bold text-white">ข้อกำหนดการใช้งาน</h2>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-gray-300">
-          <li>ลูกค้าควรอ่านรายละเอียดสินค้าก่อนสั่งซื้อทุกครั้ง</li>
-          <li>สินค้าดิจิทัลบางรายการอาจมีเงื่อนไขการใช้งานเฉพาะ</li>
-          <li>หลังได้รับสินค้าแล้ว ควรตรวจสอบและแจ้งปัญหาทันที</li>
-          <li>ห้ามนำสินค้าไปใช้ในทางที่ผิดกฎหมายหรือผิดเงื่อนไขของผู้ให้บริการ</li>
-          <li>ร้านขอสงวนสิทธิ์เปลี่ยนแปลงราคาและเงื่อนไขโดยไม่ต้องแจ้งล่วงหน้า</li>
-        </ul>
-      </section>
-    </div>
-  );
-}
-export default function LotusStorePage() {
-  const [activeCategory, setActiveCategory] = useState("ทั้งหมด");
-  const [query, setQuery] = useState("");
-  const [sortBy, setSortBy] = useState("popular");
-  const [showCart, setShowCart] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+export default function Home() {
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("ทั้งหมด");
   const [cart, setCart] = useState<CartItem[]>([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const productRefs = useRef<Record<number, HTMLDivElement | null>>({});
-  const productsSectionRef = useRef<HTMLElement | null>(null);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
-  const handleCategoryClick = (category: string) => {
-    setActiveCategory(category);
-    setShowSuggestions(false);
-
-    setTimeout(() => {
-      productsSectionRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }, 120);
-  };
-
-  const popularProducts = useMemo(() => {
-    return storeProducts
-      .filter((p) => p.popular)
-      .slice(0, 4);
-  }, []);
-
-  const pcFirstProduct = useMemo(() => {
-    return storeProducts.find((p) => p.id === 46);
+  const categories = useMemo(() => {
+    const cats = Array.from(new Set(products.map((p) => p.category.trim())));
+    return ["ทั้งหมด", ...cats];
   }, []);
 
   const filteredProducts = useMemo(() => {
-    const keyword = query.trim().toLowerCase();
-
-    const result = storeProducts.filter((product) => {
-      const name = product.name.toLowerCase();
-      const isMinecraft = name.includes("minecraft") || product.category === "Minecraft";
-      const isChatGPT = product.category === "ChatGPT";
-      const isCapCut = product.category === "CapCut";
-      const isMicrosoft = product.category === "Microsoft 365";
-      const isSpecialApp = isChatGPT || isCapCut || isMicrosoft;
-
-      const matchesCategory =
-        activeCategory === "ทั้งหมด"
-          ? true
-          : activeCategory === "Minecraft"
-            ? isMinecraft
-            : activeCategory === "เกมมือถือ"
-              ? product.type === "เกม" && !product.platform.includes("PC") && !isMinecraft
-              : activeCategory === "เกม PC"
-                ? product.type === "เกม" && product.platform.includes("PC") && !isMinecraft
-                : activeCategory === "ChatGPT"
-                  ? isChatGPT
-                  : activeCategory === "CapCut"
-                    ? isCapCut
-                    : activeCategory === "Microsoft 365"
-                      ? isMicrosoft
-                      : activeCategory === "แอพพรีเมียม"
-                        ? product.type === "แอพ" && !isSpecialApp
-                        : activeCategory === "ขายดี"
-                          ? product.popular === true
-                          : true;
-
-      const matchesKeyword =
-        keyword === ""
-          ? true
-          : product.name.toLowerCase().includes(keyword) ||
-            product.category.toLowerCase().includes(keyword) ||
-            product.description.toLowerCase().includes(keyword);
-
-      return matchesCategory && matchesKeyword;
+    return products.filter((p) => {
+      const matchSearch =
+        p.name.toLowerCase().includes(search.toLowerCase()) ||
+        p.description.toLowerCase().includes(search.toLowerCase());
+      const matchCategory =
+        selectedCategory === "ทั้งหมด" || p.category.trim() === selectedCategory;
+      return matchSearch && matchCategory;
     });
+  }, [search, selectedCategory]);
 
-    const sorted = [...result];
-
-    switch (sortBy) {
-      case "price-low":
-        sorted.sort((a, b) => a.price - b.price);
-        break;
-      case "price-high":
-        sorted.sort((a, b) => b.price - a.price);
-        break;
-      case "discount":
-        sorted.sort(
-          (a, b) =>
-            discountPercent(b.price, b.oldPrice) -
-            discountPercent(a.price, a.oldPrice)
+  const addToCart = (product: Product) => {
+    setCart((prevCart) => {
+      const existing = prevCart.find((item) => item.product.id === product.id);
+      if (existing) {
+        return prevCart.map((item) =>
+          item.product.id === product.id
+            ? { ...item, qty: item.qty + 1 }
+            : item
         );
-        break;
-      case "rating":
-        sorted.sort((a, b) => b.rating - a.rating);
-        break;
-      default:
-        sorted.sort(
-          (a, b) => Number(b.popular) - Number(a.popular) || b.sold - a.sold
-        );
-        break;
-    }
+      }
+      return [...prevCart, { product, qty: 1 }];
+    });
+  };
 
-    return sorted;
-  }, [activeCategory, query, sortBy]);
+  const updateCartQty = (id: number, delta: number) => {
+    setCart((prev) =>
+      prev
+        .map((item) => {
+          if (item.product.id === id) {
+            const newQty = item.qty + delta;
+            return newQty > 0 ? { ...item, qty: newQty } : null;
+          }
+          return item;
+        })
+        .filter(Boolean) as CartItem[]
+    );
+  };
 
-  const searchSuggestions = useMemo(() => {
-    const keyword = query.trim().toLowerCase();
+  const removeFromCart = (id: number) => {
+    setCart((prev) => prev.filter((item) => item.product.id !== id));
+  };
 
-    if (!keyword) return [];
-
-    return storeProducts
-      .filter((product) => product.name.toLowerCase().includes(keyword))
-      .slice(0, 6);
-  }, [query]);
-
-  const cartCount = useMemo(() => {
-    return cart.reduce((sum, item) => sum + item.qty, 0);
-  }, [cart]);
-
-  const cartSubtotal = useMemo(() => {
+  const totalCartPrice = useMemo(() => {
     return cart.reduce((sum, item) => sum + item.product.price * item.qty, 0);
   }, [cart]);
 
-  const cartSavings = useMemo(() => {
-    return cart.reduce(
-      (sum, item) => sum + (item.product.oldPrice - item.product.price) * item.qty,
-      0
-    );
-  }, [cart]);
-
-  const checkoutMessage = useMemo(() => {
-    if (cart.length === 0) {
-      return encodeURIComponent("สวัสดีครับ สนใจสั่งซื้อสินค้าในร้าน Lotus Store");
-    }
-
-    const lines = cart.map((item, index) => {
-      return `${index + 1}. ${item.product.name} x${item.qty} = ${formatBaht(
-        item.product.price * item.qty
-      )}`;
-    });
-
-    const message = `สวัสดีครับ สนใจสั่งซื้อสินค้าจาก Lotus Store
-
-${lines.join("\n")}
-
-ยอดรวม: ${formatBaht(cartSubtotal)}
-
-ขอรายละเอียดเพิ่มเติมครับ 🙏`;
-
-    return encodeURIComponent(message);
-  }, [cart, cartSubtotal]);
-
-  const selectedCheckoutMessage = useMemo(() => {
-    if (!selectedProduct) {
-      return encodeURIComponent("สวัสดีครับ สนใจสั่งซื้อสินค้าจาก Lotus Store");
-    }
-
-    const message = `สวัสดีครับ สนใจสั่งซื้อ ${selectedProduct.name} ราคา ${formatBaht(
-      selectedProduct.price
-    )} จาก Lotus Store
-
-ขอรายละเอียดเพิ่มเติม + วิธีสั่งซื้อครับ 🙏`;
-
-    return encodeURIComponent(message);
-  }, [selectedProduct]);
-
-  const addToCart = (product: Product) => {
-    setCart((prev) => {
-      const found = prev.find((item) => item.product.id === product.id);
-      if (found) {
-        return prev.map((item) =>
-          item.product.id === product.id ? { ...item, qty: item.qty + 1 } : item
-        );
-      }
-      return [...prev, { product, qty: 1 }];
-    });
-    setShowCart(true);
-  };
-
-  const updateQty = (productId: number, delta: number) => {
-    setCart((prev) =>
-      prev
-        .map((item) =>
-          item.product.id === productId ? { ...item, qty: item.qty + delta } : item
-        )
-        .filter((item) => item.qty > 0)
-    );
-  };
-
-  const removeFromCart = (productId: number) => {
-    setCart((prev) => prev.filter((item) => item.product.id !== productId));
-  };
-  const scrollToProduct = (product: Product) => {
-  setQuery(product.name);
-  setShowSuggestions(false);
-
-  setTimeout(() => {
-    const element = productRefs.current[product.id];
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-
-      element.classList.add("ring-2", "ring-red-500");
-
-      setTimeout(() => {
-        element.classList.remove("ring-2", "ring-red-500");
-      }, 1600);
-    }
-  }, 100);
-};
-
   return (
-    <div className="min-h-screen bg-[#050505] text-white">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-pink-500/20 bg-[#050505]/80 shadow-[0_0_30px_rgba(255,43,214,0.18)] backdrop-blur-2xl">
-        <div className="mx-auto flex h-14 max-w-7xl items-center gap-2 px-3 sm:h-16 sm:gap-3 sm:px-6 lg:px-8">
-          <div className="flex min-w-0 items-center gap-2 sm:gap-3">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans pb-12">
+      {/* Navbar */}
+      <header className="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
             <img
               src={logoUrl}
-              alt="Lotus Store"
-              className="h-9 w-9 rounded-2xl object-cover ring-1 ring-pink-500/40 drop-shadow-[0_0_18px_rgba(255,43,214,0.9)] sm:h-10 sm:w-10"
+              alt="Lotus Store Logo"
+              className="w-10 h-10 object-contain rounded-lg bg-slate-800 p-1"
               onError={(e) => {
                 e.currentTarget.style.display = "none";
               }}
             />
-            <div className="hidden sm:block">
-              <p className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-300 bg-clip-text text-lg font-black tracking-tight text-transparent drop-shadow-[0_0_12px_rgba(255,43,214,0.65)]">
-                Lotus Store
-              </p>
-              <p className="text-xs text-zinc-400"> Gaming • Premium Store</p>
-            </div>
-          </div>
-
-          <div className="relative ml-1 flex-1 md:max-w-2xl">
-            <Search className="pointer-events-none absolute left-4 top-1/2 z-20 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-
-           <input
-  value={query}
-  onChange={(e) => {
-    setQuery(e.target.value);
-    setShowSuggestions(true);
-  }}
-  onKeyDown={(e) => {
-    if (e.key === "Enter" && searchSuggestions.length > 0) {
-      scrollToProduct(searchSuggestions[0]);
-    }
-  }}
-              onFocus={() => setShowSuggestions(true)}
-              onBlur={() => {
-                setTimeout(() => setShowSuggestions(false), 150);
-              }}
-              placeholder="ค้นหาเกมหรือแอพ..."
-              className="relative z-10 h-10 w-full rounded-full border border-pink-500/25 bg-[#111111]/80 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-cyan-300/60 focus:bg-white/10 focus:shadow-[0_0_22px_rgba(255,43,214,0.3)] sm:h-11"
-            />
-
-            {showSuggestions && query.trim() !== "" && searchSuggestions.length > 0 && (
-              <div className="absolute left-0 right-0 top-[calc(100%+8px)] z-50 overflow-hidden rounded-2xl border border-white/10 bg-[#111111] shadow-2xl shadow-black/40">
-                {searchSuggestions.map((product) => (
-                  <button
-                    key={product.id}
-                    type="button"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => scrollToProduct(product)}
-                    className="flex w-full items-center gap-3 border-b border-white/5 px-3 py-3 text-left transition hover:bg-white/5 backdrop-blur-xl last:border-b-0"
-                  >
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="h-12 w-12 rounded-xl object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = "https://placehold.co/100x100";
-                      }}
-                    />
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate text-sm font-semibold text-white">
-                        {product.name}
-                      </p>
-                      <p className="text-xs text-zinc-400">{product.category}</p>
-                    </div>
-                    <span className="shrink-0 text-sm font-bold text-pink-300">
-                      {formatBaht(product.price)}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <a
-            href={`${facebookPage}?text=${encodeURIComponent(
-              "สวัสดีครับ สนใจดูรายละเอียดสินค้าในร้าน Lotus Store"
-            )}`}
-            target="_blank"
-            rel="noreferrer"
-            className="hidden rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-2 text-sm font-bold text-white shadow-[0_0_22px_rgba(255,43,214,0.45)] transition hover:scale-[1.02] md:inline-flex"
-          >
-            ติดต่อเพจ
-          </a>
-
-          <button
-            onClick={() => setShowCart(true)}
-            className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-pink-500/30 bg-[#111111] text-pink-300 shadow-[0_0_18px_rgba(255,43,214,0.25)] transition hover:scale-[1.03] hover:border-cyan-300/60 sm:h-11 sm:w-11"
-          >
-            <ShoppingCart className="h-5 w-5" />
-            {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-pink-500 px-1 text-[10px] font-bold text-white ring-1 ring-white/10">
-                {cartCount}
-              </span>
-            )}
-          </button>
-        </div>
-      </header>
-
-      <main className="pb-32 pt-14 sm:pt-16">
-        <section className="relative overflow-hidden border-b border-pink-500/20 bg-[radial-gradient(circle_at_25%_20%,rgba(255,43,214,0.30),transparent_32%),radial-gradient(circle_at_80%_10%,rgba(0,213,255,0.22),transparent_30%),linear-gradient(135deg,#050505_0%,#0b0612_45%,#080b18_100%)]">
-          <div className="mx-auto grid max-w-7xl gap-6 px-3 py-6 sm:gap-10 sm:px-6 sm:py-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-16">
-            <div className="relative z-10">
-              <img
-                src={logoUrl}
-                alt="Lotus Store"
-                className="mb-5 h-24 w-24 rounded-[28px] object-cover ring-1 ring-pink-500/40 drop-shadow-[0_0_30px_rgba(255,43,214,0.95)]"
-              />
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-pink-500/25 bg-pink-500/10 px-3 py-2 text-xs font-semibold text-pink-100 shadow-[0_0_18px_rgba(255,43,214,0.18)] backdrop-blur sm:mb-5 sm:px-4 sm:text-sm">
-                <Sparkles className="h-4 w-4" />
-                Premium mobile game & app storefront
-              </div>
-
-              <h1 className="max-w-3xl leading-[0.95] tracking-tight">
-                <span className="block bg-gradient-to-r from-pink-300 via-fuchsia-400 to-cyan-300 bg-clip-text text-4xl font-black text-transparent drop-shadow-[0_0_22px_rgba(255,43,214,0.75)] sm:text-6xl lg:text-7xl">
-                  LOTUS STORE
-                </span>
-                <span className="mt-2 block text-base font-semibold text-zinc-300 sm:mt-3 sm:text-2xl lg:text-3xl">
-                  Gaming • Minecraft • PC Games • AI Premium
-                </span>
-              </h1>
-
-              <p className="mt-4 max-w-2xl text-sm leading-6 text-zinc-400 sm:mt-5 sm:text-base sm:leading-7 lg:text-lg">
-                ร้านเกมและแอพพรีเมียมสไตล์  Gaming เลือกหมวดง่าย สั่งซื้อไว ทักเพจได้ทันที
-              </p>
-
-              <div className="mt-5 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
-                <a
-                  href="#products"
-                  className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-5 py-3 text-sm font-bold text-white shadow-[0_0_24px_rgba(255,43,214,0.45)] transition hover:scale-[1.02] sm:px-6"
-                >
-                  เริ่มเลือกสินค้า
-                </a>
-                <a
-                  href={`${facebookPage}?text=${encodeURIComponent(
-                    "สวัสดีครับ สนใจดูรายละเอียดสินค้าในร้าน Lotus Store"
-                  )}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full border border-cyan-300/30 bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-100 backdrop-blur transition hover:bg-cyan-400/20 sm:px-6"
-                >
-                  ทักแชทเลย
-                </a>
-              </div>
-
-              <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:gap-3 md:grid-cols-4">
-                {[
-                  { icon: ShieldCheck, title: "การันตี", desc: "ใช้งานได้" },
-                  { icon: MessageCircle, title: "ตอบไว", desc: "คุยง่าย" },
-                  { icon: Headphones, title: "ซัพพอร์ต", desc: "ก่อน-หลังขาย" },
-                  { icon: BadgePercent, title: "ดีลคุ้ม", desc: "ลดแรงหลายเกม" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="rounded-2xl border border-pink-500/20 bg-[#111111]/75 p-3 shadow-[0_0_18px_rgba(255,43,214,0.10)] backdrop-blur-md sm:rounded-3xl sm:p-4"
-                  >
-                    <item.icon className="mb-2 h-5 w-5 text-white sm:mb-3" />
-                    <p className="text-sm font-bold text-white sm:text-base">
-                      {item.title}
-                    </p>
-                    <p className="text-xs text-zinc-400 sm:text-sm">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="relative z-10 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="rounded-[28px] border border-pink-500/25 bg-[#111111]/90 p-4 text-white shadow-[0_0_35px_rgba(255,43,214,0.18)] sm:rounded-[32px] sm:p-5">
-                <div className="mb-4 flex items-center justify-between">
-                  <p className="text-sm font-bold text-white">🎮 เกม PC เกมแรก มาแล้ว!</p>
-                  <span className="rounded-full bg-gradient-to-r from-pink-500 to-cyan-400 px-3 py-1 text-xs font-bold text-white shadow-[0_0_14px_rgba(255,43,214,0.45)]">
-                    ลดสูงสุด{" "}
-                    {Math.max(...products.map((p) => discountPercent(p.price, p.oldPrice)))}%
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <img
-                    src={pcFirstProduct?.image ?? "https://placehold.co/400x400"}
-                    alt={pcFirstProduct?.name ?? "สินค้าแนะนำ"}
-                    className="h-32 w-32 sm:h-40 sm:w-40 rounded-2xl bg-[#191919] object-cover"
-                  />
-                  <div className="min-w-0">
-                    <h3 className="line-clamp-2 text-xl sm:text-2xl font-black">
-                      {pcFirstProduct?.name ?? "สินค้าแนะนำ"}
-                    </h3>
-                    <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
-                      {pcFirstProduct?.description ??
-                        "เลือกสินค้าที่คุ้มที่สุดวันนี้"}
-                    </p>
-                    <div className="mt-3 flex items-end gap-2">
-                      <span className="text-2xl sm:text-3xl font-black text-cyan-300">
-                        {formatBaht(pcFirstProduct?.price ?? 0)}
-                      </span>
-                      <span className="text-xs text-zinc-500 line-through sm:text-sm">
-                        {formatBaht(pcFirstProduct?.oldPrice ?? 0)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                {[
-                  { label: "รีวิวลูกค้า", value: "4.9/5" },
-                  { label: "ออเดอร์รวม", value: "1,500+" },
-                  { label: "สินค้า", value: `${storeProducts.length}+` },
-                  { label: "พร้อมตอบ", value: "ทุกวัน" },
-                ].map((item) => (
-                  <div
-                    key={item.label}
-                    className="rounded-[28px] border border-pink-500/20 bg-[#111111]/90 p-6 text-white shadow-[0_0_28px_rgba(255,43,214,0.12)] sm:p-8"
-                  >
-                    <p className="text-xl font-black sm:text-2xl">{item.value}</p>
-                    <p className="mt-1 text-xs text-zinc-400 sm:text-sm">
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
-          <div className="flex flex-col gap-3 rounded-[24px] border border-pink-500/20 bg-[#0b0b0b]/80 p-3 shadow-[0_0_28px_rgba(255,43,214,0.12)] backdrop-blur-xl sm:rounded-[28px] sm:p-4">
-            <div className="flex gap-2 overflow-x-auto no-scrollbar">
-              {mainCategories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => handleCategoryClick(category)}
-                  className={`shrink-0 rounded-full px-4 py-2 text-sm font-bold transition ${
-                    activeCategory === category
-                      ? category === "Minecraft"
-                        ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
-                        : (category === "ChatGPT" || category === "CapCut" || category === "Microsoft 365")
-                          ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-purple-500/40"
-                          : category === "ขายดี"
-                            ? "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-cyan-400/30"
-                            : "bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 text-white shadow-lg shadow-pink-500/40"
-                      : "border border-pink-500/20 bg-[#111111]/80 text-zinc-300 backdrop-blur-xl hover:border-cyan-300/50 hover:text-white hover:shadow-[0_0_18px_rgba(255,43,214,0.25)]"
-                  }`}
-                >
-                  {category === "Minecraft"
-                    ? "🟩 Minecraft"
-                    : category === "เกมมือถือ"
-                      ? "🎮 เกมมือถือ"
-                      : category === "เกม PC"
-                        ? "💻 เกม PC"
-                        : category === "ChatGPT"
-                          ? "🤖 ChatGPT"
-                          : category === "CapCut"
-                            ? "🎬 CapCut"
-                            : category === "Microsoft 365"
-                              ? "📊 Microsoft 365"
-                              : category === "แอพพรีเมียม"
-                                ? "📱 แอพพรีเมียม"
-                                : category === "ขายดี"
-                                  ? "🔥 ขายดี"
-                                  : "ทั้งหมด"}
-                </button>
-              ))}
-            </div>
-
-            <div className="relative">
-              <Filter className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500" />
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="h-11 w-full appearance-none rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl pl-11 pr-4 text-sm text-white outline-none focus:border-cyan-300/50"
-              >
-                <option value="popular" className="text-black">
-                  เรียงตามความนิยม
-                </option>
-                <option value="price-low" className="text-black">
-                  ราคาน้อยไปมาก
-                </option>
-                <option value="price-high" className="text-black">
-                  ราคามากไปน้อย
-                </option>
-                <option value="discount" className="text-black">
-                  ส่วนลดมากสุด
-                </option>
-                <option value="rating" className="text-black">
-                  คะแนนสูงสุด
-                </option>
-              </select>
-            </div>
-          </div>
-        </section>
-
-        <section className="mx-auto max-w-7xl px-3 pb-3 sm:px-6 lg:px-8">
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-lg font-black text-white sm:text-xl">สินค้าขายดี</h2>
-            <span className="inline-flex items-center gap-1 text-sm text-pink-300 drop-shadow-[0_0_10px_rgba(255,43,214,0.9)]">
-              <Flame className="h-4 w-4" />
-              Hot
+            <span className="text-xl font-bold bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
+              โลตัสเกม
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {popularProducts.map((product) => (
-              <button
-                key={product.id}
-                onClick={() => setSelectedProduct(product)}
-                className="overflow-hidden rounded-[24px] border border-pink-500/20 bg-[#111111]/90 text-left shadow-[0_0_22px_rgba(255,43,214,0.10)] transition hover:scale-[1.01] hover:border-cyan-300/50"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                    onError={(e) => {
-                      e.currentTarget.src = "https://placehold.co/500x500";
-                    }}
-                  />
-                </div>
-                <div className="p-3">
-                  <p className="line-clamp-2 min-h-[40px] text-sm font-bold text-white">
-                    {product.name}
-                  </p>
-                  <div className="mt-2 flex items-end gap-2">
-                    <span className="text-base font-black text-pink-300 sm:text-lg">
-                      {formatBaht(product.price)}
-                    </span>
-                    <span className="text-xs text-zinc-500 line-through">
-                      {formatBaht(product.oldPrice)}
-                    </span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section ref={productsSectionRef} id="products" className="scroll-mt-24 mx-auto max-w-7xl px-3 py-4 sm:px-6 lg:px-8">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-black text-white sm:text-xl">{activeCategory === "ทั้งหมด" ? "สินค้าทั้งหมด" : activeCategory}</h2>
-            <p className="text-xs text-zinc-400 sm:text-sm">
-              พบ {filteredProducts.length} รายการ
-            </p>
+          <div className="flex-1 max-w-md relative hidden sm:block">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              placeholder="ค้นหาเกม หรือ แอพ..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full bg-slate-800/80 border border-slate-700/60 rounded-full pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-rose-500 text-slate-100 placeholder-slate-400"
+            />
           </div>
 
-          {filteredProducts.length === 0 ? (
-            <div className="rounded-[28px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-8 text-center">
-              <p className="text-lg font-bold text-white">ไม่พบสินค้าที่ค้นหา</p>
-              <p className="mt-2 text-sm text-zinc-400">
-                ลองเปลี่ยนคำค้นหรือหมวดสินค้า
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-              {filteredProducts.map((product) => (
+          <div className="flex items-center gap-3">
+            <a
+              href={facebookPage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-full text-xs font-medium transition"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span className="hidden sm:inline">ติดต่อเพจ</span>
+            </a>
+
+            <button
+              onClick={() => setIsCartOpen(true)}
+              className="relative bg-slate-800 hover:bg-slate-700 p-2.5 rounded-full border border-slate-700 transition"
+            >
+              <ShoppingCart className="w-5 h-5 text-rose-400" />
+              {cart.length > 0 && (
+                <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                  {cart.reduce((a, b) => a + b.qty, 0)}
+                </span>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Search Input */}
+        <div className="px-4 pb-3 sm:hidden">
+          <div className="relative w-full">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+            <input
+              type="text"
+              placeholder="ค้นหาเกม หรือ แอพ..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full bg-slate-800/80 border border-slate-700/60 rounded-full pl-9 pr-4 py-2 text-sm focus:outline-none focus:border-rose-500 text-slate-100 placeholder-slate-400"
+            />
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Banner */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-rose-950/40 to-slate-950 py-12 px-4 border-b border-slate-800/60">
+        <div className="max-w-7xl mx-auto text-center space-y-4">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-semibold">
+            <Sparkles className="w-3.5 h-3.5" /> โลตัสเกม - ร้านค้าดิจิทัลราคาสุดคุ้ม
+          </span>
+          <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+            คลังเกมและแอปพลิเคชัน <br />
+            <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-amber-300 bg-clip-text text-transparent">
+              iOS / Android / PC ครบจบในที่เดียว
+            </span>
+          </h1>
+          <p className="text-slate-400 max-w-xl mx-auto text-sm md:text-base">
+            รับประกันไอดีปลอดภัย ราคาสบายกระเป๋า บริการจัดส่งรวดเร็วทันใจ
+          </p>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 mt-8">
+        {/* Categories Horizontal Scroll */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 scrollbar-none">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`px-4 py-2 rounded-xl text-xs md:text-sm font-medium whitespace-nowrap transition border ${
+                selectedCategory === cat
+                  ? "bg-rose-600 text-white border-rose-500 shadow-lg shadow-rose-950"
+                  : "bg-slate-900 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-slate-200"
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        {/* Product Grid */}
+        <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          {filteredProducts.map((p) => (
+            <div
+              key={p.id}
+              className="group bg-slate-900/90 rounded-2xl border border-slate-800/80 overflow-hidden hover:border-rose-500/50 transition duration-300 flex flex-col justify-between"
+            >
+              <div>
                 <div
-  key={product.id}
-  ref={(el) => {
-    productRefs.current[product.id] = el;
-  }}
-  className="group overflow-hidden rounded-[24px] border border-pink-500/20 bg-[#111111]/90 shadow-[0_0_22px_rgba(255,43,214,0.10)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-cyan-300/60 hover:shadow-[0_0_32px_rgba(255,43,214,0.35)]"
->
-                  <button
-                    onClick={() => setSelectedProduct(product)}
-                    className="block w-full text-left"
-                  >
-                    <div className="relative aspect-square overflow-hidden bg-[#111111]">
-                     <div className="absolute inset-0 bg-black/40 opacity-0 transition group-hover:opacity-100"></div>
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
-                        onError={(e) => {
-                          e.currentTarget.src = "https://placehold.co/600x600";
-                        }}
-                      />
-                      <span className="absolute left-2 top-2 rounded-full bg-black/70 px-2 py-1 text-[10px] font-bold text-white backdrop-blur">
-                        {product.badge}
-                      </span>
-                      {discountPercent(product.price, product.oldPrice) > 0 && (
-                        <span className="absolute right-2 top-2 rounded-full bg-gradient-to-r from-pink-500 to-cyan-400 px-2 py-1 text-[10px] font-bold text-white shadow-[0_0_12px_rgba(255,43,214,0.8)]">
-                          -{discountPercent(product.price, product.oldPrice)}%
-                        </span>
-                      )}
-                    </div>
-                  </button>
-
-                  <div className="p-3">
-                    <p className="line-clamp-2 min-h-[40px] text-sm font-bold text-white">
-                      {product.name}
-                    </p>
-
-                    <div className="mt-2 flex items-center gap-2 text-xs text-zinc-400">
-                      <span className="inline-flex items-center gap-1">
-                        <Star className="h-3.5 w-3.5 fill-yellow-400 text-yellow-400" />
-                        {product.rating}
-                      </span>
-                      <span>ขายแล้ว {product.sold}</span>
-                    </div>
-
-                    <div className="mt-3 flex items-end gap-2">
-                      <span className="text-lg font-black text-pink-300">
-                        {formatBaht(product.price)}
-                      </span>
-                      <span className="text-xs text-zinc-500 line-through">
-                        {formatBaht(product.oldPrice)}
-                      </span>
-                    </div>
-
-                    <div className="mt-3 grid grid-cols-1 gap-2">
-                      <button
-                        onClick={() => setSelectedProduct(product)}
-                        className="rounded-full border border-pink-500/20 bg-[#111111]/80 px-4 py-2.5 text-sm font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:border-cyan-300/50"
-                      >
-                        ดูรายละเอียด
-                      </button>
-                      <button
-                        onClick={() => addToCart(product)}
-                        className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-2.5 text-sm font-bold text-white shadow-[0_0_18px_rgba(255,43,214,0.45)] transition-all duration-300 hover:scale-[1.03]"
-                      >
-                        เพิ่มลงตะกร้า
-                      </button>
-                    </div>
+                  className="relative aspect-square overflow-hidden cursor-pointer bg-slate-800"
+                  onClick={() => setSelectedProduct(p)}
+                >
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  />
+                  <div className="absolute top-2 left-2 flex flex-col gap-1">
+                    <span className="px-2 py-0.5 rounded-md bg-slate-950/80 backdrop-blur-md text-[10px] font-bold text-slate-200 border border-slate-700">
+                      {p.badge}
+                    </span>
                   </div>
                 </div>
-              ))}
+
+                <div className="p-3">
+                  <div className="text-[11px] text-rose-400 font-semibold mb-0.5">
+                    {p.category}
+                  </div>
+                  <h3
+                    onClick={() => setSelectedProduct(p)}
+                    className="text-sm font-bold text-slate-100 line-clamp-1 cursor-pointer hover:text-rose-400 transition"
+                  >
+                    {p.name}
+                  </h3>
+                  <p className="text-xs text-slate-400 line-clamp-2 mt-1 min-h-[2rem]">
+                    {p.description}
+                  </p>
+
+                  {/* Price Area */}
+                  <div className="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between">
+                    <div>
+                      <div className="text-xs text-slate-500 line-through">
+                        ฿{p.oldPrice}
+                      </div>
+                      <div className="text-base font-extrabold text-rose-400">
+                        ฿{p.price}
+                      </div>
+                    </div>
+                    {(p.priceiOS || p.priceAndroid) && (
+                      <div className="text-[10px] text-right text-slate-400">
+                        {p.priceiOS && <div>iOS: ฿{p.priceiOS}</div>}
+                        {p.priceAndroid && <div>Android: ฿{p.priceAndroid}</div>}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-3 pt-0">
+                <button
+                  onClick={() => addToCart(p)}
+                  className="w-full mt-2 bg-slate-800 hover:bg-rose-600 text-slate-200 hover:text-white py-2 rounded-xl text-xs font-semibold transition border border-slate-700 hover:border-rose-500 flex items-center justify-center gap-1"
+                >
+                  <Plus className="w-3.5 h-3.5" /> ใส่ตะกร้า
+                </button>
+              </div>
             </div>
-          )}
-        </section>
-        <StoreInfoSections />
-
-<footer className="mt-20 border-t border-white/10 bg-black/30 px-4 py-10 text-center text-sm text-gray-400">
-  <img
-    src={logoUrl}
-    alt="LOTUS STORE"
-    className="mx-auto mb-4 h-16 w-16 rounded-2xl object-cover"
-  />
-
-  <h3 className="text-xl font-bold text-white">LOTUS STORE</h3>
-
-  <p className="mt-2">
-    จำหน่ายเกม ซอฟต์แวร์ และบริการดิจิทัลออนไลน์
-  </p>
-
-  <div className="mt-4 space-y-1">
-    <p>Facebook: Lotus Store</p>
-    <p>Email: tus7234@gmail.com</p>
-    <p>โทร: 061-028-3272</p>
-    <p>เวลาทำการ: ทุกวัน 09:00 - 24:00 น.</p>
-  </div>
-
-  <div className="mt-5 flex flex-wrap justify-center gap-4 text-xs">
-    <a href="#about" className="hover:text-white">เกี่ยวกับเรา</a>
-    <a href="#contact" className="hover:text-white">ติดต่อเรา</a>
-    <a href="#warranty" className="hover:text-white">การรับประกัน</a>
-    <a href="#privacy" className="hover:text-white">Privacy Policy</a>
-    <a href="#terms" className="hover:text-white">Terms</a>
-  </div>
-
-  <div className="mt-6 text-xs text-gray-500">
-    © 2026 LOTUS STORE. All Rights Reserved.
-  </div>
-</footer>
+          ))}
+        </div>
       </main>
 
+      {/* Product Detail Modal */}
       {selectedProduct && (
-        <div className="fixed inset-0 z-[70] flex items-end justify-center bg-black/80 p-0 backdrop-blur-sm sm:items-center sm:p-4">
-          <div className="max-h-[90vh] w-full overflow-y-auto rounded-t-[28px] border border-pink-500/25 bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,43,214,0.22)] sm:max-w-lg sm:rounded-[32px]">
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0c0c0c]/95 p-4 backdrop-blur">
-              <p className="text-base font-black text-white">รายละเอียดสินค้า</p>
-              <button
-                onClick={() => setSelectedProduct(null)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full overflow-hidden relative shadow-2xl animate-in fade-in zoom-in duration-200">
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-3 right-3 bg-slate-800/80 hover:bg-slate-700 text-slate-300 p-1.5 rounded-full z-10 transition"
+            >
+              <X className="w-5 h-5" />
+            </button>
 
-            <div className="p-4">
-              <div className="overflow-hidden rounded-[24px] bg-[#111111]">
-                <img
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  className="aspect-[4/3] w-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = "https://placehold.co/800x600";
-                  }}
-                />
-              </div>
-
-              <h3 className="mt-4 text-xl font-black text-white">
-                {selectedProduct.name}
-              </h3>
-
-              <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-zinc-400">
-                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
-                  {selectedProduct.badge}
-                </span>
-                <span className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-3 py-1">
+            <div className="flex flex-col sm:flex-row p-4 gap-4">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="w-full sm:w-40 h-40 object-cover rounded-xl bg-slate-800"
+              />
+              <div className="flex-1">
+                <span className="text-xs font-semibold text-rose-400">
                   {selectedProduct.category}
                 </span>
-              </div>
+                <h2 className="text-lg font-bold text-slate-100">
+                  {selectedProduct.name}
+                </h2>
+                <p className="text-xs text-slate-400 mt-2">
+                  {selectedProduct.description}
+                </p>
 
-              <div className="mt-4 flex items-center gap-2">
-                <span className="text-2xl font-black text-pink-300">
-                  {formatBaht(selectedProduct.price)}
-                </span>
-                <span className="text-sm text-zinc-500 line-through">
-                  {formatBaht(selectedProduct.oldPrice)}
-                </span>
-              </div>
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="text-2xl font-black text-rose-400">
+                    ฿{selectedProduct.price}
+                  </span>
+                  <span className="text-xs text-slate-500 line-through">
+                    ฿{selectedProduct.oldPrice}
+                  </span>
+                </div>
 
-              <div className="mt-2 flex items-center gap-3 text-sm text-zinc-400">
-                <span className="inline-flex items-center gap-1">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  {selectedProduct.rating}
-                </span>
-                <span>ขายแล้ว {selectedProduct.sold}</span>
-              </div>
-
-              <p className="mt-4 text-sm leading-7 text-zinc-300">
-                {selectedProduct.description}
-              </p>
-
-              <div className="mt-5 grid grid-cols-2 gap-2">
                 <button
-                  onClick={() => addToCart(selectedProduct)}
-                  className="rounded-full border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl px-4 py-3 text-sm font-bold text-white"
+                  onClick={() => {
+                    addToCart(selectedProduct);
+                    setSelectedProduct(null);
+                  }}
+                  className="w-full mt-5 bg-rose-600 hover:bg-rose-500 text-white font-semibold py-2.5 rounded-xl text-xs transition shadow-lg shadow-rose-950 flex items-center justify-center gap-2"
                 >
-                  เพิ่มลงตะกร้า
+                  <ShoppingCart className="w-4 h-4" /> เพิ่มใส่ตะกร้า
                 </button>
-
-                <a
-                  href={`${facebookPage}?text=${selectedCheckoutMessage}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-center text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
-                >
-                  ซื้อเลย
-                </a>
               </div>
             </div>
           </div>
         </div>
       )}
 
-
-      <div
-        className={`fixed inset-y-0 right-0 z-[80] flex w-full justify-end bg-black/50 transition ${
-          showCart ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
-        onClick={() => setShowCart(false)}
-      >
-        <div
-          className={`h-full w-full max-w-md transform border-l border-white/10 bg-[#0b0b0b] shadow-2xl shadow-black/50 transition-transform duration-300 ${
-            showCart ? "translate-x-0" : "translate-x-full"
-          }`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="flex h-full flex-col">
-            <div className="flex items-center justify-between border-b border-white/10 p-4">
-              <div>
-                <p className="text-lg font-black text-white">ตะกร้าสินค้า</p>
-                <p className="text-xs text-zinc-400">ทั้งหมด {cartCount} ชิ้น</p>
-              </div>
-              <button
-                onClick={() => setShowCart(false)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            <div className="flex-1 overflow-y-auto p-4">
-              {cart.length === 0 ? (
-                <div className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-6 text-center">
-                  <p className="font-bold text-white">ยังไม่มีสินค้าในตะกร้า</p>
-                  <p className="mt-2 text-sm text-zinc-400">
-                    เพิ่มสินค้าแล้วกลับมาดูได้ที่นี่
-                  </p>
+      {/* Cart Drawer */}
+      {isCartOpen && (
+        <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm">
+          <div className="w-full max-w-md bg-slate-900 border-l border-slate-800 h-full flex flex-col justify-between p-4 shadow-2xl animate-in slide-in-from-right duration-300">
+            <div>
+              <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div className="flex items-center gap-2">
+                  <ShoppingCart className="w-5 h-5 text-rose-400" />
+                  <h2 className="font-bold text-slate-100">ตะกร้าสินค้า</h2>
                 </div>
-              ) : (
-                <div className="space-y-3">
-                  {cart.map((item) => (
+                <button
+                  onClick={() => setIsCartOpen(false)}
+                  className="text-slate-400 hover:text-slate-200"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Cart List */}
+              <div className="mt-4 space-y-3 max-h-[60vh] overflow-y-auto pr-1">
+                {cart.length === 0 ? (
+                  <p className="text-center text-slate-500 text-sm py-12">
+                    ไม่มีสินค้าในตะกร้า
+                  </p>
+                ) : (
+                  cart.map((item) => (
                     <div
                       key={item.product.id}
-                      className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-3"
+                      className="flex items-center justify-between bg-slate-800/60 border border-slate-700/60 p-2.5 rounded-xl gap-3"
                     >
-                      <div className="flex gap-3">
-                        <img
-                          src={item.product.image}
-                          alt={item.product.name}
-                          className="h-20 w-20 rounded-2xl object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = "https://placehold.co/200x200";
-                          }}
-                        />
-
-                        <div className="min-w-0 flex-1">
-                          <p className="line-clamp-2 text-sm font-bold text-white">
-                            {item.product.name}
-                          </p>
-                          <p className="mt-1 text-sm font-bold text-pink-300">
-                            {formatBaht(item.product.price)}
-                          </p>
-
-                          <div className="mt-3 flex items-center justify-between gap-2">
-                            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/20 px-2 py-1">
-                              <button
-                                onClick={() => updateQty(item.product.id, -1)}
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white"
-                              >
-                                <Minus className="h-4 w-4" />
-                              </button>
-                              <span className="min-w-[20px] text-center text-sm font-bold text-white">
-                                {item.qty}
-                              </span>
-                              <button
-                                onClick={() => updateQty(item.product.id, 1)}
-                                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/10 text-white"
-                              >
-                                <Plus className="h-4 w-4" />
-                              </button>
-                            </div>
-
-                            <button
-                              onClick={() => removeFromCart(item.product.id)}
-                              className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-pink-500/15 text-pink-300"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
+                      <img
+                        src={item.product.image}
+                        alt={item.product.name}
+                        className="w-12 h-12 object-cover rounded-lg bg-slate-800"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <h4 className="text-xs font-bold text-slate-200 truncate">
+                          {item.product.name}
+                        </h4>
+                        <div className="text-rose-400 text-xs font-bold mt-0.5">
+                          ฿{item.product.price}
                         </div>
                       </div>
+
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          onClick={() => updateCartQty(item.product.id, -1)}
+                          className="bg-slate-700 hover:bg-slate-600 p-1 rounded text-slate-200"
+                        >
+                          <Minus className="w-3 h-3" />
+                        </button>
+                        <span className="text-xs font-bold w-4 text-center">
+                          {item.qty}
+                        </span>
+                        <button
+                          onClick={() => updateCartQty(item.product.id, 1)}
+                          className="bg-slate-700 hover:bg-slate-600 p-1 rounded text-slate-200"
+                        >
+                          <Plus className="w-3 h-3" />
+                        </button>
+                        <button
+                          onClick={() => removeFromCart(item.product.id)}
+                          className="text-slate-500 hover:text-rose-400 ml-1"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
                     </div>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            <div className="border-t border-white/10 p-4">
-              <div className="rounded-[24px] border border-pink-500/20 bg-[#111111]/80 backdrop-blur-xl p-4">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-zinc-400">ยอดรวม</span>
-                  <span className="font-bold text-white">
-                    {formatBaht(cartSubtotal)}
-                  </span>
-                </div>
-                <div className="mt-2 flex items-center justify-between text-sm">
-                  <span className="text-zinc-400">ประหยัด</span>
-                  <span className="font-bold text-emerald-400">
-                    {formatBaht(cartSavings)}
-                  </span>
-                </div>
+                  ))
+                )}
               </div>
-
-              <a
-                href={`${facebookPage}?text=${checkoutMessage}`}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 py-3 text-sm font-bold text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
-              >
-                ซื้อเลยผ่าน Messenger
-              </a>
             </div>
+
+            {/* Cart Footer */}
+            {cart.length > 0 && (
+              <div className="border-t border-slate-800 pt-4 space-y-3">
+                <div className="flex justify-between items-center text-sm font-bold">
+                  <span className="text-slate-300">ราคารวมทั้งหมด:</span>
+                  <span className="text-xl text-rose-400">฿{totalCartPrice}</span>
+                </div>
+                <a
+                  href={`${facebookPage}?text=${encodeURIComponent(
+                    `สนใจสั่งซื้อสินค้าจากโลตัสเกม:\n` +
+                      cart
+                        .map(
+                          (i) =>
+                            `- ${i.product.name} x${i.qty} = ฿${
+                              i.product.price * i.qty
+                            }`
+                        )
+                        .join("\n") +
+                      `\nราคารวม: ฿${totalCartPrice}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-xl text-center text-xs flex items-center justify-center gap-2 transition"
+                >
+                  <MessageCircle className="w-4 h-4" /> สั่งซื้อผ่าน Messenger
+                </a>
+              </div>
+            )}
           </div>
         </div>
-      </div>
-
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-pink-500/20 bg-[#050505]/90 p-3 shadow-[0_0_24px_rgba(255,43,214,0.18)] backdrop-blur md:hidden">
-        <div className="mx-auto flex max-w-7xl items-center gap-2">
-          <button
-            onClick={() => setShowCart(true)}
-            className="relative inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-black"
-          >
-            <ShoppingCart className="h-5 w-5" />
-            {cartCount > 0 && (
-              <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-pink-500 px-1 text-[10px] font-bold text-white">
-                {cartCount}
-              </span>
-            )}
-          </button>
-
-          <a
-            href={`${facebookPage}?text=${checkoutMessage}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-12 flex-1 items-center justify-center rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-400 px-4 text-sm font-black text-white shadow-[0_0_20px_rgba(255,43,214,0.45)]"
-          >
-            ซื้อเลย / ทักเพจ
-          </a>
-        </div>
-      </div>
+      )}
     </div>
   );
 }
