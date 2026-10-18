@@ -61,7 +61,7 @@ const products: Product[] = [
   {
     id: 2,
     name: "Hitman: Absolution",
-    price: 69,
+    price: { ANDROID: 69, iOS: 219 },
     oldPrice: 419,
     platform: ["iOS", "Android"],
     category: "การลอบสังหาร",
